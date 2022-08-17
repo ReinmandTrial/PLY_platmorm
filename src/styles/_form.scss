@@ -1,0 +1,10 @@
+.text-input {
+    background-color: $grey-color;
+    border: 0;
+    border-radius: 10px;
+    padding: 14px 20px;
+
+    &::placeholder {
+        color: #B4B4B4;
+    }
+}

@@ -3,7 +3,7 @@ import '../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js';
 import { example } from '@/js/example'
 
 // Test import of an asset
-import webpackLogo from '@/images/webpack-logo.svg'
+// import webpackLogo from '@/images/webpack-logo.svg'
 
 // Test import of styles
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';

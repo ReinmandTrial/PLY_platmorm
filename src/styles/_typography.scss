@@ -1,0 +1,51 @@
+.h1-heading,
+.h2-heading,
+.h3-heading,
+.h4-heading,
+.h5-heading,
+.h6-heading {
+    font-family: 'Termina Demi';
+}
+
+.h1-heading,
+.h2-heading {
+    font-size: 40px;
+}
+
+.h6-heading {
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.text {
+    font-size: 1rem;
+
+    &-small {
+        font-size: .875rem;
+    }
+}
+
+.filter {
+    display: flex;
+    gap: 20px;
+
+    &-btn {
+        flex-grow: 1;
+        padding: 14px 10px;
+        background-color: $grey-color;
+        text-align: center;
+        border-radius: 50px;
+        text-decoration: none;
+        font-size: 20px;
+        font-family: "Termina", sans-serif;
+    }
+}
+
+.btn {
+    padding: 14px 24px;
+
+    &-purple {
+        background-color: $purple-color;
+        color: $darkgrey-color;
+    }
+}
