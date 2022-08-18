@@ -1,0 +1,31 @@
+.search {
+  &-text {
+    font-weight: 700;
+    font-size: 18px;
+    margin: 0 40px 0 0;
+  }
+
+  &-row {
+    display: flex;
+    align-items: center;
+    margin: 50px 0;
+  }
+
+  &-form {
+    position: relative;
+    margin-left: auto;
+
+    .btn-search {
+      position: absolute;
+      right: 28px;
+      top: 19px;
+      padding: 0;
+    }
+
+    .text-input {
+      background-color: $darkgrey-color;
+      min-width: 320px;
+      padding: 16px 20px;
+    }
+  }
+}

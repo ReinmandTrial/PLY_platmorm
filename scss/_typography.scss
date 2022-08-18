@@ -50,7 +50,7 @@
 
     &-btn {
         flex-grow: 1;
-        padding: 13px 10px;
+        padding: 13px 20px;
         background-color: $darkgrey-color;
         text-align: center;
         border-radius: 50px;
@@ -60,6 +60,11 @@
 
         &:nth-of-type(even) {
             border-radius: 10px;
+        }
+
+        &.active {
+            background-color: $yellow-color;
+            color: black;
         }
     }
 }
@@ -91,5 +96,16 @@
     &-center-wrap {
         margin: 70px 0 0;
         text-align: center;
+    }
+
+    &-search {
+        width: 18px;
+        height: 18px;
+        display: inline-block;
+        background-image: url(../img/icons/search-icon.svg);
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+        font-size: 0;
     }
 }
