@@ -1,0 +1,22 @@
+.logo {
+  max-width: 120px;
+}
+
+.navbar {
+  margin: 60px 0;
+
+  .navbar-nav {
+    background-color: $darkgrey-color;
+    border-radius: 10px;
+
+    .nav-link {
+      padding: 13px 24px;
+      font-family: "Termina", sans-serif;
+      font-size: 12px;
+    }
+
+    &:last-of-type {
+      background-color: transparent;
+    }
+  }
+}

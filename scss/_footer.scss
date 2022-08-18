@@ -1,9 +1,13 @@
 .footer {
-  background-image: url(../images/pattern/footer.svg);
+  background-image: url(../img/pattern/footer.svg);
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
   padding: 140px 0;
+
+  .logo {
+    max-width: 90px;
+  }
 
   &-block {
     background-color: $darkgrey-color;
@@ -11,15 +15,21 @@
     margin: 20px 0;
     border-radius: 10px;
 
-    &-gradient-text {
-      font-family: 'Termina', sans-serif;
-      font-weight: 600;
-      font-size: 24px;
-      background: linear-gradient(270deg, #985CFF 5.65%, #E5FF8B 94.1%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      text-fill-color: transparent;
+    &-gradient {
+      &-text {
+        font-family: 'Termina', sans-serif;
+        font-weight: 600;
+        font-size: 24px;
+        background: linear-gradient(270deg, #985CFF 5.65%, #E5FF8B 94.1%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        margin-bottom: 0;
+      }
+
+      .text-14, .text-12 {
+        color: #565656;
+      }
     }
 
     &-row {
@@ -27,7 +37,7 @@
       justify-content: space-between;
     }
 
-    .small-text {
+    .text-14, .text-12 {
       margin-bottom: 0;
       font-size: 12px;
     }
@@ -35,14 +45,20 @@
 
   &-form {
     .text-input {
-      min-width: 400px;
+      min-width: 380px;
+      margin-right: 20px;
     }
   }
 
   &-reviews {
     &-rate {
       display: flex;
+      align-items: center;
       gap: 30px;
+
+      p {
+        margin: 0;
+      }
     }
   }
 

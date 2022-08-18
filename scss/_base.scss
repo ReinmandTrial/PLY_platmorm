@@ -18,6 +18,16 @@ body {
   text-align: center;
 }
 
-.common-section {
-  margin: 160px 0;
+.common {
+  &-section {
+    margin: 160px 0;
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+  &-desc {
+    .text {
+      margin: 40px 0 60px;
+    }
+  }
 }

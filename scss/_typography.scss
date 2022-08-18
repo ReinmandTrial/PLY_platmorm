@@ -4,24 +4,43 @@
 .h4-heading,
 .h5-heading,
 .h6-heading {
-    font-family: 'Termina Demi';
+    font-family: 'Termina', sans-serif;
 }
 
 .h1-heading,
 .h2-heading {
-    font-size: 40px;
+    font-size: 2.5rem;
+    font-weight: 600;
+}
+
+.h3-heading {
+    font-size: 1.25rem;
+    margin-bottom: 20px;
+}
+
+.h4-heading {
+    font-size: 1.125rem;
+    margin-bottom: 20px;
 }
 
 .h6-heading {
-    font-size: 14px;
+    font-size: .875rem;
     margin-bottom: 20px;
 }
 
 .text {
     font-size: 1rem;
 
-    &-small {
+    &-14 {
         font-size: .875rem;
+    }
+
+    &-12 {
+        font-size: .75rem;
+    }
+
+    &-10 {
+        font-size: .625rem;
     }
 }
 
@@ -31,21 +50,46 @@
 
     &-btn {
         flex-grow: 1;
-        padding: 14px 10px;
-        background-color: $grey-color;
+        padding: 13px 10px;
+        background-color: $darkgrey-color;
         text-align: center;
         border-radius: 50px;
         text-decoration: none;
         font-size: 20px;
         font-family: "Termina", sans-serif;
+
+        &:nth-of-type(even) {
+            border-radius: 10px;
+        }
     }
 }
 
 .btn {
-    padding: 14px 24px;
+    padding: 13px 24px;
+    font-family: 'Termina', sans-serif;
+    border-radius: 10px;
+    font-size: 14px;
+    border: 0;
+    color: $darkgrey-color;
 
     &-purple {
         background-color: $purple-color;
-        color: $darkgrey-color;
+    }
+
+    &-yellow {
+        background-color: $yellow-color;
+    }
+
+    &-white {
+        background-color: white;
+    }
+
+    &-wide {
+        padding: 13px 50px;
+    }
+
+    &-center-wrap {
+        margin: 70px 0 0;
+        text-align: center;
     }
 }

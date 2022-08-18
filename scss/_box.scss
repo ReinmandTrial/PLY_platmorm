@@ -1,0 +1,53 @@
+.box {
+  padding: 60px;
+  background-color: $darkgrey-color;
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+
+  &-icon {
+    height: 140px;
+    margin-bottom: 30px;
+  }
+
+  .h2-heading {
+    margin-bottom: 40px;
+  }
+
+  .text {
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+
+  .btn {
+    &:last-of-type {
+      margin-top: auto;
+    }
+  }
+
+  &-big {
+    .text:last-of-type {
+      margin-bottom: 200px;
+    }
+  }
+
+  &-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    height: 100%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    z-index: 1;
+
+    ~ * {
+      position: relative;
+      z-index: 2;
+    }
+  }
+}

@@ -1,5 +1,5 @@
 @font-face {
-  font-family: 'Termina Demi';
+  font-family: 'Termina';
   src: url('../fonts/Termina-Demi.woff') format('woff');
   font-weight: 600;
   font-style: normal;
@@ -145,5 +145,7 @@
 @import 'variables';
 @import 'base';
 @import 'typography';
+@import 'header';
+@import 'box';
 @import 'form';
 @import 'footer';
