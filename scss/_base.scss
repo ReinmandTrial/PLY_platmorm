@@ -6,6 +6,18 @@ body {
   margin: 0;
 }
 
+// container
+.container, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
+  @media (min-width: 1600px) {
+      max-width: 1520px;
+  }
+}
+
+.container-mini {
+  max-width: 1265px;
+  margin: 0 auto;
+}
+
 .grey-bg {
   background-color: $grey-color;
 
@@ -29,11 +41,5 @@ body {
     .text {
       margin: 40px 0 60px;
     }
-  }
-}
-
-.container, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
-  @media (min-width: 1600px) {
-      max-width: 1520px;
   }
 }

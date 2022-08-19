@@ -105,7 +105,9 @@
     }
 
     &-wide {
-        padding: 13px 50px;
+        @media (min-width: 1600px) {
+            padding: 13px 50px;
+        }
     }
 
     &-center-wrap {
