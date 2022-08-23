@@ -87,21 +87,41 @@
     border: 0;
     color: $darkgrey-color;
 
+    &:hover {
+        color: $darkgrey-color;
+    }
+
     &-purple {
         background-color: $purple-color;
+
+        &:hover {
+            background-color: darken($purple-color, 5%);
+        }
     }
 
     &-yellow {
         background-color: $yellow-color;
+
+        &:hover {
+            background-color: darken($yellow-color, 5%);
+        }
     }
 
     &-white {
         background-color: white;
+
+        &:hover {
+            background-color: darken(white, 5%);
+        }
     }
 
     &-darkgrey {
         background-color: $darkgrey-color;
         color: white;
+
+        &:hover {
+            background-color: darken($darkgrey-color, 5%);
+        }
     }
 
     &-wide {

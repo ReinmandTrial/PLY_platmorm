@@ -21,6 +21,10 @@
       padding: 13px 24px;
       font-family: "Termina", sans-serif;
       font-size: 12px;
+
+      &:hover {
+        color: white;
+      }
     }
 
     &:last-of-type {
