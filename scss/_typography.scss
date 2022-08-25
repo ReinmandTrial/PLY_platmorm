@@ -72,6 +72,10 @@
             border-radius: 10px;
         }
 
+        &:hover {
+            color: white;
+        }
+
         &.active {
             background-color: $yellow-color;
             color: black;
@@ -79,12 +83,12 @@
     }
 }
 
-.btn {
+.btn { 
     padding: 13px 24px;
     font-family: 'Termina', sans-serif;
     border-radius: 10px;
     font-size: 14px;
-    border: 0;
+    border: 1px solid transparent;
     color: $darkgrey-color;
 
     &:hover {
@@ -95,7 +99,9 @@
         background-color: $purple-color;
 
         &:hover {
-            background-color: darken($purple-color, 5%);
+            background-color: $darkgrey-color;
+            border: 1px solid $purple-color;
+            color: white;
         }
     }
 
@@ -103,7 +109,9 @@
         background-color: $yellow-color;
 
         &:hover {
-            background-color: darken($yellow-color, 5%);
+            background-color: $darkgrey-color;
+            border: 1px solid $yellow-color;
+            color: white;
         }
     }
 
@@ -111,7 +119,9 @@
         background-color: white;
 
         &:hover {
-            background-color: darken(white, 5%);
+            background-color: $darkgrey-color;
+            border: 1px solid white;
+            color: white;
         }
     }
 
@@ -120,7 +130,7 @@
         color: white;
 
         &:hover {
-            background-color: darken($darkgrey-color, 5%);
+            background-color: $darkgrey-color;
         }
     }
 
@@ -144,5 +154,24 @@
         background-size: contain;
         background-repeat: no-repeat;
         font-size: 0;
+    }
+}
+
+.badge-list {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin: 40px 0;
+
+    &-item {
+        flex-grow: 1;
+        color: $grey-text-color;
+        padding: 12px;
+        font-family: 'Termina', sans-serif;
+        font-weight: 500;
+        border: 1px solid $grey-border-color;
+        text-align: center;
+        border-radius: 10px;
+        font-size: 14px;
     }
 }

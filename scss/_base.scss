@@ -38,8 +38,15 @@ body {
     }
   }
   &-desc {
+    text-align: center;
+    .h2-heading {
+      max-width: 550px;
+      margin-left: auto;
+      margin-right: auto;
+    }
     .text {
-      margin: 40px 0 60px;
+      margin: 40px auto 60px;
+      max-width: 900px;
     }
   }
 }
