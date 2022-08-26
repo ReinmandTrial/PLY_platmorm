@@ -5,6 +5,10 @@
   background-position: center;
   padding: 140px 0;
 
+  @media (max-width: 768px) {
+    padding: 100px 0 70px;
+  }
+
   .logo {
     max-width: 90px;
   }
@@ -29,6 +33,10 @@
           }
         }
       }
+    }
+
+    @media (max-width: 768px) {
+      margin: 40px 0 0;
     }
 
     &-gradient {
@@ -99,6 +107,10 @@
 
       p {
         margin: 0;
+
+        @media (max-width: 768px) {
+          display: none;
+        }
       }
     }
   }

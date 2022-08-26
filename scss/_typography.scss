@@ -11,6 +11,10 @@
 .h2-heading {
     font-size: 2.5rem;
     font-weight: 600;
+
+    @media (max-width: 768px) {
+        font-size: 1.25rem;
+    }
 }
 
 .h3-heading {
@@ -58,6 +62,10 @@
         margin: 20px 0;
     }
 
+    @media (max-width: 768px) {
+        gap: 10px;
+    }
+
     &-btn {
         flex-grow: 1;
         padding: 13px 20px;
@@ -67,6 +75,11 @@
         text-decoration: none;
         font-size: 20px;
         font-family: "Termina", sans-serif;
+
+        @media (max-width: 768px) {
+            font-size: 10px;
+            padding: 8px 16px;
+        }
 
         &:nth-of-type(even) {
             border-radius: 10px;
