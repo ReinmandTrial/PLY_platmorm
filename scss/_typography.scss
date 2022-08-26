@@ -53,6 +53,13 @@
     }
 }
 
+.gradient-text {
+    background: linear-gradient(270deg, #985CFF 5.65%, #E5FF8B 94.1%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
 .filter {
     display: flex;
     gap: 20px;
@@ -96,7 +103,7 @@
     }
 }
 
-.btn { 
+.btn {
     padding: 13px 24px;
     font-family: 'Termina', sans-serif;
     border-radius: 10px;
@@ -156,6 +163,10 @@
     &-center-wrap {
         margin: 70px 0 0;
         text-align: center;
+
+        @media (max-width: 768px) {
+            display: none;
+        }
     }
 
     &-search {

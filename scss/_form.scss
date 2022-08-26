@@ -19,6 +19,20 @@ input {
     flex-wrap: wrap;
     gap: 20px;
 
+    &-section {
+        &-left {
+            flex-basis: 10%;
+            align-self: stretch;
+            height: unset;
+            @media (max-width: 768px) {
+                display: none;
+            }
+        }
+        &-right {
+            flex-basis: 40%;
+        }
+    }
+
     &-text-input,
     &-textarea {
         font-size: 14px;
@@ -52,8 +66,9 @@ input {
         &-half {
             width: 48%;
 
-            @media (max-width: 768px) {
-                width: 100%;
+            @media (max-width: 992px) {
+                width: 46%;    
+                flex-grow: 1;
             }
         }
 
@@ -73,6 +88,11 @@ input {
             position: absolute;
             bottom: 0;
             right: 0;
+
+            @media (max-width: 768px) {
+                position: static;
+                width: 100%;
+            }
         }
     }
 }
@@ -84,6 +104,10 @@ input {
     cursor: pointer;
     margin: 20px 0 30px;
     max-width: 70%;
+
+    @media (max-width: 768px) {
+       max-width: 100%;
+    }
 
     input {
         opacity: 0;
@@ -110,7 +134,7 @@ input {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: #ccc;
+    background-color: #696969;
     transition: .3s;
     width: 45px;
     height: 21px;

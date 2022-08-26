@@ -51,10 +51,14 @@ body {
   &-desc {
     text-align: center;
 
-    .h2-heading {
+    .h1-heading, .h2-heading, .h3-heading {
       max-width: 550px;
       margin-left: auto;
       margin-right: auto;
+    }
+
+    .h1-heading {
+      max-width: 710px;
     }
 
     .text {

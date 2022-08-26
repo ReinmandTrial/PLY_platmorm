@@ -40,14 +40,10 @@
     }
 
     &-gradient {
-      &-text {
+      .gradient-text {
         font-family: 'Termina', sans-serif;
         font-weight: 600;
         font-size: 24px;
-        background: linear-gradient(270deg, #985CFF 5.65%, #E5FF8B 94.1%);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
         margin-bottom: 0;
       }
 
