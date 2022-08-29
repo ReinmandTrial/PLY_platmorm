@@ -141,5 +141,12 @@
         color: $grey-text-color;
       }
     }
+  } 
+
+  &-legal {
+    .text {
+      font-size: 14px;
+      margin: 0;
+    }
   }
 }
