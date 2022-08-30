@@ -330,6 +330,15 @@
   &-price {
 
     &-top {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      min-height: 320px;
+
+      @media (max-width: 992px) {
+        font-size: 20px;
+        min-height: 240px;
+      }
 
       &-name,
       &-cost {
@@ -340,6 +349,7 @@
       &-name {
         font-size: 30px;
         margin-bottom: 0;
+
         @media (max-width: 992px) {
           font-size: 20px;
         }
@@ -347,8 +357,30 @@
 
       &-cost {
         font-size: 50px;
+        display: flex;
+        position: relative;
+
         @media (max-width: 992px) {
           font-size: 38px;
+        }
+
+        &-monthly {
+          position: absolute;
+          text-align: right;
+          font-size: 14px;
+          right: 0;
+          bottom: -10px;
+
+          @media (max-width: 992px) {
+            font-size: 9px;
+          }
+        }
+
+        input {
+          background-color: transparent;
+          border: 0;
+          font-weight: 600;
+          width: 65%;
         }
       }
 
@@ -359,12 +391,12 @@
 
       .btn,
       .btn:last-of-type {
-        margin: 55px 0;
+        margin: auto 0 55px;
         width: 100%;
         font-weight: 600;
 
         @media (max-width: 992px) {
-          margin: 25px 0;
+          margin: auto 0 25px;
         }
       }
     }
@@ -374,11 +406,19 @@
       margin: 0;
       padding: 0;
 
+      @media (max-width: 992px) {
+        display: none;
+      }
+
       li {
         font-size: 14px;
         position: relative;
         padding-left: 40px;
         margin: 15px 0;
+
+        @media (max-width: 992px) {
+          font-size: 11px;
+        }
 
         &:before {
           content: "↗";
@@ -387,6 +427,38 @@
           position: absolute;
           left: 0;
         }
+      }
+
+      &-show {
+        display: none;
+        color: $grey-text-color;
+        text-align: center;
+        font-size: 12px;
+        margin: 0 auto;
+
+        &:hover {
+          color: $grey-text-color;
+        }
+
+        @media (max-width: 992px) {
+          display: block;
+
+          &.open {
+            +.card-price-list {
+              display: block;
+            }
+          }
+        }
+      }
+    }
+
+    .range-container {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+
+      @media (max-width: 992px) {
+        font-size: 12px;
       }
     }
   }

@@ -69,6 +69,7 @@
             <p class="card-price-top-description">Get familiar with platform. No credit card requider.</p>
             <div class="btn btn-white">Start Today</div>
           </div>
+          <a href="" class="card-price-list-show">View detailed pricing options</a>
           <ul class="card-price-list">
             <li>Scoring system for identifying best companies</li>
             <li>Discover undervalued stocks based on our relative valuation methodology</li>
@@ -86,12 +87,19 @@
           <div class="card-price-top">
             <p class="card-price-top-name">Professional</p>
             <p class="card-price-top-cost">
-              6.99
+              <input type="text" id="output-value" value="8.99" readonly />
               <span>€</span>
+              <span class="card-price-top-cost-monthly">8.99 € /
+                month / market</span>
             </p>
-            <p class="card-price-top-description">Get familiar with platform. No credit card requider.</p>
+            <div class="range-container">
+              <span>Markets</span>
+              <input type="range" min="1" max="6" value="1" oninput="sliderChange(this.value)" id="input-value" class="range-input" />
+              <span class="range-input-value">1</span>
+            </div>
             <div class="btn btn-yellow">Start Today</div>
           </div>
+          <a href="" class="card-price-list-show">View detailed pricing options</a>
           <ul class="card-price-list">
             <li>All free features</li>
             <li>Comprehensive as-reported financials of every company</li>
@@ -112,6 +120,7 @@
             <p class="card-price-top-description">For organizations with special requirements</p>
             <div class="btn btn-purple">Start Today</div>
           </div>
+          <a href="" class="card-price-list-show">View detailed pricing options</a>
           <ul class="card-price-list">
             <li>Can't find your preferred financial ratios in our toolkit?</li>
             <li>Need some additonal valuation multiples to value your stocks?</li>
@@ -123,12 +132,12 @@
         </div>
       </div>
       <div class="center-text">
-        <a href="" class="price-section-link">View detailed pricing options</a>
+        <a href="#price-table" class="price-section-link">View detailed pricing options</a>
       </div>
     </div>
   </section>
 
-  <section class="price-table-section">
+  <section class="price-table-section" id="price-table">
     <div class="container">
       <div class="common-desc">
         <h2 class="h2-heading center-text">Detailed features overview</h2>
@@ -140,15 +149,18 @@
               <div>Discover investment opportunities</div>
             </th>
             <th class="price-table-heading price-table-heading-pricing price-table-heading-pricing-1">
-              <div class="price-table-heading-tariff"><img src="img/pattern/pricing-table-1.svg" class="price-table-heading-tariff-bg" alt=""><span>Basic</span><span
+              <div class="price-table-heading-tariff"><img src="img/pattern/pricing-table-1.svg"
+                  class="price-table-heading-tariff-bg" alt=""><span>Basic</span><span
                   class="price-table-heading-tariff-final">0.00<sup>€</sup></span></div>
             </th>
             <th class="price-table-heading price-table-heading-pricing price-table-heading-pricing-2">
-              <div class="price-table-heading-tariff"><img src="img/pattern/pricing-table-2.svg" class="price-table-heading-tariff-bg" alt=""><span>Professional</span><span
+              <div class="price-table-heading-tariff"><img src="img/pattern/pricing-table-2.svg"
+                  class="price-table-heading-tariff-bg" alt=""><span>Professional</span><span
                   class="price-table-heading-tariff-final">8.99<sup>€</sup></span></div>
             </th>
             <th class="price-table-heading price-table-heading-pricing price-table-heading-pricing-3">
-              <div class="price-table-heading-tariff"><img src="img/pattern/pricing-table-3.svg" class="price-table-heading-tariff-bg" alt=""><span>Enterprise</span><span
+              <div class="price-table-heading-tariff"><img src="img/pattern/pricing-table-3.svg"
+                  class="price-table-heading-tariff-bg" alt=""><span>Enterprise</span><span
                   class="price-table-heading-tariff-final">Custom</span></div>
             </th>
           </tr>
