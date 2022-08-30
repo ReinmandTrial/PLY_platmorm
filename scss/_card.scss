@@ -59,6 +59,7 @@
       grid-template-columns: repeat(2, 1fr);
       gap: 0 20px;
     }
+
     @media (max-width: 576px) {
       grid-template-columns: repeat(1, 1fr);
     }
@@ -327,6 +328,7 @@
   }
 
   &-price {
+
     &-top {
 
       &-name,
@@ -338,10 +340,16 @@
       &-name {
         font-size: 30px;
         margin-bottom: 0;
+        @media (max-width: 992px) {
+          font-size: 20px;
+        }
       }
 
       &-cost {
         font-size: 50px;
+        @media (max-width: 992px) {
+          font-size: 38px;
+        }
       }
 
       &-description {
@@ -354,6 +362,10 @@
         margin: 55px 0;
         width: 100%;
         font-weight: 600;
+
+        @media (max-width: 992px) {
+          margin: 25px 0;
+        }
       }
     }
 
@@ -377,6 +389,13 @@
         }
       }
     }
+  }
+}
+
+.line-endless-mob .card {
+  @media (max-width: 992px) {
+    min-width: 240px;
+    padding: 20px;
   }
 }
 
@@ -434,8 +453,13 @@
         &:nth-of-type(4n) {
           order: 4;
         }
+
         @media (max-width: 768px) {
-          &:nth-of-type(1n),&:nth-of-type(2n),&:nth-of-type(3n),&:nth-of-type(4n) {
+
+          &:nth-of-type(1n),
+          &:nth-of-type(2n),
+          &:nth-of-type(3n),
+          &:nth-of-type(4n) {
             order: unset;
           }
         }
