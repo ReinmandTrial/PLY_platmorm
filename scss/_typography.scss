@@ -126,6 +126,10 @@
             background-color: $darkgrey-color;
             border: 1px solid $purple-color;
             color: white;
+
+            img {
+                filter: brightness(0) invert(1);
+            }
         }
     }
 

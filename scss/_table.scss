@@ -4,18 +4,47 @@
     }
 
     &-heading {
-        padding: 40px 10px 60px;
+        padding: 40px 10px 58px;
 
         div {
-            padding: 40px 60px;
+            padding: 40px 58px;
             background: $darkgrey-color;
             font-family: "Termina", sans-serif;
             font-weight: 600;
             border-radius: 10px;
+
+            span {
+                font-family: "Termina", sans-serif;
+
+                &:first-of-type {
+                    font-size: 16px;
+                    font-weight: 600;
+                    position: relative;
+                    z-index: 1;
+                }
+            }
         }
 
-        &-pricing {
-            div {}
+        .price-table-heading-tariff {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px 60px;
+            position: relative;
+            overflow: hidden;
+
+            &-final {
+                font-size: 27px;
+                position: relative;
+                z-index: 1;
+            }
+
+            &-bg {
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 115%;
+            }
         }
     }
 
