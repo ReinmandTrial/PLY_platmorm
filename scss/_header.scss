@@ -169,6 +169,7 @@
 
   &-toggler {
     border: 0;
+    padding-right: 0;
 
     &:focus {
       box-shadow: none;
@@ -185,11 +186,11 @@
   margin: 290px 0 0;
 
   @media (max-width: 1280px) {
-    margin: 198px 0 0;
+    margin: 205px 0 0;
   }
 
   @media (max-width: 768px) {
-    margin: 180px 0 0;
+    margin: 185px 0 0;
   }
 
   .header {
@@ -202,10 +203,14 @@
       background: rgba(255, 255, 255, 0.1);
       backdrop-filter: blur(5px);
       border-radius: 10px;
-      padding: 20px 60px;
+      padding: 15px 60px;
 
       @media (max-width: 1280px) {
-        padding: 20px;
+        padding: 13px 15px;
+      }
+
+      @media (max-width:992px) {
+        padding: 13px 25px;
       }
     }
   }

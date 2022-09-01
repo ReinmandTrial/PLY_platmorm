@@ -64,6 +64,7 @@
       &-2 {
         .card {
           flex: initial;
+          margin-bottom: 0;
         }
       }
     }
@@ -102,6 +103,10 @@
   &-icon {
     height: 140px;
     margin-bottom: 30px;
+
+    @media (max-width: 992px) {
+      height: 55px;
+    }
   }
 
   .h2-heading {
@@ -144,6 +149,10 @@
       max-height: unset;
     }
 
+    @media (max-width: 768px) {
+      padding: 10px;
+    }
+
     &-image {
       max-width: 40px;
     }
@@ -161,6 +170,11 @@
       text-decoration: none;
       align-items: center;
 
+      @media (max-width: 768px) {
+        font-size: 0.5625rem;
+        margin: 0;
+      }
+
       span {
         text-decoration: underline;
         color: $grey-text-color;
@@ -176,6 +190,20 @@
         font-size: 24px;
         margin-left: auto;
         align-items: center;
+      }
+    }
+
+    &-extra {
+      @media (max-width: 992px) {
+        flex-direction: row;
+        padding: 10px;
+        gap: 10px;
+        max-width: 145px;
+        min-width: 145px;
+
+        &-image {
+          max-width: 35px;
+        }
       }
     }
 
@@ -490,6 +518,12 @@
   @media (max-width: 992px) {
     min-width: 240px;
     padding: 20px;
+
+    &-small-extra {
+      padding: 10px;
+      max-width: 145px;
+      min-width: 145px;
+    }
   }
 }
 
