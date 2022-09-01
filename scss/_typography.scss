@@ -168,6 +168,34 @@
         }
     }
 
+    &-triangle {
+        position: relative;
+        display: flex;
+        align-items: center;
+        gap: 18px;
+        padding: 0;
+        margin-top: auto;
+
+        &:before {
+            content: "";
+            background-image: url(../img/icons/triangle.svg);
+            background-position: center;
+            background-size: contain;
+            background-repeat: no-repeat;
+            width: 25px;
+            height: 34px;
+            display: inline-block;
+            transition: .3s;
+        }
+
+        &:hover {
+            border-color: transparent;
+            &:before {
+                background-image: url(../img/icons/triangle-purple.svg);
+            }
+        }
+    }
+
     &-center-wrap {
         margin: 70px 0 0;
         text-align: center;

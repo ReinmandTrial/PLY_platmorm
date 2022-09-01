@@ -140,6 +140,8 @@ input {
     transition: .3s;
     width: 45px;
     height: 21px;
+    border-radius: 50px;
+    transition: .3s;
 
     &:before {
         position: absolute;
@@ -150,6 +152,7 @@ input {
         bottom: 2px;
         background-color: white;
         transition: .3s;
+        border-radius: 50px;
     }
 }
 

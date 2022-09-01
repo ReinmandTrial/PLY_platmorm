@@ -6,6 +6,18 @@
   }
 }
 
+.header-navbar {
+  display: flex;
+  width: 100%;
+  align-items: center;
+
+  @media (max-width: 992px) {
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+}
+
 .navbar {
   margin: 60px 0 160px;
 
@@ -13,18 +25,23 @@
     margin: 60px 0;
   }
 
+  @media (max-width: 768px) {
+    margin: 30px 0;
+  }
+
   .navbar-nav {
     background-color: $darkgrey-color;
     border-radius: 10px;
 
-    @media (max-width: 1280px) {
-      margin: 20px 0 0;
-    }
+    // @media (max-width: 1280px) {
+    //   margin: 20px 0 0;
+    // }
 
     .nav-link {
       padding: 13px 24px;
       font-family: "Termina", sans-serif;
       font-size: 12px;
+      height: 100%;
 
       &:hover {
         color: $yellow-color;
@@ -34,6 +51,10 @@
     &:last-of-type {
       background-color: transparent;
 
+      @media (max-width: 768px) {
+        margin-top: 10px;
+      }
+
       .nav-item:first-of-type {
         margin-right: 20px;
 
@@ -42,19 +63,150 @@
         }
       }
     }
-  }
 
-  &-collapse {
-    // @media (max-width: 1280px) {
-    //   margin: 20px 0 0;
-    // }
+    .account {
+      &-icon {
+        background-image: url(../img/icons/account/main-white.svg);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        width: 18px;
+        height: 18px;
+        display: inline-block;
+        transition: .3s;
+      }
+
+      &-dropdown {
+        font-size: 0;
+        border: 0;
+        position: relative;
+
+        &:hover {
+          .account-icon {
+            background-image: url(../img/icons/account/main-yellow.svg);
+          }
+        }
+
+        &.active {
+          .account-dropdown-list {
+            display: flex;
+          }
+
+          .account-icon {
+            background-image: url(../img/icons/account/main-yellow.svg);
+          }
+        }
+
+        &-list {
+          display: none;
+          position: absolute;
+          min-width: 180px;
+          right: 0;
+          background-color: $darkgrey-color;
+          flex-direction: column;
+          border-radius: 10px;
+          text-align: left;
+          padding: 15px;
+
+          @media (max-width: 992px) {
+            right: 0;
+            left: 0;
+            top: 44px;
+          }
+        }
+        
+        &-divider {
+          border: 0;
+          margin: 10px 0;
+        }
+      }
+
+      &-link {
+        font-size: 12px;
+        margin: 12px 0;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        gap: 15px;
+
+        .form-switch {
+          margin: 8px 0;
+          max-width: 100%;
+          width: 100%;
+          padding: 0;
+          
+          .account-link-icon {
+            order: 1;
+            margin-right: 15px;
+          }
+
+          .account-link-icon + span {
+            order: 2;
+          }
+
+          .form-slider {
+            order: 3;
+            right: 0;
+            left: auto;
+            margin-top: -4px;
+          }
+        }
+
+        &:first-of-type {
+          margin-top: 0;
+        }
+
+        &:last-of-type {
+          margin-bottom: 0;
+        }
+
+        &:hover {
+          color: white;
+        }
+      }
+    }
   }
 
   &-toggler {
-    border: 2px solid white;
+    border: 0;
+
+    &:focus {
+      box-shadow: none;
+    }
 
     &-icon {
-      background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.55%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+      background-image: url(../img/icons/navbar-toggler.svg);
+      width: 14px;
+    }
+  }
+}
+
+.fixed-header {
+  margin: 290px 0 0;
+
+  @media (max-width: 1280px) {
+    margin: 198px 0 0;
+  }
+
+  @media (max-width: 768px) {
+    margin: 180px 0 0;
+  }
+
+  .header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 9;
+
+    &-navbar {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(5px);
+      border-radius: 10px;
+      padding: 20px 60px;
+
+      @media (max-width: 1280px) {
+        padding: 20px;
+      }
     }
   }
 }
