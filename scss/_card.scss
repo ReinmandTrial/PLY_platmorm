@@ -19,6 +19,24 @@
 
       .card {
         min-width: 210px;
+
+        &-icon {
+          height: 100px;
+
+          @media (max-width: 992px) {
+            height: 55px;
+          }
+        }
+      }
+    }
+
+    .card {
+      &-icon {
+        height: 100px;
+
+        @media (max-width: 992px) {
+          height: 55px;
+        }
       }
     }
   }
@@ -512,6 +530,13 @@
       }
     }
   }
+
+  &-research-case {
+    .text-12 {
+      margin-top: auto;
+      color: #969696;
+    }
+  }
 }
 
 .line-endless-mob .card {
@@ -637,6 +662,16 @@
 
     @media (max-width: 992px) {
       grid-template-columns: repeat(1, 1fr);
+    }
+  }
+}
+
+.research-grid {
+  .card {
+    height: 100%;
+
+    .text:only-of-type {
+      margin-bottom: 0;
     }
   }
 }

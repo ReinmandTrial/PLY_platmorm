@@ -16,7 +16,7 @@ window.addEventListener("scroll", function () {
 });
 
 // header dropdown
-document.querySelector(".account-dropdown").addEventListener("click", function () {
+document.querySelector(".account-dropdown")?.addEventListener("click", function () {
     this.classList.toggle("active");
 })
 
