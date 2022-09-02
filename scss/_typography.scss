@@ -196,6 +196,15 @@
         }
     }
 
+    &-grey {
+        background-color: #B6B6B6;
+
+        &:hover {
+            background-color: $darkgrey-color;
+            color: white;
+        }
+    }
+
     &-wide {
         @media (min-width: 1600px) {
             padding: 13px 50px;
@@ -240,6 +249,16 @@
         }
     }
 
+    &-wide {
+        padding-right: 65px;
+        padding-left: 65px;
+
+        @media (max-width: 768px) {
+            padding-right: 24px;
+            padding-left: 24px;
+        }
+    }
+
     &-center-wrap {
         margin: 70px 0 0;
         text-align: center;
@@ -258,6 +277,11 @@
         background-size: contain;
         background-repeat: no-repeat;
         font-size: 0;
+    }
+
+    &-container {
+        display: flex;
+        gap: 20px;
     }
 }
 

@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <link rel="icon" href="img/favicon.png" />
+  <link rel="stylesheet" href="css/bootstrap.min.css" />
+  <link rel="stylesheet" href="css/index.min.css" />
+  <link rel="stylesheet" href="css/home.min.css" />
+
+  <title>Modal test page</title>
+</head>
+
+<body class="grey-bg">
+  <header class="header">
+    <nav class="navbar navbar-expand-lg navbar-light">
+      <div class="container">
+        <div class="header-navbar">
+          <a class="navbar-brand" href="#"><img src="img/logo.svg" class="logo" alt="" /></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto ms-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="#">Features</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Pricing</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Research</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Need help</a>
+              </li>
+            </ul>
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <span class="nav-link btn btn-darkgrey account-dropdown" href="#">
+                  <span class="account-icon"></span>
+                  <div class="account-dropdown-list">
+                    <a href="" class="account-link">
+                      <img src="img/icons/account/dashboard.svg" alt="" class="account-link-icon"> Dashboard
+                    </a>
+                    <a href="" class="account-link">
+                      <img src="img/icons/account/expert-dashboard.svg" alt="" class="account-link-icon"> Expert
+                      Dashboard
+                    </a>
+                    <span class="account-link">
+                      <label class="form-switch">
+                        <input type="checkbox">
+                        <span class="form-slider form-round"></span>
+                        <img src="img/icons/account/fullscreen.svg" alt="" class="account-link-icon"><span>Full
+                          Screen</span>
+                      </label>
+                    </span>
+                    <hr class="account-dropdown-divider">
+                    <a href="" class="account-link">
+                      <img src="img/icons/account/research.svg" alt="" class="account-link-icon"> Research
+                    </a>
+                    <a href="" class="account-link">
+                      <img src="img/icons/account/help.svg" alt="" class="account-link-icon"> Help Center
+                    </a>
+                    <a href="" class="account-link">
+                      <img src="img/icons/account/profile.svg" alt="" class="account-link-icon"> Profile Settings
+                    </a>
+                    <hr class="account-dropdown-divider">
+                    <a href="" class="account-link">
+                      <img src="img/icons/account/billing.svg" alt="" class="account-link-icon"> Account & Billing
+                    </a>
+                    <a href="" class="account-link">
+                      <img src="img/icons/account/logout.svg" alt="" class="account-link-icon"> Log out
+                    </a>
+                  </div>
+                </span>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link btn btn-yellow" href="#">Start free trial</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <div class="container">
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-yellow" data-bs-toggle="modal" data-bs-target="#exampleModal">
+      Launch user modal
+    </button>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          <div class="modal-body">
+            <h4 class="h4-heading">User info</h4>
+            <form action="" class="form">
+              <label class="form-label form-label-half">
+                <span class="form-label-name">
+                  Name
+                </span>
+                <input type="text" class="form-text-input" placeholder="Enter name" />
+              </label>
+              <label class="form-label form-label-half">
+                <span class="form-label-name">
+                  Surname
+                </span>
+                <input type="text" class="form-text-input" placeholder="Enter surname" />
+              </label>
+              <label class="form-label form-label-half">
+                <span class="form-label-name">
+                  Adress
+                </span>
+                <input type="text" class="form-text-input" placeholder="Enter adress" />
+              </label>
+              <label class="form-label form-label-half">
+                <span class="form-label-name">
+                  Company name
+                </span>
+                <input type="text" class="form-text-input" placeholder="Enter company name" />
+              </label>
+              <label class="form-label form-label-half">
+                <span class="form-label-name">
+                  Email
+                </span>
+                <input type="email" class="form-text-input" placeholder="Enter email" />
+              </label>
+              <label class="form-label form-label-half">
+                <span class="form-label-name">
+                  Phone
+                </span>
+                <input type="tel" class="form-text-input" placeholder="Enter company name" />
+              </label>
+
+              <div class="form-bottom form-bottom-static">
+                <div class="btn-container">
+                  <button class="btn btn-grey btn-wide">Cancel</button>
+                  <input type="submit" class="btn btn-purple btn-wide" value="Save" />
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="filter">
+        <a href="" class="filter-btn">Guide</a>
+        <a href="" class="filter-btn">Tips</a>
+        <a href="" class="filter-btn">Analysis</a>
+        <a href="" class="filter-btn">Help</a>
+        <a href="" class="filter-btn">Data</a>
+        <a href="" class="filter-btn">Guide</a>
+        <a href="" class="filter-btn">Tips</a>
+        <a href="" class="filter-btn">Analysis</a>
+        <a href="" class="filter-btn">Data recovery</a>
+      </div>
+      <div class="footer-block footer-block-email">
+        <div class="footer-block-row">
+          <div class="footer-block-gradient">
+            <p class="gradient-text">Possibility to choose various investment</p>
+            <p class="text-14">
+              Unsubscribe at any time.
+              <a href="">Privacy policy↗</a>
+            </p>
+          </div>
+          <form action="" class="footer-form">
+            <input type="email" class="text-input" placeholder="Enter your email to subscribe" />
+            <input type="submit" class="btn btn-purple" value="Subscribe" />
+          </form>
+        </div>
+      </div>
+      <div class="footer-block">
+        <div class="footer-block-row">
+          <img src="img/logo.svg" class="logo" alt="" />
+          <div class="footer-reviews-rate">
+            <p><b>Excellent</b></p>
+            <img src="img/icons/trustpilot-stars.svg" alt="" />
+            <p>4.8 out of 5 based ion 427 review</p>
+          </div>
+        </div>
+      </div>
+      <div class="footer-block footer-block-links">
+        <div class="row">
+          <div class="col-lg-4">
+            <h6 class="h6-heading">Our Platform</h6>
+            <p class="text-14">Ultrices dignissim iaculis mattis feugiat. Nulla imperdiet in lacus integer pellentesque
+              justo. Adipiscing purus quis ut mattis at cursus sit ut et. Eu pharetra, tempus arcu eget blandit
+              vestibulum scelerisque convallis. Pellentesque interdum elit amet vitae, nunc vitae, molestie dui.</p>
+          </div>
+          <div class="col-lg-2 offset-lg-2">
+            <h6 class="h6-heading">Where to begin</h6>
+            <div class="footer-list">
+              <a class="footer-list-link" href="">Beginner’s guide</a>
+              <a class="footer-list-link" href="">Analysis & Inspiration</a>
+              <a class="footer-list-link" href="">Investment tips</a>
+              <a class="footer-list-link" href="">Market coverage</a>
+            </div>
+          </div>
+          <div class="col-lg-2">
+            <h6 class="h6-heading">Invest</h6>
+            <div class="footer-list">
+              <a class="footer-list-link" href="">Pricing & plans</a>
+              <a class="footer-list-link" href="">News & annoucments</a>
+              <a class="footer-list-link" href="">Help center</a>
+              <a class="footer-list-link" href="">Contacts center</a>
+            </div>
+          </div>
+          <div class="col-lg-2">
+            <h6 class="h6-heading">Legal</h6>
+            <div class="footer-list">
+              <a class="footer-list-link" href="">Terms of Service</a>
+              <a class="footer-list-link" href="">Terms & Conditions of Sales</a>
+              <a class="footer-list-link" href="">Privacy Policy</a>
+              <a class="footer-list-link" href="">Cookies Policy</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p class="footer-copyright-text center-text">Copyright © Plyanalytics. 2022</p>
+      <div class="footer-risk-disclosure">
+        <p>
+          No Advice Regarding Investment, Tax, Trading or Security Account Type. The Services provided by the Service
+          Provider include only the collection of Financial Data and their provision to the User with analytics
+          solutions for the analysis of this Financial Data. Neither Service Provider, nor any of its representatives,
+          will: provide User with investment advice or recommendation; offer any opinion regarding the suitability of
+          any security, account type, order, transaction, or investment advisor, or strategy; solicit any order or
+          transaction; monitor User Account or the Financial Data it analyzes, alert User to any change of Financial
+          Data, or provide legal, tax, or accounting advice (collectively – "Advice"). Nothing on Platform is or shall
+          be deemed a recommendation or solicitation to invest, buy or sell securities or any other investment products,
+          or to engage in any investment strategy. User will not seek, accept, or rely on any Advice from Service
+          Provider or its
+          representatives, or any communication that could be construed as such. Because Service Provider does not
+          provide Advice, Service Provider is not responsible for the suitability or appropriateness of any order,
+          trade, investment, investment strategy, selection of advisor or other activity of User. User agrees that any
+          investment or trade decision executed based on Financial Data provided on Platform is solely User's own
+          decision and is based on User's own evaluation of Financial Data and/or its personal financial situation,
+          needs, and investment objective(s). Service Provider does not endorse and is not responsible for any advice,
+          representation, content, or other information provided by third parties, including but not limited to any such
+          information or third party referenced by or accessed through Platform, including but not limited to the
+          official websites of the public companies from which the Financial Data is collected.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/scripts.js"></script>
+</body>
+
+</html>

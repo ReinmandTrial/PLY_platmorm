@@ -61,6 +61,11 @@ input {
         &::placeholder {
             color: #969696;
         }
+
+        @media (max-width: 992px) {
+            padding: 10px 12px;
+            font-size: 11px;
+        }
     }
 
     &-textarea {
@@ -94,6 +99,10 @@ input {
             font-family: 'Termina', sans-serif;
             font-weight: 600;
             font-size: 14px;
+
+            @media (max-width: 992px) {
+                font-size: 11px;
+            }
         }
     }
 
@@ -108,6 +117,25 @@ input {
             @media (max-width: 768px) {
                 position: static;
                 width: 100%;
+            }
+        }
+    }
+
+    &-bottom {
+        &-static {
+            display: flex;
+            width: 100%;
+            justify-content: flex-end;
+            margin-top: 40px;
+
+            @media (max-width: 992px) {
+                margin-top: 0;
+            }
+
+            .btn {
+                &:last-of-type {
+                    position: static;
+                }
             }
         }
     }
