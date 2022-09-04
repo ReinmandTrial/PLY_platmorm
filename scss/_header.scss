@@ -144,19 +144,18 @@
             order: 2;
           }
 
-          .form-slider {
+          &-slider {
             order: 3;
             right: 0;
             left: auto;
-            margin-top: -4px;
           }
         }
 
-        &:first-of-type {
+        &:first-child {
           margin-top: 0;
         }
 
-        &:last-of-type {
+        &:last-child {
           margin-bottom: 0;
         }
 

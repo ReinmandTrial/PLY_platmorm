@@ -29,6 +29,7 @@
 .h4-heading {
     font-size: 1.25rem;
     margin-bottom: 20px;
+    font-weight: 600;
 
     @media (max-width: 768px) {
         font-size: 0.8125rem;
@@ -75,6 +76,10 @@
     &-10 {
         font-size: .625rem;
     }
+}
+
+.weight-normal {
+    font-weight: 400;
 }
 
 .regular-font {
@@ -135,6 +140,22 @@
     }
 }
 
+.yellow, .red {
+    &-link {
+        &:hover {
+            color: white;
+        }
+    }
+}
+
+.yellow {
+    color: $yellow-color;
+}
+
+.red {
+    color: $red-color;
+}
+
 .btn {
     padding: 13px 24px;
     font-family: 'Termina', sans-serif;
@@ -142,6 +163,7 @@
     font-size: 14px;
     border: 1px solid transparent;
     color: $darkgrey-color;
+    font-weight: 500;
 
     @media (max-width: 768px) {
         font-size: 0.6875rem;
@@ -208,6 +230,10 @@
     &-wide {
         @media (min-width: 1600px) {
             padding: 13px 50px;
+        }
+
+        &-full {
+            width: 100%;
         }
     }
 
@@ -285,6 +311,10 @@
     }
 }
 
+.btn-group-vertical>.btn, .btn-group>.btn {
+    flex: unset;
+}
+
 .badge-list {
     display: flex;
     gap: 20px;
@@ -309,5 +339,55 @@
         @media (max-width: 768px) {
             padding: 6px 12px;
         }
+    }
+}
+
+.settings {
+    width: 100%;
+    margin-top: 30px;
+
+    &-block {
+        width: 100%;
+        background-color:  $grey-2-color;
+        padding: 20px;
+        border-radius: 10px;
+ 
+        &-line {
+            display: flex;
+            justify-content: space-between;
+            margin: 20px 0;
+            align-items: center;
+
+            + .settings-block-subheading {
+                margin-top: 50px;
+            }
+
+            &:last-of-type {
+                margin-bottom: 0;
+            }
+
+            &-name {
+                font-size: 14px;
+            }
+        }
+
+        &-subheading {
+            font-weight: 700;
+            margin-top: 30px;
+            font-size: 14px;
+        }
+    }
+
+    &-link {
+        font-size: 12px;
+        font-weight: 700;
+
+        &:hover {
+            color: white;
+        }
+    }
+
+    &-wide .settings-block-line {
+        margin: 10px 20px;
     }
 }

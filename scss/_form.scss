@@ -42,7 +42,8 @@ input {
                 border: 0;
                 padding: 0;
 
-                .form-text-input, .form-textarea {
+                .form-text-input,
+                .form-textarea {
                     background-color: $darkgrey-color;
                 }
             }
@@ -55,7 +56,7 @@ input {
         border: 0;
         padding: 16px 20px;
         outline: none;
-        background-color: #343434;
+        background-color: $grey-2-color;
         border-radius: 10px;
 
         &::placeholder {
@@ -85,10 +86,9 @@ input {
         }
 
         &-half {
-            width: 48%;
+            width: calc(50% - 10px);
 
             @media (max-width: 992px) {
-                width: 46%;
                 flex-grow: 1;
             }
         }
@@ -119,14 +119,12 @@ input {
                 width: 100%;
             }
         }
-    }
 
-    &-bottom {
         &-static {
             display: flex;
             width: 100%;
             justify-content: flex-end;
-            margin-top: 40px;
+            margin: 40px 0 20px;
 
             @media (max-width: 992px) {
                 margin-top: 0;
@@ -137,80 +135,153 @@ input {
                     position: static;
                 }
             }
+
+            &-column {
+                flex-direction: column;
+                margin: 20px 0;
+
+                .form-switch {
+                    max-width: 100%;
+                    margin: 20px 0;
+                }
+            }
+        }
+
+        &-text, &-text a {
+            font-size: .75rem;
+            color: $grey-text-color;
+            margin-top: 35px;
+
+            &:hover {
+                color: $grey-text-color;
+
+                a {
+                    color: $grey-text-color;
+                }
+            }
         }
     }
-}
 
-.form-switch {
-    position: relative;
-    display: flex;
-    align-items: flex-start;
-    cursor: pointer;
-    margin: 20px 0 30px;
-    max-width: 70%;
+    &-switch {
+        position: relative;
+        display: flex;
+        align-items: flex-start;
+        cursor: pointer;
+        max-width: 70%;
 
-    @media (max-width: 768px) {
-        max-width: 100%;
-    }
+        @media (max-width: 768px) {
+            max-width: 100%;
+        }
 
-    input {
-        opacity: 0;
-        width: 0;
-        height: 0;
-    }
+        input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
 
-    &-text {
-        color: #969696;
-        margin: 4px 0 0 32px;
-        font-size: 12px;
-        user-select: none;
-
-        a {
+        &-text {
             color: #969696;
+            margin: 4px 0 0 32px;
+            font-size: 12px;
+            user-select: none;
+            display: inline-block;
+
+            a {
+                color: #969696;
+            }
+        }
+
+        &-line {
+            margin: 20px 0 30px;
+        }
+
+        &-slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #696969;
+            transition: .3s;
+            width: 45px;
+            height: 21px;
+            border-radius: 50px;
+            transition: .3s;
+
+            &:before {
+                position: absolute;
+                content: "";
+                height: 17px;
+                width: 17px;
+                left: 2px;
+                bottom: 2px;
+                background-color: white;
+                transition: .3s;
+                border-radius: 50px;
+            }
+        }
+
+        &-pricing {
+            width: auto;
+            height: auto;
+            align-items: center;
+
+            .form-switch {
+                &-slider {
+                    background-color: $purple-color;
+                    width: 55px;
+                    height: 30px;
+                    position: relative;
+                    margin: 0 15px;
+
+                    &:before {
+                        background-color: #2E2E2E;
+                        width: 22px;
+                        height: 22px;
+                        left: 4px;
+                        bottom: 4px;
+                    }
+                }
+            }
+        }
+
+        &-option {
+            font-size: 14px;
+
+            &:first-of-type {
+                font-weight: 700;
+            }
         }
     }
 }
 
-.form-slider {
-    position: absolute;
-    cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #696969;
-    transition: .3s;
-    width: 45px;
-    height: 21px;
-    border-radius: 50px;
-    transition: .3s;
-
-    &:before {
-        position: absolute;
-        content: "";
-        height: 17px;
-        width: 17px;
-        left: 2px;
-        bottom: 2px;
-        background-color: white;
-        transition: .3s;
-        border-radius: 50px;
-    }
-}
-
-input:checked+.form-slider {
+input:checked+.form-switch-slider {
     background-color: $purple-color;
 }
 
-input:focus+.form-slider {
+input:focus+.form-switch-slider {
     box-shadow: 0 0 1px $purple-color;
 }
 
-input:checked+.form-slider:before {
-    transform: translateX(26px);
+input:checked+.form-switch-slider:before {
+    transform: translateX(24px);
 }
 
-/* Rounded sliders */
+.input-checkmark {
+    width: 12px;
+    height: 12px;
+    display: inline-block;
+    border: 1px solid #969696;
+    border-radius: 50%;
+}
+
+input[type="radio"]:checked + .input-checkmark {
+    background-color: $purple-color;
+    border-color: $purple-color;
+}
+
+// range edit
 .range-input {
     -webkit-appearance: none;
     width: 100%;
@@ -220,7 +291,7 @@ input:checked+.form-slider:before {
     background-color: white;
 }
 
-/* --------------------------- webkit browsers */
+/* webkit browsers */
 .range-input::-webkit-slider-thumb {
     -webkit-appearance: none;
     width: 18px;
@@ -231,7 +302,7 @@ input:checked+.form-slider:before {
     cursor: pointer;
 }
 
-/* -------------------------- Firefox */
+/* Firefox */
 .range-input::-moz-range-thumb {
     -moz-appearance: none;
     width: 18px;

@@ -54,7 +54,7 @@
                     <span class="account-link">
                       <label class="form-switch">
                         <input type="checkbox">
-                        <span class="form-slider form-round"></span>
+                        <span class="form-switch-slider form-switch-round"></span>
                         <img src="img/icons/account/fullscreen.svg" alt="" class="account-link-icon"><span>Full
                           Screen</span>
                       </label>
@@ -90,13 +90,11 @@
   </header>
 
   <div class="container">
-    <!-- Button trigger modal -->
-    <button type="button" class="btn btn-yellow" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    <button type="button" class="btn btn-yellow" data-bs-toggle="modal" data-bs-target="#user-info-popup">
       Launch user modal
     </button>
 
-    <!-- Modal -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="user-info-popup" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog modal-lg">
         <div class="modal-content">
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -147,6 +145,829 @@
                 </div>
               </div>
             </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <button type="button" class="btn btn-yellow" data-bs-toggle="modal" data-bs-target="#user-details-popup">
+      User Details
+    </button>
+
+    <div class="modal fade" id="user-details-popup" tabindex="-1" aria-labelledby="exampleModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          <div class="modal-body">
+            <div class="tab-container">
+              <div class="tab-nav btn-group">
+                <button data-tab="profile" class="tab-nav-item btn active">Profile</button>
+                <button data-tab="plans" class="tab-nav-item btn">Plans</button>
+                <button data-tab="billing" class="tab-nav-item btn">Billing</button>
+                <button data-tab="history" class="tab-nav-item btn">Purchase history</button>
+              </div>
+              <div id="profile" class="tab active">
+                <div class="tab-content">
+                  <h4 class="h4-heading">User info</h4>
+                  <form action="" class="form">
+                    <label class="form-label form-label-half">
+                      <span class="form-label-name">
+                        Name
+                      </span>
+                      <input type="text" class="form-text-input" placeholder="Enter name" />
+                    </label>
+                    <label class="form-label form-label-half">
+                      <span class="form-label-name">
+                        Surname
+                      </span>
+                      <input type="text" class="form-text-input" placeholder="Enter surname" />
+                    </label>
+                    <label class="form-label form-label-half">
+                      <span class="form-label-name">
+                        Adress
+                      </span>
+                      <input type="text" class="form-text-input" placeholder="Enter adress" />
+                    </label>
+                    <label class="form-label form-label-half">
+                      <span class="form-label-name">
+                        Company name
+                      </span>
+                      <input type="text" class="form-text-input" placeholder="Enter company name" />
+                    </label>
+                    <label class="form-label form-label-half">
+                      <span class="form-label-name">
+                        Email
+                      </span>
+                      <input type="email" class="form-text-input" placeholder="Enter email" />
+                    </label>
+                    <label class="form-label form-label-half">
+                      <span class="form-label-name">
+                        Phone
+                      </span>
+                      <input type="tel" class="form-text-input" placeholder="Enter company name" />
+                    </label>
+
+                    <div class="form-bottom form-bottom-static">
+                      <div class="btn-container">
+                        <button class="btn btn-grey btn-wide">Cancel</button>
+                        <input type="submit" class="btn btn-purple btn-wide" value="Save" />
+                      </div>
+                    </div>
+
+                    <div class="settings">
+                      <div class="settings-block">
+                        <h4 class="h4-heading">Preferences</h4>
+                        <p class="settings-block-subheading">Email preferences</p>
+                        <div class="settings-block-line">
+                          <span class="settings-block-line-name">Sociis integer feugiat fermentum orci justo.</span>
+                          <label class="form-switch">
+                            <input type="checkbox" />
+                            <span class="form-switch-slider form-switch-round"></span>
+                          </label>
+                        </div>
+                        <div class="settings-block-line">
+                          <span class="settings-block-line-name">Sociis integer feugiat fermentum orci justo.</span>
+                          <label class="form-switch">
+                            <input type="checkbox" />
+                            <span class="form-switch-slider form-switch-round"></span>
+                          </label>
+                        </div>
+                        <div class="settings-block-line">
+                          <span class="settings-block-line-name">Sociis integer feugiat fermentum orci justo.</span>
+                          <label class="form-switch">
+                            <input type="checkbox" />
+                            <span class="form-switch-slider form-switch-round"></span>
+                          </label>
+                        </div>
+                        <p class="settings-block-subheading">Cookie preferences</p>
+                        <div class="settings-block-line">
+                          <span class="settings-block-line-name">Sociis integer feugiat fermentum orci justo.</span>
+                          <a href="" class="settings-link yellow">View</a>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="settings">
+                      <div class="settings-block">
+                        <h4 class="h4-heading">Delete account</h4>
+                        <p class="settings-block-subheading">Email preferences</p>
+                        <div class="settings-block-line">
+                          <span>Sociis integer feugiat fermentum orci justo.</span>
+                          <a href="" class="settings-link red">Delete</a>
+                        </div>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+              <div id="plans" class="tab">
+                <div class="tab-content">
+                  <h4 class="h4-heading">Market plans</h4>
+                  <div class="table-container">
+                    <table class="table table-market">
+                      <tr>
+                        <td class="table-item">
+                          <p class="table-text"><b>Professional Plan</b></p>
+                          <p class="table-text-small">Lithuania market</p>
+                        </td>
+                        <td class="table-item">
+                          <p class="table-text">Subscription type</p>
+                          <p class="table-text-small">9,99 € / month </p>
+                        </td>
+                        <td class="table-item">
+                          <p class="table-text">Plan expires</p>
+                          <p class="table-text-small">August 4, 2023 at 18:05:45 GTM+3</p>
+                        </td>
+                        <td class="table-item">
+                          <p class="table-text">Auto renewal:</p>
+                          <a href="" class="table-text-small yellow">Turn auto renewal off</a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td class="table-item">
+                          <p class="table-text"><b>Professional Plan</b></p>
+                          <p class="table-text-small">Lithuania market</p>
+                        </td>
+                        <td class="table-item">
+                          <p class="table-text">Subscription type</p>
+                          <p class="table-text-small">9,99 € / month </p>
+                        </td>
+                        <td class="table-item">
+                          <p class="table-text">Plan expires</p>
+                          <p class="table-text-small">August 4, 2023 at 18:05:45 GTM+3</p>
+                        </td>
+                        <td class="table-item">
+                          <p class="table-text">Auto renewal:</p>
+                          <a href="" class="table-text-small yellow">Turn auto renewal off</a>
+                        </td>
+                      </tr>
+                    </table>
+                  </div>
+                </div>
+              </div>
+              <div id="billing" class="tab">
+                <div class="tab-content">
+                  <h4 class="h4-heading">Billing</h4>
+                  <div class="billing-block">
+                    <p class="text"><b>Payment methods</b></p>
+                    <div class="billing-line">
+                      <p class="billing-line-name">VAT/GST number</p>
+                      <div class="billing-line-text">LT100010900711<br>
+                        VAT number approved</div>
+                      <button class="billing-line-edit"></button>
+                    </div>
+                  </div>
+                  <a href="" class="btn btn-purple">Add payment method</a>
+                  <div class="billing-block">
+                    <p class="text"><b>Tax information</b></p>
+                    <p class="text">Sociis integer feugiat fermentum orci justo.</p>
+                    <div class="billing-line">
+                      <p class="billing-line-name">UAB Dvylika menuliu</p>
+                      <div class="billing-line-text">Rokas Cicenas<br>
+                        Audronės 4<br>
+                        Vilnius, Other 11105<br>
+                        Lithuania</div>
+                      <button class="billing-line-edit"></button>
+                    </div>
+                    <div class="billing-line">
+                      <p class="billing-line-name">VAT/GST number</p>
+                      <div class="billing-line-text">LT100010900711<br>
+                        VAT number approved</div>
+                      <button class="billing-line-edit"></button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div id="history" class="tab">
+                <div class="tab-content">
+                  <h4 class="h4-heading">Purchase History</h4>
+                  <div class="table-container">
+                    <table class="table table-history">
+                      <tr>
+                        <th class="table-heading">Date</th>
+                        <th class="table-heading">Description</th>
+                        <th class="table-heading table-item-right">Total</th>
+                        <th class="table-heading">Invoice</th>
+                      </tr>
+                      <tr>
+                        <td class="table-item">
+                          <p class="table-text">Aug 4, 2022</p>
+                        </td>
+                        <td class="table-item">
+                          <p class="table-text"><b>Professional Plan (Lithuania market)</b></p>
+                        </td>
+                        <td class="table-item table-item-right">
+                          <p class="table-text">Aug 4, 2022</p>
+                        </td>
+                        <td class="table-item">
+                          <p><b class="yellow">Invoice SSTK-02223A</b></p>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td class="table-item">
+                          <p class="table-text">Aug 4, 2022</p>
+                        </td>
+                        <td class="table-item">
+                          <p class="table-text"><b>Professional Plan (Lithuania market)</b></p>
+                        </td>
+                        <td class="table-item table-item-right">
+                          <p class="table-text">Aug 4, 2022</p>
+                        </td>
+                        <td class="table-item">
+                          <p><b class="yellow">Invoice SSTK-02223A</b></p>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td class="table-item">
+                          <p class="table-text">Aug 4, 2022</p>
+                        </td>
+                        <td class="table-item">
+                          <p class="table-text"><b>Professional Plan (Lithuania market)</b></p>
+                        </td>
+                        <td class="table-item table-item-right">
+                          <p class="table-text">Aug 4, 2022</p>
+                        </td>
+                        <td class="table-item">
+                          <p><b class="yellow">Invoice SSTK-02223A</b></p>
+                        </td>
+                      </tr>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <button type="button" class="btn btn-yellow" data-bs-toggle="modal" data-bs-target="#shop-popup">
+      PLY Market shop
+    </button>
+
+    <div class="modal fade" id="shop-popup" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          <div class="modal-body">
+            <h4 class="h4-heading">PLY Market shop</h4>
+            <div class="settings settings-wide">
+              <div class="settings-block">
+                <div class="settings-block-line">
+                  <span>Choose yearly or montly payment option</span>
+                  <label class="form-switch form-switch-pricing">
+                    <span class="form-switch-option">Annually</span>
+                    <input type="checkbox" class="form-pricing-switch" />
+                    <span class="form-switch-slider form-switch-round"></span>
+                    <span class="form-switch-option">Monthly</span>
+                  </label>
+                </div>
+              </div>
+            </div>
+
+            <div class="shop-choice">
+              <h4 class="h4-heading">Lithuanian Market <span class="weight-normal">(LT)</span></h4>
+              <div class="shop-choice-line">
+                <label class="shop-choice-item">
+                  <input type="radio" name="market1" class="shop-choice-item-radio">
+                  <span class="input-checkmark"></span>
+                  <div class="shop-choice-item-text">
+                    <span class="shop-choice-item-text-name">Annually</span>
+                    <span class="shop-choice-item-text-desc">Save 36&nbsp;€ (17%) when compared to monthly option</span>
+                  </div>
+                  <div class="shop-choice-item-price">
+                    <span class="shop-choice-item-price-monthly">8.99&nbsp;€</span>
+                    <span class="shop-choice-item-price-total">107.88&nbsp;€ / year </span>
+                  </div>
+                </label>
+                <label class="shop-choice-item disabled">
+                  <input disabled type="radio" name="market1" class="shop-choice-item-radio">
+                  <span class="input-checkmark"></span>
+                  <div class="shop-choice-item-text">
+                    <span class="shop-choice-item-text-name">Monthly</span>
+                    <span class="shop-choice-item-text-desc">Most flexible option. Billed every month.</span>
+                  </div>
+                  <div class="shop-choice-item-price">
+                    <span class="shop-choice-item-price-monthly">11.99&nbsp;€</span>
+                    <span class="shop-choice-item-price-total">11.99&nbsp;€ / month</span>
+                  </div>
+                </label>
+              </div>
+            </div>
+
+            <div class="shop-choice">
+              <h4 class="h4-heading">Latvian Market <span class="weight-normal">(LV)</span></h4>
+              <div class="shop-choice-line">
+                <label class="shop-choice-item">
+                  <input type="radio" name="market2" class="shop-choice-item-radio">
+                  <span class="input-checkmark"></span>
+                  <div class="shop-choice-item-text">
+                    <span class="shop-choice-item-text-name">Annually</span>
+                    <span class="shop-choice-item-text-desc">Save 36&nbsp;€ (17%) when compared to monthly option</span>
+                  </div>
+                  <div class="shop-choice-item-price">
+                    <span class="shop-choice-item-price-monthly">8.99&nbsp;€</span>
+                    <span class="shop-choice-item-price-total">107.88&nbsp;€ / year </span>
+                  </div>
+                </label>
+                <label class="shop-choice-item disabled">
+                  <input disabled type="radio" name="market2" class="shop-choice-item-radio">
+                  <span class="input-checkmark"></span>
+                  <div class="shop-choice-item-text">
+                    <span class="shop-choice-item-text-name">Monthly</span>
+                    <span class="shop-choice-item-text-desc">Most flexible option. Billed every month.</span>
+                  </div>
+                  <div class="shop-choice-item-price">
+                    <span class="shop-choice-item-price-monthly">11.99&nbsp;€</span>
+                    <span class="shop-choice-item-price-total">11.99&nbsp;€ / month</span>
+                  </div>
+                </label>
+              </div>
+            </div>
+
+            <div class="shop-choice">
+              <h4 class="h4-heading">Estonian Market <span class="weight-normal">(EE)</span></h4>
+              <div class="shop-choice-line">
+                <label class="shop-choice-item">
+                  <input type="radio" name="market2" class="shop-choice-item-radio">
+
+                  <div class="shop-choice-item-text">
+                    <span class="shop-choice-item-text-name">Annually</span>
+                    <span class="shop-choice-item-text-desc">Save 36&nbsp;€ (17%) when compared to monthly option</span>
+                  </div>
+                  <div class="shop-choice-item-price">
+                    <span class="shop-choice-item-price-monthly">8.99&nbsp;€</span>
+                    <span class="shop-choice-item-price-total">107.88&nbsp;€ / year </span>
+                  </div>
+                </label>
+                <label class="shop-choice-item disabled">
+                  <input disabled type="radio" name="market2" class="shop-choice-item-radio">
+                  <div class="shop-choice-item-text">
+                    <span class="shop-choice-item-text-name">Monthly</span>
+                    <span class="shop-choice-item-text-desc">Most flexible option. Billed every month.</span>
+                  </div>
+                  <div class="shop-choice-item-price">
+                    <span class="shop-choice-item-price-monthly">11.99&nbsp;€</span>
+                    <span class="shop-choice-item-price-total">11.99&nbsp;€ / month</span>
+                  </div>
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <button type="button" class="btn btn-yellow" data-bs-toggle="modal" data-bs-target="#issue-popup">
+      Issues
+    </button>
+
+    <div class="modal fade" id="issue-popup" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          <div class="modal-body">
+            <h5 class="h5-heading">Select your issue category</h5>
+            <div class="issue-grid">
+              <div class="card card-small card-small-extra">
+                <img src="img/icons/steps-icon.svg" class="card-small-image" alt="">
+                <a href="" class="card-small-text">
+                  <p class="text text-14">Category name</p>
+                  <p class="text text-12">12 Research cases</p>
+                </a>
+              </div>
+              <div class="card card-small card-small-extra">
+                <img src="img/icons/steps-icon.svg" class="card-small-image" alt="">
+                <a href="" class="card-small-text">
+                  <p class="text text-14">Category name</p>
+                  <p class="text text-12">12 Research cases</p>
+                </a>
+              </div>
+              <div class="card card-small card-small-extra">
+                <img src="img/icons/steps-icon.svg" class="card-small-image" alt="">
+                <a href="" class="card-small-text">
+                  <p class="text text-14">Category name</p>
+                  <p class="text text-12">12 Research cases</p>
+                </a>
+              </div>
+              <div class="card card-small card-small-extra">
+                <img src="img/icons/steps-icon.svg" class="card-small-image" alt="">
+                <a href="" class="card-small-text">
+                  <p class="text text-14">Category name</p>
+                  <p class="text text-12">12 Research cases</p>
+                </a>
+              </div>
+              <div class="card card-small card-small-extra">
+                <img src="img/icons/steps-icon.svg" class="card-small-image" alt="">
+                <a href="" class="card-small-text">
+                  <p class="text text-14">Category name</p>
+                  <p class="text text-12">12 Research cases</p>
+                </a>
+              </div>
+              <div class="card card-small card-small-extra">
+                <img src="img/icons/steps-icon.svg" class="card-small-image" alt="">
+                <a href="" class="card-small-text">
+                  <p class="text text-14">Category name</p>
+                  <p class="text text-12">12 Research cases</p>
+                </a>
+              </div>
+              <div class="card card-small card-small-extra">
+                <img src="img/icons/steps-icon.svg" class="card-small-image" alt="">
+                <a href="" class="card-small-text">
+                  <p class="text text-14">Category name</p>
+                  <p class="text text-12">12 Research cases</p>
+                </a>
+              </div>
+              <div class="card card-small card-small-extra">
+                <img src="img/icons/steps-icon.svg" class="card-small-image" alt="">
+                <a href="" class="card-small-text">
+                  <p class="text text-14">Category name</p>
+                  <p class="text text-12">12 Research cases</p>
+                </a>
+              </div>
+              <div class="card card-small card-small-extra">
+                <img src="img/icons/steps-icon.svg" class="card-small-image" alt="">
+                <a href="" class="card-small-text">
+                  <p class="text text-14">Category name</p>
+                  <p class="text text-12">12 Research cases</p>
+                </a>
+              </div>
+            </div>
+            <h5 class="h5-heading">Popular questions</h5>
+            <div class="faq-block">
+              <details class="faq-block-item">
+                <summary class="faq-block-question">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Id metus
+                  blandit.</summary>
+                <div class="faq-block-answer">
+                  <p class="text">Massa hendrerit lorem interdum cum at. Tincidunt pulvinar donec ornare aenean urna
+                    iaculis. Eget ullamcorper malesuada phasellus massa. Id id massa purus purus vel. Neque sed nulla
+                    ultrices dapibus nunc, scelerisque nisl. Sit sed ultricies aliquam suspendisse diam rhoncus. Varius
+                    turpis in enim, vitae. Odio elementum sit senectus feugiat semper enim. Magna risus blandit
+                    facilisis morbi fringilla.</p>
+                  <p class="text">Massa hendrerit lorem interdum cum at. Tincidunt pulvinar donec ornare aenean urna
+                    iaculis. Eget ullamcorper malesuada phasellus massa. Id id massa purus purus vel. Neque sed nulla
+                    ultrices dapibus nunc, scelerisque nisl. Sit sed ultricies aliquam suspendisse diam rhoncus. Varius
+                    turpis in enim, vitae. Odio elementum sit senectus feugiat semper enim. Magna risus blandit
+                    facilisis morbi fringilla.</p>
+                </div>
+              </details>
+              <details class="faq-block-item">
+                <summary class="faq-block-question">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Id metus
+                  blandit.</summary>
+                <div class="faq-block-answer">
+                  <p class="text">Massa hendrerit lorem interdum cum at. Tincidunt pulvinar donec ornare aenean urna
+                    iaculis. Eget ullamcorper malesuada phasellus massa. Id id massa purus purus vel. Neque sed nulla
+                    ultrices dapibus nunc, scelerisque nisl. Sit sed ultricies aliquam suspendisse diam rhoncus. Varius
+                    turpis in enim, vitae. Odio elementum sit senectus feugiat semper enim. Magna risus blandit
+                    facilisis morbi fringilla.</p>
+                  <p class="text">Massa hendrerit lorem interdum cum at. Tincidunt pulvinar donec ornare aenean urna
+                    iaculis. Eget ullamcorper malesuada phasellus massa. Id id massa purus purus vel. Neque sed nulla
+                    ultrices dapibus nunc, scelerisque nisl. Sit sed ultricies aliquam suspendisse diam rhoncus. Varius
+                    turpis in enim, vitae. Odio elementum sit senectus feugiat semper enim. Magna risus blandit
+                    facilisis morbi fringilla.</p>
+                </div>
+              </details>
+              <details class="faq-block-item">
+                <summary class="faq-block-question">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Id metus
+                  blandit.</summary>
+                <div class="faq-block-answer">
+                  <p class="text">Massa hendrerit lorem interdum cum at. Tincidunt pulvinar donec ornare aenean urna
+                    iaculis. Eget ullamcorper malesuada phasellus massa. Id id massa purus purus vel. Neque sed nulla
+                    ultrices dapibus nunc, scelerisque nisl. Sit sed ultricies aliquam suspendisse diam rhoncus. Varius
+                    turpis in enim, vitae. Odio elementum sit senectus feugiat semper enim. Magna risus blandit
+                    facilisis morbi fringilla.</p>
+                  <p class="text">Massa hendrerit lorem interdum cum at. Tincidunt pulvinar donec ornare aenean urna
+                    iaculis. Eget ullamcorper malesuada phasellus massa. Id id massa purus purus vel. Neque sed nulla
+                    ultrices dapibus nunc, scelerisque nisl. Sit sed ultricies aliquam suspendisse diam rhoncus. Varius
+                    turpis in enim, vitae. Odio elementum sit senectus feugiat semper enim. Magna risus blandit
+                    facilisis morbi fringilla.</p>
+                </div>
+              </details>
+              <details class="faq-block-item">
+                <summary class="faq-block-question">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Id metus
+                  blandit.</summary>
+                <div class="faq-block-answer">
+                  <p class="text">Massa hendrerit lorem interdum cum at. Tincidunt pulvinar donec ornare aenean urna
+                    iaculis. Eget ullamcorper malesuada phasellus massa. Id id massa purus purus vel. Neque sed nulla
+                    ultrices dapibus nunc, scelerisque nisl. Sit sed ultricies aliquam suspendisse diam rhoncus. Varius
+                    turpis in enim, vitae. Odio elementum sit senectus feugiat semper enim. Magna risus blandit
+                    facilisis morbi fringilla.</p>
+                  <p class="text">Massa hendrerit lorem interdum cum at. Tincidunt pulvinar donec ornare aenean urna
+                    iaculis. Eget ullamcorper malesuada phasellus massa. Id id massa purus purus vel. Neque sed nulla
+                    ultrices dapibus nunc, scelerisque nisl. Sit sed ultricies aliquam suspendisse diam rhoncus. Varius
+                    turpis in enim, vitae. Odio elementum sit senectus feugiat semper enim. Magna risus blandit
+                    facilisis morbi fringilla.</p>
+                </div>
+              </details>
+            </div>
+            <h5 class="h5-heading">Contact us</h5>
+            <form action="" class="form">
+              <label class="form-label form-label-half">
+                <span class="form-label-name">
+                  Name
+                </span>
+                <input type="text" class="form-text-input" placeholder="Enter name">
+              </label>
+              <label class="form-label form-label-half">
+                <span class="form-label-name">
+                  Company
+                </span>
+                <input type="text" class="form-text-input" placeholder="Enter company">
+              </label>
+              <label class="form-label form-label-half">
+                <span class="form-label-name">
+                  Email
+                </span>
+                <input type="email" class="form-text-input" placeholder="Enter email">
+              </label>
+              <label class="form-label form-label-half">
+                <span class="form-label-name">
+                  Phone
+                </span>
+                <input type="tel" class="form-text-input" placeholder="Enter phone">
+              </label>
+              <label class="form-label form-label-full">
+                <span class="form-label-name">
+                  Message
+                </span>
+                <textarea class="form-textarea" placeholder="Enter message"></textarea>
+              </label>
+              <div class="form-bottom">
+                <label class="form-switch form-switch-line">
+                  <input type="checkbox">
+                  <span class="form-switch-slider form-switch-round"></span>
+                  <span class="form-switch-text">
+                    I accept the
+                    <a href="">Terms of Services</a>
+                    and have read the Service
+                    <a href="">Privacy Policy</a>
+                  </span>
+                </label>
+                <label class="form-switch form-switch-line">
+                  <input type="checkbox">
+                  <span class="form-switch-slider form-switch-round"></span>
+                  <span class="form-switch-text">I agree that my personal data (name, surname, email address, telephone
+                    number) will be processed for direct marketing purpose, i.e. I would be provided with offers, news
+                    about the services, information about ongoing events, promotions and/or other information, as well
+                    as
+                    my opinion about services provided would also be sought</span>
+                </label>
+                <input type="submit" class="btn btn-purple" value="Dive deeper">
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <button type="button" class="btn btn-yellow" data-bs-toggle="modal" data-bs-target="#login-popup">
+      Log in
+    </button>
+
+    <div class="modal fade" id="login-popup" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          <div class="modal-body">
+            <h3 class="h3-heading center-text">Log In</h3>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <button type="button" class="btn btn-yellow" data-bs-toggle="modal" data-bs-target="#register-popup">
+      Register
+    </button>
+
+    <div class="modal fade" id="register-popup" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          <div class="modal-body">
+            <h3 class="h3-heading center-text">Register with email</h3>
+            <form action="" class="form">
+              <label class="form-label form-label-full">
+                <span class="form-label-name">
+                  Username
+                </span>
+                <input type="text" class="form-text-input" placeholder="Enter username">
+              </label>
+              <label class="form-label form-label-full">
+                <span class="form-label-name">
+                  Enter password
+                </span>
+                <input type="text" class="form-text-input" placeholder="Enter password">
+              </label>
+              <label class="form-label form-label-full">
+                <span class="form-label-name">
+                  Repeat password
+                </span>
+                <input type="text" class="form-text-input" placeholder="Repeat password">
+              </label>
+              <div class="form-bottom form-bottom-static form-bottom-static-column">
+                <label class="form-switch form-switch-line">
+                  <input type="checkbox">
+                  <span class="form-switch-slider form-switch-round"></span>
+                  <span class="form-switch-text">
+                    I accept the
+                    <a href="">Terms of Services</a>
+                    and have read the Service
+                    <a href="">Privacy Policy</a>
+                  </span>
+                </label>
+                <label class="form-switch form-switch-line">
+                  <input type="checkbox">
+                  <span class="form-switch-slider form-switch-round"></span>
+                  <span class="form-switch-text">I agree that my personal data (name, surname, email address, telephone
+                    number) will be processed for direct marketing purpose, i.e. I would be provided with offers, news
+                    about the services, information about ongoing events, promotions and/or other information, as well
+                    as
+                    my opinion about services provided would also be sought</span>
+                </label>
+              </div>
+              <input type="submit" class="btn btn-purple btn-wide-full" value="Create account">
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <button type="button" class="btn btn-yellow" data-bs-toggle="modal" data-bs-target="#login-email-popup">
+      Log in with email
+    </button>
+
+    <div class="modal fade" id="login-email-popup" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          <div class="modal-body">
+            <h3 class="h3-heading center-text">Log in with email</h3>
+            <form action="" class="form">
+              <label class="form-label form-label-full">
+                <span class="form-label-name">
+                  Email
+                </span>
+                <input type="email" class="form-text-input" placeholder="Enter username">
+              </label>
+              <label class="form-label form-label-full">
+                <span class="form-label-name">
+                  Enter password
+                </span>
+                <input type="text" class="form-text-input" placeholder="Enter password">
+              </label>
+              <input type="submit" class="btn btn-purple btn-wide-full" value="Log in">
+              <div class="center-flex">
+                <a href="" class="form-bottom-text">Forgot your password?</a>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <button type="button" class="btn btn-yellow" data-bs-toggle="modal" data-bs-target="#activate-popup">
+      Activation
+    </button>
+
+    <div class="modal fade" id="activate-popup" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          <div class="modal-body activate-body">
+            <div class="center-text">
+              <img src="img/logo.svg" class="activate-logo" alt="">
+              <h4 class="h4-heading">Your account is not active yet.
+                Please verify your email.</h4>
+              <p class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Blandit vitae sagittis lacus,
+                nisi montes, neque donec. In nibh proin et est ac viverra. </p>
+              <a href="" class="btn btn-purple btn-wide-full">Resend Activation Link </a>
+            </div>
+            <div class="center-flex">
+              <span class="form-bottom-text">You need help? <a href="">Contact our support platform</a> </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <button type="button" class="btn btn-yellow" data-bs-toggle="modal" data-bs-target="#create-proifle-popup">
+      Log in with email
+    </button>
+
+    <div class="modal fade" id="create-proifle-popup" tabindex="-1" aria-labelledby="exampleModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          <div class="modal-body">
+            <div class="center-text">
+              <h3 class="h3-heading">Create your profile</h3>
+              <p class="text text-12">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Blandit</p>
+            </div>
+            <form action="" class="form">
+              <label class="form-label form-label-full">
+                <span class="form-label-name">
+                  Name
+                </span>
+                <input type="text" class="form-text-input" placeholder="Enter name">
+              </label>
+              <label class="form-label form-label-full">
+                <span class="form-label-name">
+                  Surname
+                </span>
+                <input type="text" class="form-text-input" placeholder="Enter surname">
+              </label>
+              <label class="form-label form-label-full">
+                <span class="form-label-name">
+                  Business Name
+                </span>
+                <input type="text" class="form-text-input" placeholder="Enter business name">
+              </label>
+              <label class="form-label form-label-full">
+                <span class="form-label-name">
+                  Business Address
+                </span>
+                <input type="text" class="form-text-input" placeholder="Enter busines adress ">
+              </label>
+              <label class="form-label form-label-full">
+                <span class="form-label-name">
+                  Business Postal/ZIP Code
+                </span>
+                <input type="text" class="form-text-input" placeholder="Enter business postal/ZIP code">
+              </label>
+              <label class="form-label form-label-full">
+                <span class="form-label-name">
+                  Country
+                </span>
+                <input type="text" class="form-text-input" placeholder="Enter country">
+              </label>
+              <label class="form-label form-label-full">
+                <span class="form-label-name">
+                  Business Registration Number
+                </span>
+                <input type="text" class="form-text-input" placeholder="Enter business registration number">
+              </label>
+              <label class="form-label form-label-full">
+                <span class="form-label-name">
+                  Business VAT ID
+                </span>
+                <input type="text" class="form-text-input" placeholder="Enter business VAT ID">
+              </label>
+              <input type="submit" class="btn btn-purple btn-wide-full" value="Continue">
+              <div class="center-flex">
+                <a href="" class="form-bottom-text">Add your info later</a>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <button type="button" class="btn btn-yellow" data-bs-toggle="modal" data-bs-target="#upgrade-1-popup">
+      Too deep 1
+    </button>
+
+    <div class="modal fade" id="upgrade-1-popup" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          <div class="modal-body">
+            <div class="center-text">
+              <h2 class="h2-heading">Too Deep!</h2>
+              <p class="text text-12">Nascetur sem interdum tortor sodales quis.
+                Nunc praesent nec massa dignissim
+                vel et felis massa.</p>
+            </div>
+            <a href="" class="btn btn-purple btn-wide-full">Upgrade Now</a>
+            <div class="center-flex">
+              <a href="" class="form-bottom-text">View detailed pricing options</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <button type="button" class="btn btn-yellow" data-bs-toggle="modal" data-bs-target="#upgrade-2-popup">
+      Too deep 2
+    </button>
+
+    <div class="modal fade" id="upgrade-2-popup" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          <div class="modal-body upgrade-body">
+            <div class="center-text">
+              <h2 class="h2-heading">Too Deep!</h2>
+              <p class="text text-12">Nascetur sem interdum tortor sodales quis.
+                Nunc praesent nec massa dignissim
+                vel et felis massa.</p>
+            </div>
+            <a href="" class="btn btn-purple btn-wide-full">Upgrade Now</a>
+            <div class="center-flex">
+              <a href="" class="form-bottom-text">View detailed pricing options</a>
+            </div>
           </div>
         </div>
       </div>
