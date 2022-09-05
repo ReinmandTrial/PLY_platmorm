@@ -76,6 +76,48 @@ const shopRadios = document.querySelectorAll(".shop-choice-item-radio");
 document.querySelector(".form-pricing-switch").addEventListener("click", function () {
     console.log("switch");
     for (const shopRadio of shopRadios) {
-        switchPrice.checked ? shopRadio.disabled=true : shopRadio.disabled=false;
+        switchPrice.checked ? shopRadio.disabled = true : shopRadio.disabled = false;
     }
 });
+
+// file upload
+document.querySelector("html").classList.add('js');
+
+var fileInput = document.querySelector(".form-input-file"),
+    button = document.querySelector(".form-input-file-trigger"),
+    the_return = document.querySelector(".form-file-return");
+
+button.addEventListener("keydown", function (event) {
+    if (event.keyCode == 13 || event.keyCode == 32) {
+        fileInput.focus();
+    }
+});
+button.addEventListener("click", function (event) {
+    fileInput.focus();
+    return false;
+});
+fileInput.addEventListener("change", function (event) {
+    the_return.innerHTML = this.files[0].name;
+});  
+
+// select
+const select = document.querySelectorAll('.select-btn');
+const option = document.querySelectorAll('.option');
+let index = 1;
+
+select.forEach(a => {
+	a.addEventListener('click', b => {
+		const next = b.target.nextElementSibling;
+		next.classList.toggle('toggle');
+		next.style.zIndex = index++;
+	})
+})
+option.forEach(a => {
+	a.addEventListener('click', b => {
+		b.target.parentElement.classList.remove('toggle');
+		
+		const parent = b.target.closest('.select').children[0];
+		parent.setAttribute('data-type', b.target.getAttribute('data-type'));
+		parent.innerText = b.target.innerText;
+	})
+})

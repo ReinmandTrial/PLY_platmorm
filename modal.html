@@ -311,29 +311,51 @@
                   <h4 class="h4-heading">Billing</h4>
                   <div class="billing-block">
                     <p class="text"><b>Payment methods</b></p>
-                    <div class="billing-line">
-                      <p class="billing-line-name">VAT/GST number</p>
-                      <div class="billing-line-text">LT100010900711<br>
-                        VAT number approved</div>
+                    <label class="billing-line">
+                      <input type="radio" name="billing" class="billing-line-radio">
+                      <span class="input-checkmark"></span>
+                      <div class="billing-line-content">
+                        <p class="billing-line-name"><b>MC ending in 8725</b> <i>(Default payment method)</i></p>
+                        <div class="billing-line-text">Expires 07/2023</div>
+                      </div>
                       <button class="billing-line-edit"></button>
-                    </div>
+                    </label>
+                    <label class="billing-line">
+                      <input type="radio" name="billing" class="billing-line-radio">
+                      <span class="input-checkmark"></span>
+                      <div class="billing-line-content">
+                        <p class="billing-line-name"><b>MC ending in 8725</b></p>
+                        <div class="billing-line-text">Expires 07/2023</div>
+                        <p class="billing-line-name"><b>Name on Card</b></p>
+                        <div class="billing-line-text">Rokas Cicenas</div>
+                        <p class="billing-line-name"><b>Billing address</b></p>
+                        <div class="billing-line-text">Audronės 4<br>
+                          Vilnius, Other 11105<br>
+                          Lithuania</div>
+                      </div>
+                      <button class="billing-line-edit"></button>
+                    </label>
+                    <a href="" class="btn btn-purple">Add payment method</a>
                   </div>
-                  <a href="" class="btn btn-purple">Add payment method</a>
                   <div class="billing-block">
                     <p class="text"><b>Tax information</b></p>
                     <p class="text">Sociis integer feugiat fermentum orci justo.</p>
                     <div class="billing-line">
-                      <p class="billing-line-name">UAB Dvylika menuliu</p>
-                      <div class="billing-line-text">Rokas Cicenas<br>
-                        Audronės 4<br>
-                        Vilnius, Other 11105<br>
-                        Lithuania</div>
+                      <div class="billing-line-content">
+                        <p class="billing-line-name"><b>UAB Dvylika menuliu</b></p>
+                        <div class="billing-line-text">Rokas Cicenas<br>
+                          Audronės 4<br>
+                          Vilnius, Other 11105<br>
+                          Lithuania</div>
+                      </div>
                       <button class="billing-line-edit"></button>
                     </div>
                     <div class="billing-line">
-                      <p class="billing-line-name">VAT/GST number</p>
-                      <div class="billing-line-text">LT100010900711<br>
-                        VAT number approved</div>
+                      <div class="billing-line-content">
+                        <p class="billing-line-name"><b>VAT/GST number</b></p>
+                        <div class="billing-line-text">LT100010900711<br>
+                          VAT number approved</div>
+                      </div>
                       <button class="billing-line-edit"></button>
                     </div>
                   </div>
@@ -361,7 +383,7 @@
                           <p class="table-text">Aug 4, 2022</p>
                         </td>
                         <td class="table-item">
-                          <p><b class="yellow">Invoice SSTK-02223A</b></p>
+                          <p class="table-text"><b class="yellow">Invoice SSTK-02223A</b></p>
                         </td>
                       </tr>
                       <tr>
@@ -375,7 +397,7 @@
                           <p class="table-text">Aug 4, 2022</p>
                         </td>
                         <td class="table-item">
-                          <p><b class="yellow">Invoice SSTK-02223A</b></p>
+                          <p class="table-text"><b class="yellow">Invoice SSTK-02223A</b></p>
                         </td>
                       </tr>
                       <tr>
@@ -389,7 +411,7 @@
                           <p class="table-text">Aug 4, 2022</p>
                         </td>
                         <td class="table-item">
-                          <p><b class="yellow">Invoice SSTK-02223A</b></p>
+                          <p class="table-text"><b class="yellow">Invoice SSTK-02223A</b></p>
                         </td>
                       </tr>
                     </table>
@@ -729,9 +751,26 @@
       <div class="modal-dialog">
         <div class="modal-content">
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          <div class="modal-body">
+          <div class="modal-body login-popup-body">
             <h3 class="h3-heading center-text">Log In</h3>
-
+            <div class="login-popup-line">
+              <a href="" class="btn btn-icon btn-darkgrey"><img src="img/icons/social/google.svg" alt="">
+                <span>Google</span></a>
+              <a href="" class="btn btn-icon btn-darkgrey"><img src="img/icons/social/microsoft.svg" alt="">
+                <span>Microsoft</span></a>
+            </div>
+            <div class="login-popup-line">
+              <a href="" class="btn btn-icon btn-darkgrey"><img src="img/icons/social/apple.svg" alt=""></a>
+              <a href="" class="btn btn-icon btn-darkgrey"><img src="img/icons/social/play.svg" alt=""></a>
+              <a href="" class="btn btn-icon btn-darkgrey"><img src="img/icons/social/linkedin.svg" alt=""></a>
+              <a href="" class="btn btn-icon btn-darkgrey"><img src="img/icons/social/facebook.svg" alt=""></a>
+            </div>
+            <div class="login-popup-divider"></div>
+            <a href="" class="btn btn-icon btn-darkgrey"><img src="img/icons/social/mail.svg"
+                alt=""><span>E-mail</span></a>
+            <div class="center-flex">
+              <span class="form-bottom-text">Don't have a PLY account yet? <a href="">Register</a></span>
+            </div>
           </div>
         </div>
       </div>
@@ -853,7 +892,7 @@
     </div>
 
     <button type="button" class="btn btn-yellow" data-bs-toggle="modal" data-bs-target="#create-proifle-popup">
-      Log in with email
+      Create your profile
     </button>
 
     <div class="modal fade" id="create-proifle-popup" tabindex="-1" aria-labelledby="exampleModalLabel"
@@ -867,6 +906,12 @@
               <p class="text text-12">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Blandit</p>
             </div>
             <form action="" class="form">
+              <div class="form-input-file-container">
+                <input class="form-input-file" id="my-file" type="file">
+                <label tabindex="0" for="my-file" class="form-input-file-trigger"><img src="img/icons/img-thumb.svg"
+                    alt=""></label>
+              </div>
+              <p class="form-file-return"></p>
               <label class="form-label form-label-full">
                 <span class="form-label-name">
                   Name
@@ -878,6 +923,19 @@
                   Surname
                 </span>
                 <input type="text" class="form-text-input" placeholder="Enter surname">
+              </label>
+              <label class="form-label form-label-full">
+                <span class="form-label-name">
+                  Business type
+                </span>
+                <div class="select">
+                  <div class="select-btn" data-type="firstOption">Business type</div>
+                  <div class="select-dropdown">
+                    <div class="option" data-type="firstOption">First option</div>
+                    <div class="option" data-type="secondOption">Second option</div>
+                    <div class="option" data-type="thirdOption">Third option</div>
+                  </div>
+                </div>
               </label>
               <label class="form-label form-label-full">
                 <span class="form-label-name">
@@ -933,14 +991,29 @@
       <div class="modal-dialog">
         <div class="modal-content">
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          <div class="modal-body">
+          <div class="modal-body upgrade-body upgrade-body-bg">
             <div class="center-text">
               <h2 class="h2-heading">Too Deep!</h2>
               <p class="text text-12">Nascetur sem interdum tortor sodales quis.
                 Nunc praesent nec massa dignissim
                 vel et felis massa.</p>
             </div>
-            <a href="" class="btn btn-purple btn-wide-full">Upgrade Now</a>
+            <div class="card-price-top">
+              <p class="card-price-top-name">Professional</p>
+              <p class="card-price-top-cost">
+                <input type="text" id="output-value" value="8.99" readonly="">
+                <span>€</span>
+                <span class="card-price-top-cost-monthly">8.99 € /
+                  month / market</span>
+              </p>
+              <div class="range-container">
+                <span>Markets</span>
+                <input type="range" min="1" max="6" value="1" oninput="sliderChange(this.value)" id="input-value"
+                  class="range-input">
+                <span class="range-input-value">1</span>
+              </div>
+            </div>
+            <a href="" class="btn btn-yellow btn-wide-full">Upgrade Now</a>
             <div class="center-flex">
               <a href="" class="form-bottom-text">View detailed pricing options</a>
             </div>
@@ -959,6 +1032,7 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           <div class="modal-body upgrade-body">
             <div class="center-text">
+              <img src="img/pattern/deep.svg" class="upgrade-pattern-image" alt="">
               <h2 class="h2-heading">Too Deep!</h2>
               <p class="text text-12">Nascetur sem interdum tortor sodales quis.
                 Nunc praesent nec massa dignissim

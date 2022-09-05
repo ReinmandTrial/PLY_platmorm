@@ -147,7 +147,8 @@ input {
             }
         }
 
-        &-text, &-text a {
+        &-text,
+        &-text a {
             font-size: .75rem;
             color: $grey-text-color;
             margin-top: 35px;
@@ -276,7 +277,7 @@ input:checked+.form-switch-slider:before {
     border-radius: 50%;
 }
 
-input[type="radio"]:checked + .input-checkmark {
+input[type="radio"]:checked+.input-checkmark {
     background-color: $purple-color;
     border-color: $purple-color;
 }
@@ -311,4 +312,141 @@ input[type="radio"]:checked + .input-checkmark {
     background-color: $yellow-color;
     overflow: visible;
     cursor: pointer;
+}
+
+.form-input-file-container {
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.js .form-input-file-trigger {
+    display: block;
+    padding: 70px 90px;
+    color: #fff;
+    transition: .3s;
+    cursor: pointer;
+    border: 1px solid #828282;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 225px;
+}
+
+.js .form-input-file {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    padding: 14px 0;
+    display: block;
+    cursor: pointer;
+}
+
+.form-file-return {
+    margin: 0;
+}
+
+.form-file-return:not(:empty) {
+    margin: 1em 0;
+}
+
+.js .form-file-return {
+    font-style: italic;
+    font-size: .9em;
+    font-weight: bold;
+}
+
+.js .form-file-return:not(:empty):before {
+    content: "Selected file: ";
+    font-style: normal;
+    font-weight: normal;
+}
+
+// select
+.select {
+    position: relative;
+    width: 100%;
+}
+
+.select .select-btn {
+    width: 100%;
+    cursor: pointer;
+    position: relative;
+    user-select: none;
+    font-size: 14px;
+    border: 0;
+    padding: 16px 20px;
+    outline: none;
+    background-color: $grey-color;
+    border-radius: 10px;
+
+    @media (max-width: 992px) {
+        padding: 10px 12px;
+        font-size: 11px;
+    }
+}
+
+.select .select-btn:after {
+    content: "";
+    position: absolute;
+    top: 45%;
+    right: 15px;
+    width: 6px;
+    height: 6px;
+    transform: translateY(-50%) rotate(45deg);
+    border-right: 2px solid #666;
+    border-bottom: 2px solid #666;
+    transition: 0.2s ease;
+}
+
+.select .select-btn.toggle {
+    border-radius: 3px 3px 0 0;
+}
+
+.select .select-btn.toggle:after {
+    transform: translateY(-50%) rotate(-135deg);
+}
+
+.select .select-dropdown {
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    border-radius: 0 0 3px 3px;
+    overflow: hidden;
+    z-index: 1;
+    transform: scale(1, 0);
+    transform-origin: top center;
+    visibility: hidden;
+    transition: .3s;
+    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+    background-color: $grey-color;
+}
+
+.select .select-dropdown .option {
+    padding: 10px;
+    box-sizing: border-box;
+    cursor: pointer;
+    padding: 8px 20px;
+    box-sizing: border-box;
+    cursor: pointer;
+    font-size: 14px;
+
+    @media (max-width: 992px) {
+        font-size: 11px;
+        padding: 10px 12px;
+    }
+}
+
+.select .select-dropdown .option:hover {
+    background: $lightgrey-color;
+}
+
+.select .select-dropdown.toggle {
+    visibility: visible;
+    -webkit-transform: scale(1, 1);
+    transform: scale(1, 1);
 }

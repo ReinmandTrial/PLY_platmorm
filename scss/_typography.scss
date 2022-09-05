@@ -164,6 +164,8 @@
     border: 1px solid transparent;
     color: $darkgrey-color;
     font-weight: 500;
+    outline: none;
+    box-shadow: none;
 
     @media (max-width: 768px) {
         font-size: 0.6875rem;
@@ -271,6 +273,19 @@
 
             &:before {
                 background-image: url(../img/icons/triangle-purple.svg);
+            }
+        }
+    }
+
+    &-icon {
+        display: flex;
+        justify-content: center;
+
+        img {
+            max-height: 19px;
+
+            + span {
+                margin-left: 14px;
             }
         }
     }
@@ -389,5 +404,35 @@
 
     &-wide .settings-block-line {
         margin: 10px 20px;
+    }
+}
+
+.tab {
+    padding: 60px 0 0;
+    display: none;
+
+    &.active {
+        display: block;
+    }
+}
+
+.tab-nav {
+    display: flex;
+
+    &-item {
+        background-color: $grey-color;
+        color: white;
+
+        &:hover {
+            color: $yellow-color;
+            border-color: $grey-color;
+            background-color: $grey-color;
+        }
+
+        &.active {
+            color: $yellow-color;
+            background-color: $grey-color;
+            border-color: $grey-color;
+        }
     }
 }
