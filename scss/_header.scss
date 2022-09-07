@@ -6,6 +6,11 @@
   }
 }
 
+.header {
+  position: relative;
+  z-index: 1;
+}
+
 .header-navbar {
   display: flex;
   width: 100%;

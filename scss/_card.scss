@@ -658,6 +658,15 @@
           font-size: 1.5rem;
         }
       }
+
+      .badge-list {
+        &-item {
+          min-width: 130px;
+        }
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
     }
 
     @media (max-width: 992px) {

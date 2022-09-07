@@ -6,10 +6,14 @@
         background-image: url(../img/pattern/home-main.svg);
         background-size: 90%;
         background-repeat: no-repeat;
-        background-position: center;
+        background-position: top;
         min-height: 120vh;
         padding: 200px 0 380px;
         margin: -240px 0;
+
+        @media (max-width: 1280px) {
+            background-position: center;
+        }
 
         @media (max-width: 768px) {
             background-size: cover;
@@ -22,10 +26,14 @@
         background-color: white;
         border-radius: 18px;
         max-width: 1060px;
-        margin: 500px auto 0;
+        margin: 180px auto;
+
+        @media (max-width: 992px) {
+            margin: 140px auto 0;
+        }
 
         @media (max-width: 768px) {
-            margin: 160px auto 0;
+            margin: 100px auto 0;
             max-width: 250px;
         }
 

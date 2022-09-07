@@ -11,9 +11,9 @@
   }
 
   .row-images {
-    margin: 100px 0;
+    margin: 100px -12px;
     + .row-images {
-      margin: -70px 0 100px;
+      margin: -70px -12px 100px;
     }
     @media (max-width: 768px) {
       margin: 0 0 40px;

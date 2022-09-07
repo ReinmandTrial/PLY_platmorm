@@ -77,7 +77,7 @@
     }
 
     &-heading {
-        padding: 40px 10px 58px;
+        padding: 40px 0 58px;
 
         @media (max-width: 768px) {
             padding: 20px 10px 30px;
@@ -126,6 +126,10 @@
                 left: 0;
                 height: 115%;
             }
+        }
+
+        &-pricing {
+            padding-left: 20px;
         }
     }
 
