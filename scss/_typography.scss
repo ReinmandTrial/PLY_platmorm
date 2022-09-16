@@ -361,6 +361,18 @@
             padding: 6px 12px;
         }
     }
+
+    &-width-1 {
+        .badge-list-item {
+            flex-basis: 29%;
+        }
+    }
+
+    &-width-2 {
+        .badge-list-item {
+            flex-basis: 48%;
+        }
+    }
 }
 
 a.badge-list-item:hover {
