@@ -133,3 +133,32 @@ option.forEach((a) => {
     parent.innerText = b.target.innerText;
   });
 });
+
+// search slider
+const swiper = new Swiper('.search-swiper', {
+  // Optional parameters
+  slidesPerView: 1,
+  spaceBetween: 20,
+  breakpoints: {
+    576: {
+      slidesPerView: 2,
+    },
+    992: {
+      slidesPerView: 3,
+    },
+    1280: {
+      slidesPerView: 4,
+    }
+  },
+
+  // If we need pagination
+  pagination: {
+    el: '.search-swiper-pagination',
+  },
+
+  // Navigation arrows
+  navigation: {
+    nextEl: '.search-swiper-button-next',
+    prevEl: '.search-swiper-button-prev',
+  },
+});

@@ -37,11 +37,41 @@
       padding: 16px 20px;
 
       @media (max-width: 1600px) {
-        min-width: unset
+        min-width: unset;
       }
 
       @media (max-width: 576px) {
         min-width: 100%;
+      }
+    }
+  }
+
+  &-swiper {
+    &-container {
+      position: relative;
+      max-width: 100%;
+
+      .swiper-pagination-bullets.swiper-pagination-horizontal,
+      .swiper-pagination-custom,
+      .swiper-pagination-fraction {
+        bottom: -20px;
+      }
+    }
+    &-button {
+      &-prev {
+        @media (max-width: 992px) {
+          left: 5px;
+        }
+      }
+      &-next {
+        @media (max-width: 992px) {
+          right: 5px;
+        }
+      }
+    }
+    &-pagination-bullet {
+      &-active {
+        background: white;
       }
     }
   }

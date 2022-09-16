@@ -181,7 +181,7 @@
 
     &-link {
       color: $grey-text-color;
-      font-family: 'Termina', sans-serif;
+      font-family: "Termina", sans-serif;
       display: flex;
       margin: 10px;
       width: 100%;
@@ -196,7 +196,7 @@
       span {
         text-decoration: underline;
         color: $grey-text-color;
-        font-family: 'Termina', sans-serif;
+        font-family: "Termina", sans-serif;
 
         &:hover {
           color: $grey-text-color;
@@ -293,7 +293,7 @@
     background-repeat: no-repeat;
     z-index: 1;
 
-    ~* {
+    ~ * {
       position: relative;
       z-index: 2;
     }
@@ -396,7 +396,6 @@
   }
 
   &-price {
-
     &-top {
       width: 100%;
       display: flex;
@@ -410,7 +409,7 @@
 
       &-name,
       &-cost {
-        font-family: 'Termina', sans-serif;
+        font-family: "Termina", sans-serif;
         font-weight: 600;
       }
 
@@ -512,7 +511,7 @@
           display: block;
 
           &.open {
-            +.card-price-list {
+            + .card-price-list {
               display: block;
             }
           }
@@ -535,6 +534,12 @@
     .text-12 {
       margin-top: auto;
       color: #969696;
+
+      @media (max-width: 576px) {
+        &:last-of-type {
+          margin-bottom: 0;
+        }
+      }
     }
   }
 }
@@ -608,7 +613,6 @@
         }
 
         @media (max-width: 768px) {
-
           &:nth-of-type(1n),
           &:nth-of-type(2n),
           &:nth-of-type(3n),
