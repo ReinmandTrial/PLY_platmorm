@@ -2,18 +2,34 @@
   .text {
     font-size: 18px;
     color: $grey-text-color;
+    margin-bottom: 24px;
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+
+    @media (max-width: 768px) {
+      font-size: 11px;
+    }
   }
 
   .h1-heading,
   .h2-heading,
   .h3-heading {
-    margin: 40px auto;
+    margin: 80px auto 40px;
+
+    @media (max-width: 768px) {
+      margin-bottom: 20px;
+    }
   }
 
   .row-images {
     margin: 100px -12px;
     + .row-images {
       margin: -70px -12px 100px;
+    }
+    + .box .h3-heading:first-of-type {
+      margin-top: 0;
     }
     @media (max-width: 768px) {
       margin: 0 0 40px;
@@ -84,7 +100,7 @@
     border-radius: 10px;
 
     @media (max-width: 992px) {
-      padding: 30px;
+      padding: 25px;
       flex-direction: column;
     }
 
@@ -92,11 +108,24 @@
       margin: 40px 0;
     }
 
+    &-author {
+      @media (max-width: 992px) {
+        display: flex;
+        justify-content: space-between;
+
+        &-name {
+          color: $grey-text-color;
+          font-size: 11px;
+        }
+      }
+    }
+
     &-heading {
       margin-right: 40px;
 
       @media (max-width: 992px) {
         margin-right: 20px;
+        font-size: 11px;
       }
     }
   }
@@ -106,6 +135,7 @@
 
     @media (max-width: 992px) {
       margin: 30px 0 0;
+      justify-content: space-between;
     }
 
     &-links {
@@ -114,6 +144,10 @@
 
         @media (max-width: 992px) {
           margin: 0 10px;
+
+          img {
+            max-width: 20px;
+          }
         }
       }
     }
@@ -125,10 +159,11 @@
     padding: 60px;
     align-items: flex-start;
     gap: 65px;
+    border-radius: 10px;
 
     @media (max-width: 576px) {
       flex-direction: column;
-      padding: 30px;
+      padding: 25px;
       gap: 30px;
     }
 

@@ -32,9 +32,34 @@ for (const pricingLink of pricingLinks) {
   });
 }
 
+// pricing month/year switch
+let periodSwitch = document.querySelector(".price-period-switch");
+const textVal = document.querySelector(".card-price-top-cost-monthly-number");
+if (periodSwitch) {
+  periodSwitch.addEventListener("click", periodChange);
+}
+
+function periodChange() {
+  if (textVal.innerHTML === "8.99") {
+    textVal.innerHTML = "6.99";
+    document.getElementById("output-value").value = "6.99";
+    document.getElementById("input-value").value = 1;
+    document.querySelector(".range-input-value").textContent = "1";
+  } else {
+    textVal.innerHTML = "8.99";
+    document.getElementById("output-value").value = "8.99";
+    document.getElementById("input-value").value = 1;
+    document.querySelector(".range-input-value").textContent = "1";
+  }
+}
+
 // pricing markets
 function sliderChange(val) {
-  document.getElementById("output-value").value = val * 8.99;
+  if (textVal.innerHTML === "8.99") {
+    document.getElementById("output-value").value = val * 8.99;
+  } else {
+    document.getElementById("output-value").value = val * 6.99;
+  }
   document.querySelector(".range-input-value").textContent =
     document.getElementById("input-value").value;
   document.getElementById("output-value").style.width =
@@ -70,7 +95,7 @@ function Tabs() {
 }
 var connectTabs = new Tabs();
 
-// annual/month pricing switch
+// annual/month pricing switch in modal
 const switchPrice = document.querySelector(".form-pricing-switch");
 const togglePrice = () =>
   document
@@ -135,7 +160,7 @@ option.forEach((a) => {
 });
 
 // search slider
-const swiper = new Swiper('.search-swiper', {
+const swiper = new Swiper(".search-swiper", {
   // Optional parameters
   slidesPerView: 1,
   spaceBetween: 20,
@@ -148,17 +173,17 @@ const swiper = new Swiper('.search-swiper', {
     },
     1280: {
       slidesPerView: 4,
-    }
+    },
   },
 
   // If we need pagination
   pagination: {
-    el: '.search-swiper-pagination',
+    el: ".search-swiper-pagination",
   },
 
   // Navigation arrows
   navigation: {
-    nextEl: '.search-swiper-button-next',
-    prevEl: '.search-swiper-button-prev',
+    nextEl: ".search-swiper-button-next",
+    prevEl: ".search-swiper-button-prev",
   },
 });

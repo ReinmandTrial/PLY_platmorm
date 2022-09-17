@@ -3,7 +3,11 @@
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
-  padding: 140px 0;
+  padding: 200px 0 140px;
+
+  @media (max-width: 768px) {
+    padding: 140px 0;
+  }
 
   @media (max-width: 768px) {
     padding: 70px 0;

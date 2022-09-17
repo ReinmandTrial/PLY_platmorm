@@ -450,3 +450,53 @@ input[type="radio"]:checked+.input-checkmark {
     -webkit-transform: scale(1, 1);
     transform: scale(1, 1);
 }
+
+.price-choice {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 60px;
+    margin-top: -30px;
+
+    &-tip {
+        background-color: $yellow-color;
+        color: $darkgrey-color;
+        padding: 6px 18px;
+        border-radius: 7px;
+        font-size: 8px;
+        font-weight: 500;
+        margin-top: -10px;
+    }
+
+    .form-switch {
+        gap: 26px;
+        padding-left: 0;
+
+        input {
+            display: none;
+        }
+
+        &-round {
+            order: 2;
+            position: relative;
+        }
+    }
+
+    .form-switch-option {
+        &:first-of-type {
+            order: 1;
+            font-weight: 400;
+            color: #D6D6D6;
+        }
+
+        &:last-of-type {
+            order: 3;
+            font-weight: 700;
+            color: #D6D6D6;
+        }
+    }
+
+    input:checked+.form-switch-slider {
+        background-color: $darkgrey-color;
+    }
+}

@@ -7,6 +7,7 @@
   <meta http-equiv="x-ua-compatible" content="ie=edge" />
   <link rel="icon" href="img/favicon.png" />
   <link rel="stylesheet" href="css/bootstrap.min.css" />
+  <link rel="stylesheet" href="css/swiper-bundle.min.css" />
   <link rel="stylesheet" href="css/index.min.css" />
   <link rel="stylesheet" href="css/home.min.css" />
 
@@ -57,8 +58,16 @@
     <div class="container">
       <div class="common-desc">
         <h2 class="h2-heading center-text">Package to suit your plan</h2>
-        <p class="text center-text">Tax’es included. 14 day money back guarantee. Cancel, downgrade or upgrade at any
-          time</p>
+        <p class="text center-text">Taxes included. 14 day money back guarantee. Cancel, downgrade or upgrade at any time</p>
+      </div>
+      <div class="price-choice">
+        <label class="form-switch form-switch-line">
+          <span class="form-switch-option">Monthly</span>
+          <input type="checkbox" class="price-period-switch" />
+          <span class="form-switch-slider form-switch-round"></span>
+          <span class="form-switch-option">Annually</span>
+        </label>
+        <span class="price-choice-tip">Annually you have 16% off which is 2 months free</span>
       </div>
       <div class="line line-endless-mob">
         <div class="card card-price">
@@ -92,7 +101,7 @@
             <p class="card-price-top-cost">
               <input type="text" id="output-value" value="8.99" readonly />
               <span>€</span>
-              <span class="card-price-top-cost-monthly">8.99 € /
+              <span class="card-price-top-cost-monthly"><span class="card-price-top-cost-monthly-number">8.99</span> € /
                 month / market</span>
             </p>
             <div class="range-container">
@@ -558,6 +567,7 @@
   </footer>
 
   <script src="js/bootstrap.min.js"></script>
+  <script src="js/swiper-bundle.min.js"></script>
   <script src="js/scripts.js"></script>
 </body>
 
