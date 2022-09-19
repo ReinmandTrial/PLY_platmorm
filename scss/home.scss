@@ -4,12 +4,20 @@
 .intro {
     &-section {
         background-image: url(../img/pattern/home-main.svg);
-        background-size: 90%;
+        background-size: contain;
         background-repeat: no-repeat;
         background-position: top;
         min-height: 120vh;
         padding: 200px 0 380px;
         margin: -240px 0;
+
+        @media (max-width: 1440px) {
+            background-size: 90%;
+        }
+
+        @media (max-width: 1280px) {
+            background-position: center;
+        }
 
         @media (max-width: 1280px) {
             background-position: center;

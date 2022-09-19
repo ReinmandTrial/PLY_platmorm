@@ -22,6 +22,34 @@ document
     this.classList.toggle("active");
   });
 
+//fullscreen toggle
+let myDocument = document.documentElement;
+let fullToggle = document.querySelector(".fullscreen-toggler");
+let fullToggleCheckbox = document.querySelector(".fullscreen-checkbox");
+fullToggle.addEventListener("click", () => {
+  if (fullToggleCheckbox.checked) {
+    if (myDocument.requestFullscreen) {
+      myDocument.requestFullscreen();
+    } else if (myDocument.msRequestFullscreen) {
+      myDocument.msRequestFullscreen();
+    } else if (myDocument.mozRequestFullScreen) {
+      myDocument.mozRequestFullScreen();
+    } else if (myDocument.webkitRequestFullscreen) {
+      myDocument.webkitRequestFullscreen();
+    }
+  } else {
+    if (document.exitFullscreen) {
+      document.exitFullscreen();
+    } else if (document.msexitFullscreen) {
+      document.msexitFullscreen();
+    } else if (document.mozexitFullscreen) {
+      document.mozexitFullscreen();
+    } else if (document.webkitexitFullscreen) {
+      document.webkitexitFullscreen();
+    }
+  }
+});
+
 // pricing open full list
 const pricingLinks = document.querySelectorAll(".card-price-list-show");
 

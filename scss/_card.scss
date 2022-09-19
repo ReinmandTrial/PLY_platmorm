@@ -260,10 +260,10 @@
     flex: 1 0 49%;
     height: auto;
     align-self: stretch;
-    padding: 60px;
+    padding: 0;
 
     @media (max-width: 1280px) {
-      padding: 30px;
+      // padding: 30px;
     }
 
     img {
