@@ -16,6 +16,7 @@
   &-endless-mob {
     @media (max-width: 992px) {
       overflow: auto;
+      gap: 15px;
 
       .card {
         min-width: 210px;
@@ -99,9 +100,13 @@
       grid-template-columns: repeat(2, 1fr);
       gap: 0 20px;
     }
+  }
 
-    @media (max-width: 576px) {
-      grid-template-columns: repeat(1, 1fr);
+  &-small-link {
+    @media (max-width: 992px) {
+      .card-small:last-of-type {
+        margin-bottom: 20px;
+      }
     }
   }
 }
@@ -175,12 +180,20 @@
       max-height: unset;
     }
 
-    @media (max-width: 768px) {
+    @media (max-width: 992px) {
       padding: 10px;
+
+      &:last-of-type {
+        margin-bottom: 0;
+      }
     }
 
     &-image {
       max-width: 40px;
+
+      @media (max-width: 992px) {
+        max-width: 30px;
+      }
     }
 
     &-text {
@@ -314,20 +327,37 @@
   &-review {
     padding: 40px;
 
+    @media (max-width: 768px) {
+      padding: 25px;
+    }
+
     &-top {
       display: flex;
       align-items: center;
       justify-content: space-between;
       margin: 0 0 20px;
 
-      @media (max-width: 768px) {
-        span {
+      @media (max-width: 576px) {
+        margin: 0 0 10px;
+      }
+
+      span {
+        color: $grey-text-color;
+        font-weight: 600;
+        @media (max-width: 768px) {
           font-size: 13px;
+        }
+        @media (max-width: 576px) {
+          font-size: 9px;
         }
       }
 
       &-image {
         max-width: 58%;
+
+        @media (max-width: 768px) {
+          max-width: 50%;
+        }
       }
     }
 
@@ -336,6 +366,11 @@
 
       @media (max-width: 768px) {
         font-size: 14px;
+      }
+
+      @media (max-width: 576px) {
+        font-size: 10px;
+        margin-bottom: 7px;
       }
     }
 
@@ -347,15 +382,16 @@
       @media (max-width: 768px) {
         font-size: 14px;
       }
+
+      @media (max-width: 576px) {
+        font-size: 9px;
+        margin-bottom: 7px;
+      }
     }
 
     &-name {
       font-weight: bold;
       margin-bottom: 0;
-    }
-
-    @media (max-width: 768px) {
-      padding: 30px;
     }
   }
 
@@ -416,7 +452,7 @@
 
       @media (max-width: 992px) {
         font-size: 20px;
-        min-height: 240px;
+        min-height: 208px;
       }
 
       &-name,
@@ -569,6 +605,10 @@
       padding: 10px;
       max-width: 145px;
       min-width: 145px;
+
+      p {
+        font-size: 9px;
+      }
     }
 
     .text:last-of-type {
@@ -576,6 +616,7 @@
 
       + .btn {
         margin-top: 26px;
+        margin-bottom: 6px;
       }
     }
   }
@@ -595,7 +636,8 @@
     margin-top: 0;
   }
 
-  .text, .text:last-of-type {
+  .text,
+  .text:last-of-type {
     color: $grey-text-color;
     margin-bottom: 40px;
   }
