@@ -5,6 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
     <link rel="icon" href="img/favicon.png" />
+    <style>
+      .loader-container {
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        background: #202020 url("img/PLY_preloader.svg") center no-repeat;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+      }
+
+      .spinner {
+        width: 50vw;
+        height: 50vh;
+        background: url(img/PLY_preloader.svg) center no-repeat;
+      }
+
+      .loader-container-hidden {
+        display: none;
+      }
+    </style>
     <link rel="stylesheet" href="css/bootstrap.min.css" />
     <link rel="stylesheet" href="css/swiper-bundle.min.css" />
     <link rel="stylesheet" href="css/index.min.css" />
@@ -14,6 +38,18 @@
   </head>
 
   <body class="grey-bg">
+    <div class="loader-container">
+      <div class="spinner"></div>
+    </div>
+
+    <script>
+      const loaderContainer = document.querySelector(".loader-container");
+
+      window.addEventListener("load", () => {
+        loaderContainer.classList.add("loader-container-hidden");
+      });
+    </script>
+
     <header class="header">
       <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container">
@@ -28,8 +64,7 @@
               data-bs-target="#navbarSupportedContent"
               aria-controls="navbarSupportedContent"
               aria-expanded="false"
-              aria-label="Toggle navigation"
-            >
+              aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -51,37 +86,32 @@
                 <li class="nav-item">
                   <span
                     class="nav-link btn btn-darkgrey account-dropdown"
-                    href="#"
-                  >
+                    href="#">
                     <span class="account-icon"></span>
                     <div class="account-dropdown-list">
                       <a href="" class="account-link">
                         <img
                           src="img/icons/account/dashboard.svg"
                           alt=""
-                          class="account-link-icon"
-                        />
+                          class="account-link-icon" />
                         Dashboard
                       </a>
                       <a href="" class="account-link">
                         <img
                           src="img/icons/account/expert-dashboard.svg"
                           alt=""
-                          class="account-link-icon"
-                        />
+                          class="account-link-icon" />
                         Expert Dashboard
                       </a>
                       <span class="account-link">
                         <label class="form-switch fullscreen-toggler">
                           <input type="checkbox" class="fullscreen-checkbox" />
                           <span
-                            class="form-switch-slider form-switch-round"
-                          ></span>
+                            class="form-switch-slider form-switch-round"></span>
                           <img
                             src="img/icons/account/fullscreen.svg"
                             alt=""
-                            class="account-link-icon"
-                          />
+                            class="account-link-icon" />
                           <span>Full Screen</span>
                         </label>
                       </span>
@@ -90,24 +120,21 @@
                         <img
                           src="img/icons/account/research.svg"
                           alt=""
-                          class="account-link-icon"
-                        />
+                          class="account-link-icon" />
                         Research
                       </a>
                       <a href="" class="account-link">
                         <img
                           src="img/icons/account/help.svg"
                           alt=""
-                          class="account-link-icon"
-                        />
+                          class="account-link-icon" />
                         Help Center
                       </a>
                       <a href="" class="account-link">
                         <img
                           src="img/icons/account/profile.svg"
                           alt=""
-                          class="account-link-icon"
-                        />
+                          class="account-link-icon" />
                         Profile Settings
                       </a>
                       <hr class="account-dropdown-divider" />
@@ -115,16 +142,14 @@
                         <img
                           src="img/icons/account/billing.svg"
                           alt=""
-                          class="account-link-icon"
-                        />
+                          class="account-link-icon" />
                         Account & Billing
                       </a>
                       <a href="" class="account-link">
                         <img
                           src="img/icons/account/logout.svg"
                           alt=""
-                          class="account-link-icon"
-                        />
+                          class="account-link-icon" />
                         Log out
                       </a>
                     </div>
@@ -249,8 +274,7 @@
               <img
                 src="img/icons/steps-icon.svg"
                 class="card-small-image"
-                alt=""
-              />
+                alt="" />
               <a href="" class="card-small-text">
                 <p class="text text-12">Strategies</p>
                 <p class="text text-14">
@@ -262,8 +286,7 @@
               <img
                 src="img/icons/steps-icon.svg"
                 class="card-small-image"
-                alt=""
-              />
+                alt="" />
               <a href="" class="card-small-text">
                 <p class="text text-12">Ratios</p>
                 <p class="text text-14">
@@ -275,8 +298,7 @@
               <img
                 src="img/icons/steps-icon.svg"
                 class="card-small-image"
-                alt=""
-              />
+                alt="" />
               <a href="" class="card-small-text">
                 <p class="text text-12">Data depth</p>
                 <p class="text text-14">
@@ -288,8 +310,7 @@
               <img
                 src="img/icons/steps-icon.svg"
                 class="card-small-image"
-                alt=""
-              />
+                alt="" />
               <a href="" class="card-small-text">
                 <p class="text text-12">Statistics</p>
                 <p class="text text-14">
@@ -301,8 +322,7 @@
               <img
                 src="img/icons/steps-icon.svg"
                 class="card-small-image"
-                alt=""
-              />
+                alt="" />
               <a href="" class="card-small-text">
                 <p class="text text-12">Charts</p>
                 <p class="text text-14">
@@ -314,8 +334,7 @@
               <img
                 src="img/icons/steps-icon.svg"
                 class="card-small-image"
-                alt=""
-              />
+                alt="" />
               <a href="" class="card-small-text">
                 <p class="text text-12">Evaluation</p>
                 <p class="text text-14">
@@ -398,9 +417,14 @@
     <section class="common-section">
       <div class="container">
         <div class="common-desc">
-          <h2 class="h2-heading common-heading-wide">Possibility to choose various investment strategies</h2>
+          <h2 class="h2-heading common-heading-wide">
+            Possibility to choose various investment strategies
+          </h2>
           <p class="text">
-            Non at suspendisse vel, mi, quam vitae. Non nullam facilisis eget egestas. Gravida etiam amet et nunc, viverra aliquet venenatis. Lacus commodo neque pellentesque orci amet. Facilisi nisi odio egestas egestas commodo diam dui ipsum in. Dictum interdum.
+            Non at suspendisse vel, mi, quam vitae. Non nullam facilisis eget
+            egestas. Gravida etiam amet et nunc, viverra aliquet venenatis.
+            Lacus commodo neque pellentesque orci amet. Facilisi nisi odio
+            egestas egestas commodo diam dui ipsum in. Dictum interdum.
           </p>
         </div>
         <div class="line line-picture">
@@ -410,8 +434,7 @@
               title="YouTube video player"
               frameborder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen
-            ></iframe>
+              allowfullscreen></iframe>
           </div>
           <div class="card card-picture">
             <iframe
@@ -419,8 +442,7 @@
               title="YouTube video player"
               frameborder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen
-            ></iframe>
+              allowfullscreen></iframe>
           </div>
         </div>
         <div class="line line-small-link">
@@ -464,7 +486,9 @@
             <span class="form-switch-slider form-switch-round"></span>
             <span class="form-switch-option">Annually</span>
           </label>
-          <span class="price-choice-tip">Annually you have 16% off which is 2 months free</span>
+          <span class="price-choice-tip">
+            Annually you have 16% off which is 2 months free
+          </span>
         </div>
         <div class="line line-endless-mob">
           <div class="card card-price">
@@ -506,7 +530,8 @@
                 <input type="text" id="output-value" value="8.99" readonly />
                 <span>€</span>
                 <span class="card-price-top-cost-monthly">
-                  <span class="card-price-top-cost-monthly-number">8.99</span> € / month / market
+                  <span class="card-price-top-cost-monthly-number">8.99</span>
+                  € / month / market
                 </span>
               </p>
               <div class="range-container">
@@ -518,8 +543,7 @@
                   value="1"
                   oninput="sliderChange(this.value)"
                   id="input-value"
-                  class="range-input"
-                />
+                  class="range-input" />
                 <span class="range-input-value">1</span>
               </div>
               <div class="btn btn-yellow">Start Today</div>
@@ -581,11 +605,16 @@
 
     <div class="container">
       <div class="article-tip">
-        <h2 class="h2-heading">Take your investment analysis to the next level</h2>
-        <p class="text">Practical and structured approach to financial analysis and intelligent investment decisions
-          making. How to choose correctly from hundreds and even thousands of stocks? How to evaluate financials of any
-          given company as quickly and efficiently, as possible? How to read financial statements and find undervalued
-          companies?</p>
+        <h2 class="h2-heading">
+          Take your investment analysis to the next level
+        </h2>
+        <p class="text">
+          Practical and structured approach to financial analysis and
+          intelligent investment decisions making. How to choose correctly from
+          hundreds and even thousands of stocks? How to evaluate financials of
+          any given company as quickly and efficiently, as possible? How to read
+          financial statements and find undervalued companies?
+        </p>
         <a href="" class="btn btn-white">Let’s find out</a>
       </div>
     </div>
@@ -603,7 +632,10 @@
         </div>
         <div class="line line-endless-mob">
           <div class="card">
-            <img src="img/PLY_blog_thumbs_small/SVG/PLY_blog_thumbs_small_1.svg" class="card-icon" alt="" />
+            <img
+              src="img/PLY_blog_thumbs_small/SVG/PLY_blog_thumbs_small_1.svg"
+              class="card-icon"
+              alt="" />
             <h4 class="h4-heading">
               Vestibulum a nec duis mauris ullamcorper. Sit.
             </h4>
@@ -617,7 +649,10 @@
             </p>
           </div>
           <div class="card">
-            <img src="img/PLY_blog_thumbs_small/SVG/PLY_blog_thumbs_small_2.svg" class="card-icon" alt="" />
+            <img
+              src="img/PLY_blog_thumbs_small/SVG/PLY_blog_thumbs_small_2.svg"
+              class="card-icon"
+              alt="" />
             <h4 class="h4-heading">
               Vestibulum a nec duis mauris ullamcorper. Sit.
             </h4>
@@ -631,7 +666,10 @@
             </p>
           </div>
           <div class="card">
-            <img src="img/PLY_blog_thumbs_large/SVG/PLY_blog_thumbs_large_1.svg" class="card-bg" alt="" />
+            <img
+              src="img/PLY_blog_thumbs_large/SVG/PLY_blog_thumbs_large_1.svg"
+              class="card-bg"
+              alt="" />
             <h3 class="h3-heading">
               Vestibulum a nec duis mauris ullamcorper. Sit.
             </h3>
@@ -642,7 +680,10 @@
             <a href="" class="btn btn-yellow btn-wide">Demo Preview</a>
           </div>
           <div class="card">
-            <img src="img/PLY_blog_thumbs_small/SVG/PLY_blog_thumbs_small_3.svg" class="card-icon" alt="" />
+            <img
+              src="img/PLY_blog_thumbs_small/SVG/PLY_blog_thumbs_small_3.svg"
+              class="card-icon"
+              alt="" />
             <h4 class="h4-heading">
               Vestibulum a nec duis mauris ullamcorper. Sit.
             </h4>
@@ -682,39 +723,34 @@
                 <input
                   type="text"
                   class="form-text-input"
-                  placeholder="Enter name"
-                />
+                  placeholder="Enter name" />
               </label>
               <label class="form-label form-label-half">
                 <span class="form-label-name">Company</span>
                 <input
                   type="text"
                   class="form-text-input"
-                  placeholder="Enter company"
-                />
+                  placeholder="Enter company" />
               </label>
               <label class="form-label form-label-half">
                 <span class="form-label-name">Email</span>
                 <input
                   type="email"
                   class="form-text-input"
-                  placeholder="Enter email"
-                />
+                  placeholder="Enter email" />
               </label>
               <label class="form-label form-label-half">
                 <span class="form-label-name">Phone</span>
                 <input
                   type="tel"
                   class="form-text-input"
-                  placeholder="Enter phone"
-                />
+                  placeholder="Enter phone" />
               </label>
               <label class="form-label form-label-full">
                 <span class="form-label-name">Message</span>
                 <textarea
                   class="form-textarea"
-                  placeholder="Enter message"
-                ></textarea>
+                  placeholder="Enter message"></textarea>
               </label>
               <div class="form-bottom">
                 <label class="form-switch form-switch-line">
@@ -742,8 +778,7 @@
                 <input
                   type="submit"
                   class="btn btn-purple"
-                  value="Dive deeper"
-                />
+                  value="Dive deeper" />
               </div>
             </form>
           </div>
@@ -768,8 +803,7 @@
               <img
                 src="img/icons/trustpilot-stars.svg"
                 class="card-review-top-image"
-                alt=""
-              />
+                alt="" />
               <span>4 days ago</span>
             </div>
             <p class="card-review-heading"><b>Lobortis viverra maecenas.</b></p>
@@ -784,8 +818,7 @@
               <img
                 src="img/icons/trustpilot-stars.svg"
                 class="card-review-top-image"
-                alt=""
-              />
+                alt="" />
               <span>4 days ago</span>
             </div>
             <p class="card-review-heading"><b>Lobortis viverra maecenas.</b></p>
@@ -800,8 +833,7 @@
               <img
                 src="img/icons/trustpilot-stars.svg"
                 class="card-review-top-image"
-                alt=""
-              />
+                alt="" />
               <span>4 days ago</span>
             </div>
             <p class="card-review-heading"><b>Lobortis viverra maecenas.</b></p>
@@ -816,8 +848,7 @@
               <img
                 src="img/icons/trustpilot-stars.svg"
                 class="card-review-top-image"
-                alt=""
-              />
+                alt="" />
               <span>4 days ago</span>
             </div>
             <p class="card-review-heading"><b>Lobortis viverra maecenas.</b></p>
@@ -859,8 +890,7 @@
               <input
                 type="email"
                 class="text-input"
-                placeholder="Enter your email to subscribe"
-              />
+                placeholder="Enter your email to subscribe" />
               <input type="submit" class="btn btn-purple" value="Subscribe" />
             </form>
           </div>
