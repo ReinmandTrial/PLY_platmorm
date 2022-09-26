@@ -1,5 +1,5 @@
 <svg width="113" height="40" viewBox="0 0 113 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M5.93839 25.0912V5.06415H22.7096C24.6213 5.06415 26.4245 5.2397 28.0514 5.63133C26.1804 2.22822 22.7909 0 17.0966 0H0V40H5.93839V30.1553H17.0966C22.7909 30.1553 26.194 27.9271 28.065 24.5105C26.4516 24.9021 24.6484 25.0777 22.7231 25.0777H5.93839V25.0912Z" fill="url(#paint0_linear_1203_15693)"/>
+<path id="x1" d="M5.93839 25.0912V5.06415H22.7096C24.6213 5.06415 26.4245 5.2397 28.0514 5.63133C26.1804 2.22822 22.7909 0 17.0966 0H0V40H5.93839V30.1553H17.0966C22.7909 30.1553 26.194 27.9271 28.065 24.5105C26.4516 24.9021 24.6484 25.0777 22.7231 25.0777H5.93839V25.0912Z" fill="url(#paint0_linear_1203_15693)"/>
 <path d="M28.0515 5.64478C29.4887 8.25112 30.031 11.5597 30.031 15.0843C30.031 18.609 29.4887 21.9041 28.0515 24.5239C32.6205 23.403 35.7253 20.5536 35.7253 15.0843C35.7253 9.61506 32.6205 6.76564 28.0515 5.64478Z" fill="url(#paint1_linear_1203_15693)"/>
 <path d="M44.1853 0V21.1749C44.1853 27.657 47.1138 31.1546 51.3981 32.8157C50.4898 30.4929 50.1372 27.7785 50.1372 24.9156V0H44.1853Z" fill="url(#paint2_linear_1203_15693)"/>
 <path d="M51.3848 32.8157C53.0524 37.0831 56.5503 40 63.0717 40H75.8975V34.0851H59.3162C56.4419 34.0851 53.7167 33.7205 51.3848 32.8292V32.8157Z" fill="url(#paint3_linear_1203_15693)"/>
@@ -8,32 +8,62 @@
 <path d="M87.4895 23.7407C87.5437 24.3349 87.5844 24.9561 87.5844 25.6043V40H93.5228V25.6043C93.5228 24.9561 93.5499 24.3349 93.6177 23.7407C92.5602 23.9838 91.5162 24.1053 90.5536 24.0918C89.591 24.0918 88.5605 23.9838 87.4895 23.7407Z" fill="url(#paint6_linear_1203_15693)"/>
 <defs>
 <linearGradient id="paint0_linear_1203_15693" x1="113" y1="-7.81974e-07" x2="1.24249e-06" y2="40" gradientUnits="userSpaceOnUse">
-<stop stop-color="#BBA3FF"/>
-<stop offset="1" stop-color="#EBFFC2"/>
+  <animate attributeName="x1" values="200;-300;200" dur="10s" repeatCount="indefinite"  /> 
+  <animate attributeName="y2" values="100;-300;100" dur="10s" repeatCount="indefinite"  /> 
+<stop stop-color="#BBA3FF">
+</stop>
+<stop offset="1" stop-color="#EBFFC2">
+</stop>
 </linearGradient>
 <linearGradient id="paint1_linear_1203_15693" x1="113" y1="-7.81974e-07" x2="1.24249e-06" y2="40" gradientUnits="userSpaceOnUse">
-<stop stop-color="#BBA3FF"/>
-<stop offset="1" stop-color="#EBFFC2"/>
+  <animate attributeName="x1" values="200;-300;200" dur="10s" repeatCount="indefinite"  /> 
+  <animate attributeName="y2" values="100;-300;100" dur="10s" repeatCount="indefinite"  /> 
+<stop stop-color="#BBA3FF">
+</stop>
+<stop offset="1" stop-color="#EBFFC2">
+</stop>
 </linearGradient>
 <linearGradient id="paint2_linear_1203_15693" x1="113" y1="-7.81974e-07" x2="1.24249e-06" y2="40" gradientUnits="userSpaceOnUse">
-<stop stop-color="#BBA3FF"/>
-<stop offset="1" stop-color="#EBFFC2"/>
+  <animate attributeName="x1" values="200;-300;200" dur="10s" repeatCount="indefinite"  /> 
+  <animate attributeName="y2" values="100;-300;100" dur="10s" repeatCount="indefinite"  /> 
+<stop stop-color="#BBA3FF">
+</stop>
+<stop offset="1" stop-color="#EBFFC2">
+</stop>
 </linearGradient>
 <linearGradient id="paint3_linear_1203_15693" x1="113" y1="-7.81974e-07" x2="1.24249e-06" y2="40" gradientUnits="userSpaceOnUse">
-<stop stop-color="#BBA3FF"/>
-<stop offset="1" stop-color="#EBFFC2"/>
+  <animate attributeName="x1" values="200;-300;200" dur="10s" repeatCount="indefinite"  /> 
+  <animate attributeName="y2" values="100;-300;100" dur="10s" repeatCount="indefinite"  /> 
+<stop stop-color="#BBA3FF">
+</stop>
+<stop offset="1" stop-color="#EBFFC2">
+</stop>
 </linearGradient>
 <linearGradient id="paint4_linear_1203_15693" x1="113" y1="-7.81974e-07" x2="1.24249e-06" y2="40" gradientUnits="userSpaceOnUse">
-<stop stop-color="#BBA3FF"/>
-<stop offset="1" stop-color="#EBFFC2"/>
+  <animate attributeName="x1" values="200;-300;200" dur="10s" repeatCount="indefinite"  /> 
+  <animate attributeName="y2" values="100;-300;100" dur="10s" repeatCount="indefinite"  /> 
+<stop stop-color="#BBA3FF">
+</stop>
+<stop offset="1" stop-color="#EBFFC2">
+</stop>
 </linearGradient>
 <linearGradient id="paint5_linear_1203_15693" x1="113" y1="-7.81974e-07" x2="1.24249e-06" y2="40" gradientUnits="userSpaceOnUse">
-<stop stop-color="#BBA3FF"/>
-<stop offset="1" stop-color="#EBFFC2"/>
+  <animate attributeName="x1" values="200;-300;200" dur="10s" repeatCount="indefinite"  /> 
+  <animate attributeName="y2" values="100;-300;100" dur="10s" repeatCount="indefinite"  /> 
+<stop stop-color="#BBA3FF">
+</stop>
+<stop offset="1" stop-color="#EBFFC2">
+</stop>
 </linearGradient>
 <linearGradient id="paint6_linear_1203_15693" x1="113" y1="-7.81974e-07" x2="1.24249e-06" y2="40" gradientUnits="userSpaceOnUse">
-<stop stop-color="#BBA3FF"/>
-<stop offset="1" stop-color="#EBFFC2"/>
+  <animate attributeName="x1" values="200;-300;200" dur="10s" repeatCount="indefinite"  /> 
+  <animate attributeName="y2" values="100;-300;100" dur="10s" repeatCount="indefinite"  /> 
+<stop stop-color="#BBA3FF">
+</stop>
+<stop offset="1" stop-color="#EBFFC2">
+</stop>
 </linearGradient>
 </defs>
+ 
+
 </svg>
