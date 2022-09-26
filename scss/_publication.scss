@@ -19,7 +19,10 @@
     margin: 80px auto 40px;
 
     @media (max-width: 768px) {
+      margin-top: 40px;
       margin-bottom: 20px;
+      font-weight: 500;
+      font-size: 13px;
     }
   }
 
@@ -28,19 +31,30 @@
     + .row-images {
       margin: -70px -12px 100px;
     }
-    + .box .h3-heading:first-of-type {
-      margin-top: 0;
+    + .box .col-md-6:first-of-type .h1-heading:first-of-type,
+    + .box .col-md-6:first-of-type .h2-heading:first-of-type,
+    + .box .col-md-6:first-of-type .h3-heading:first-of-type {
+      @media (max-width: 768px) {
+        margin-top: 0;
+      }
+    }
+    + .box .col-md-6 .h1-heading:first-of-type,
+    + .box .col-md-6 .h2-heading:first-of-type,
+    + .box .col-md-6 .h3-heading:first-of-type {
+      @media (min-width: 768px) {
+        margin-top: 0;
+      }
     }
     @media (max-width: 768px) {
-      margin: 0 0 40px;
+      margin: 40px 0;
       + .row-images {
-        margin: -40px 0 40px;
+        margin: -15px 0 15px;
       }
     }
     .article-image {
       margin: 0;
       @media (max-width: 768px) {
-        margin: 40px 0 0;
+        margin: 15px 0 0;
       }
     }
   }
@@ -69,7 +83,10 @@
       }
     }
 
-    .h1-heading, .h2-heading, .h3-heading, .text {
+    .h1-heading,
+    .h2-heading,
+    .h3-heading,
+    .text {
       margin: 0;
     }
   }
@@ -86,21 +103,17 @@
       border-radius: 10px;
     }
 
-    +.box {
+    + .box {
       margin-top: 100px;
     }
   }
 
   &-info {
-    background-color: $darkgrey-color;
-    padding: 40px 120px;
     margin: 160px 0 40px;
     display: flex;
     justify-content: space-between;
-    border-radius: 10px;
 
     @media (max-width: 992px) {
-      padding: 25px;
       flex-direction: column;
     }
 
@@ -109,9 +122,15 @@
     }
 
     &-author {
+      background-color: $darkgrey-color;
+      border-radius: 10px 0 0 10px;
+      padding: 40px 120px;
+      flex-grow: 1;
       @media (max-width: 992px) {
         display: flex;
         justify-content: space-between;
+        padding: 25px;
+        border-radius: 7px;
 
         &-name {
           color: $grey-text-color;
@@ -122,6 +141,7 @@
 
     &-heading {
       margin-right: 40px;
+      color: $grey-text-color;
 
       @media (max-width: 992px) {
         margin-right: 20px;
@@ -132,22 +152,31 @@
 
   &-share {
     display: flex;
+    background-color: $darkgrey-color;
+    border-radius: 0 10px 10px 0;
+    padding: 40px 120px;
 
     @media (max-width: 992px) {
-      margin: 30px 0 0;
+      margin: 15px 0 0;
       justify-content: space-between;
+      align-items: center;
+      padding: 25px;
+      border-radius: 7px;
     }
 
     &-links {
       a {
-        margin: 0 20px;
+        margin: 0 0 0 20px;
 
         @media (max-width: 992px) {
-          margin: 0 10px;
+          margin: 0 0 0 35px;
 
           img {
             max-width: 20px;
           }
+        }
+        @media (max-width: 375px) {
+          margin: 0 0 0 20px;
         }
       }
     }
@@ -176,7 +205,7 @@
         color: $grey-text-color;
       }
     }
-  } 
+  }
 
   &-legal {
     .text {

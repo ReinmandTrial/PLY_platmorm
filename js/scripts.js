@@ -26,7 +26,7 @@ document
 let myDocument = document.documentElement;
 let fullToggle = document.querySelector(".fullscreen-toggler");
 let fullToggleCheckbox = document.querySelector(".fullscreen-checkbox");
-fullToggle.addEventListener("click", () => {
+fullToggle?.addEventListener("click", () => {
   if (fullToggleCheckbox.checked) {
     if (myDocument.requestFullscreen) {
       myDocument.requestFullscreen();
@@ -190,14 +190,12 @@ option.forEach((a) => {
 // search slider
 const swiper = new Swiper(".search-swiper", {
   // Optional parameters
-  slidesPerView: 1,
-  spaceBetween: 20,
+  slidesPerView: 2,
+  spaceBetween: 15,
   breakpoints: {
-    576: {
-      slidesPerView: 2,
-    },
-    992: {
+    768: {
       slidesPerView: 3,
+      spaceBetween: 20,
     },
     1280: {
       slidesPerView: 4,
@@ -215,3 +213,13 @@ const swiper = new Swiper(".search-swiper", {
     prevEl: ".search-swiper-button-prev",
   },
 });
+
+// search filter button move
+if (window.screen.width <= 768) {
+  let searchForm = document.getElementsByClassName(
+    "search-form-container"
+  )[0];
+  let searchFilterBtn = document.getElementsByClassName("filter-btn-more")[0];
+
+  searchForm.appendChild(searchFilterBtn);
+}

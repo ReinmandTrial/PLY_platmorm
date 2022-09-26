@@ -19,8 +19,6 @@
       gap: 15px;
 
       .card {
-        min-width: 210px;
-
         &-icon {
           height: 100px;
 
@@ -95,10 +93,10 @@
 
   &-small-link,
   &-review {
-    @media (max-width: 768px) {
+    @media (max-width: 992px) {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 0 20px;
+      gap: 0 15px;
     }
   }
 
@@ -125,6 +123,10 @@
   @media (max-width: 1280px) {
     padding: 30px;
     margin: 0 0 20px;
+  }
+
+  @media (max-width: 992px) {
+    padding: 25px;
   }
 
   &-icon {
@@ -182,6 +184,7 @@
 
     @media (max-width: 992px) {
       padding: 10px;
+      margin-bottom: 15px;
 
       &:last-of-type {
         margin-bottom: 0;
@@ -233,10 +236,16 @@
         font-size: 24px;
         margin-left: auto;
         align-items: center;
+        @media (max-width: 992px) {
+          line-height: 1;
+        }
       }
     }
 
     &-extra {
+      .text-14 {
+        line-height: 1.2;
+      }
       @media (max-width: 992px) {
         flex-direction: row;
         padding: 10px;
@@ -295,6 +304,10 @@
     iframe {
       width: 100%;
       min-height: 300px;
+
+      @media (max-width: 576px) {
+        min-height: 182px;
+      }
     }
 
     &:only-child {
@@ -328,7 +341,7 @@
     padding: 40px;
 
     @media (max-width: 768px) {
-      padding: 25px;
+      padding: 20px;
     }
 
     &-top {
@@ -477,6 +490,7 @@
 
         @media (max-width: 992px) {
           font-size: 38px;
+          margin-bottom: 0;
         }
 
         &-monthly {
@@ -502,6 +516,10 @@
       &-description {
         font-size: 14px;
         margin-bottom: 0;
+
+        @media (max-width: 992px) {
+          margin-bottom: 20px;
+        }
       }
 
       .btn,
@@ -596,27 +614,33 @@
   }
 }
 
-.line-endless-mob .card {
-  @media (max-width: 992px) {
-    min-width: 240px;
-    padding: 20px;
+.line-endless-mob {
+  .card {
+    @media (max-width: 992px) {
+      min-width: 210px;
+      padding: 20px;
 
-    &-small-extra {
-      padding: 10px;
-      max-width: 145px;
-      min-width: 145px;
+      &-small-extra {
+        padding: 10px;
+        max-width: 145px;
+        min-width: 145px;
 
-      p {
-        font-size: 9px;
+        p {
+          font-size: 9px;
+        }
       }
-    }
 
-    .text:last-of-type {
-      margin-bottom: 0;
+      .text:last-of-type {
+        margin-bottom: 0;
 
-      + .btn {
-        margin-top: 26px;
-        margin-bottom: 6px;
+        + .btn {
+          margin-top: 26px;
+          margin-bottom: 6px;
+        }
+      }
+
+      &-price {
+        min-width: 240px;
       }
     }
   }
@@ -750,8 +774,20 @@
   .card {
     height: 100%;
 
+    @media (max-width: 992px) {
+      margin-bottom: 0;
+
+      .btn:last-of-type {
+        margin-bottom: 0;
+      }
+    }
+
     .text:only-of-type {
       margin-bottom: 0;
     }
   }
+}
+
+.card-research-case .card-icon {
+  max-height: 97px;
 }
