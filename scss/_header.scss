@@ -48,7 +48,7 @@
       font-size: 12px;
       height: 100%;
 
-      &:hover {
+      &:hover, &:focus {
         color: $yellow-color;
       }
     }

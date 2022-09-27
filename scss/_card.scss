@@ -791,3 +791,20 @@
 .card-research-case .card-icon {
   max-height: 97px;
 }
+
+.home-swiper-container {
+  position: relative;
+  max-width: 100%;
+
+  .card-icon {
+    height: 100px;
+  }
+}
+
+.home-swiper-container .swiper-pagination-bullets.swiper-pagination-horizontal, .home-swiper-container .swiper-pagination-custom, .home-swiper-container .swiper-pagination-fraction {
+  bottom: -60px;
+
+  @media (max-width: 992px) {
+    bottom: -20px;
+  }
+}

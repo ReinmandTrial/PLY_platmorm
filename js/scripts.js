@@ -50,6 +50,33 @@ fullToggle?.addEventListener("click", () => {
   }
 });
 
+// home slider
+const swiperHome = new Swiper(".home-swiper", {
+  // Optional parameters
+  slidesPerView: 2,
+  spaceBetween: 15,
+  breakpoints: {
+    768: {
+      slidesPerView: 3,
+      spaceBetween: 20,
+    },
+    1280: {
+      slidesPerView: 4,
+    },
+  },
+
+  // If we need pagination
+  pagination: {
+    el: ".home-swiper-pagination",
+  },
+
+  // Navigation arrows
+  navigation: {
+    nextEl: ".home-swiper-button-next",
+    prevEl: ".home-swiper-button-prev",
+  },
+});
+
 // pricing open full list
 const pricingLinks = document.querySelectorAll(".card-price-list-show");
 
@@ -188,7 +215,7 @@ option.forEach((a) => {
 });
 
 // search slider
-const swiper = new Swiper(".search-swiper", {
+const swiperSearch = new Swiper(".search-swiper", {
   // Optional parameters
   slidesPerView: 2,
   spaceBetween: 15,
