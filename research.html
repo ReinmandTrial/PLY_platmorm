@@ -5,6 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
     <link rel="icon" href="img/favicon.png" />
+    <style>
+      .loader-container {
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        background: #202020 url("img/PLY_preloader.svg") center no-repeat;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+      }
+  
+      .spinner {
+        width: 50vw;
+        height: 50vh;
+        background: url(img/PLY_preloader.svg) center no-repeat;
+      }
+  
+      .loader-container-hidden {
+        display: none;
+      }
+    </style>
     <link rel="stylesheet" href="css/bootstrap.min.css" />
     <link rel="stylesheet" href="css/swiper-bundle.min.css" />
     <link rel="stylesheet" href="css/index.min.css" />
@@ -13,6 +37,15 @@
   </head>
 
   <body class="grey-bg">
+    <div class="loader-container">
+      <div class="spinner"></div>
+    </div>
+    <script>
+      const loaderContainer = document.querySelector(".loader-container");
+      window.addEventListener("load", () => {
+        loaderContainer.classList.add("loader-container-hidden");
+      });
+    </script>
     <header class="header">
       <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container">
