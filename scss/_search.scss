@@ -25,6 +25,11 @@
           border-radius: 20px;
         }
       }
+
+      &:hover {
+        background-color: $yellow-color;
+        color: $darkgrey-color;
+      }
     }
 
     @media (max-width: 1280px) {

@@ -601,6 +601,9 @@
   }
 
   &-research-case {
+    text-decoration: none;
+    transition: .3s;
+
     .text-12 {
       margin-top: auto;
       color: #969696;
@@ -609,6 +612,22 @@
         &:last-of-type {
           margin-bottom: 0;
         }
+      }
+    }
+
+    &:hover {
+      background-color: $yellow-color;
+
+      .h5-heading {
+        color: $darkgrey-color;
+      }
+
+      .text-14 {
+        color: $darkgrey-2-color;
+      }
+
+      .text-12 {
+        color: $darkgrey-color;
       }
     }
   }
@@ -658,12 +677,14 @@
 
   .h2-heading {
     margin-top: 0;
+    margin-bottom: 30px;
   }
 
   .text,
   .text:last-of-type {
     color: $grey-text-color;
     margin-bottom: 40px;
+    font-size: 1rem;
   }
 
   @media (max-width: 992px) {
@@ -737,6 +758,10 @@
         }
       }
 
+      @media (max-width: 768px) {
+        padding: 25px;
+      }
+
       img {
         position: absolute;
         top: 50%;
@@ -792,7 +817,7 @@
   max-height: 97px;
 }
 
-.home-swiper-container {
+.home-swiper-container, .features-swiper-container {
   position: relative;
   max-width: 100%;
 
@@ -801,7 +826,7 @@
   }
 }
 
-.home-swiper-container .swiper-pagination-bullets.swiper-pagination-horizontal, .home-swiper-container .swiper-pagination-custom, .home-swiper-container .swiper-pagination-fraction {
+.home-swiper-container .swiper-pagination-bullets.swiper-pagination-horizontal, .home-swiper-container .swiper-pagination-custom, .home-swiper-container .swiper-pagination-fraction, .features-swiper-container .swiper-pagination-bullets.swiper-pagination-horizontal, .features-swiper-container .swiper-pagination-custom, .features-swiper-container .swiper-pagination-fraction {
   bottom: -60px;
 
   @media (max-width: 992px) {

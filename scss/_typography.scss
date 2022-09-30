@@ -29,7 +29,7 @@
 .h4-heading {
     font-size: 1.25rem;
     margin-bottom: 20px;
-    font-weight: 600;
+    font-weight: 500;
 
     @media (max-width: 768px) {
         font-size: 0.8125rem;
@@ -342,6 +342,26 @@
     flex-wrap: wrap;
     margin: 40px 0;
 
+    &-width-1 {
+        .badge-list-item {
+            flex-basis: 29%;
+
+            @media (max-width: 768px) {
+                flex-basis: auto;
+            }
+        }
+    }
+
+    &-width-2 {
+        .badge-list-item {
+            flex-basis: 48%;
+
+            @media (max-width: 768px) {
+                flex-basis: auto;
+            }
+        }
+    }
+
     &-item {
         flex-grow: 1;
         color: $grey-text-color;
@@ -364,19 +384,12 @@
             min-width: unset;
             flex-basis: unset;
             flex-grow: 0;
+            font-size: 11px;
         }
     }
 
-    &-width-1 {
-        .badge-list-item {
-            flex-basis: 29%;
-        }
-    }
-
-    &-width-2 {
-        .badge-list-item {
-            flex-basis: 48%;
-        }
+    @media (max-width: 576px) {
+        gap: 15px;
     }
 }
 
