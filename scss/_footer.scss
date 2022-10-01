@@ -45,20 +45,6 @@
       }
     }
 
-    &-gradient {
-      .gradient-text {
-        font-family: "Termina", sans-serif;
-        font-weight: 600;
-        font-size: 24px;
-        margin-bottom: 0;
-      }
-
-      .text-14,
-      .text-12 {
-        color: #565656;
-      }
-    }
-
     &-email {
       @media (max-width: 768px) {
         display: none;
@@ -77,8 +63,30 @@
     .text-14,
     .text-12 {
       margin-bottom: 0;
-      font-size: 12px;
       color: $grey-text-color;
+      line-height: 1.7;
+    }
+
+    &-gradient {
+      .gradient-text {
+        font-family: "Termina", sans-serif;
+        font-weight: 600;
+        font-size: 24px;
+        margin-bottom: 0;
+        background: transparent;
+        color: white;
+        -webkit-text-fill-color: white;
+      }
+
+      .text-14,
+      .text-12 {
+        color: #565656;
+
+        a {
+          color: $grey-text-color;
+          text-decoration: none;
+        }
+      }
     }
   }
 
