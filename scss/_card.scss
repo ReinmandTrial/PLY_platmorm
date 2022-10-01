@@ -71,6 +71,14 @@
   &-picture {
     margin-bottom: 20px;
 
+    &-2 {
+      .card {
+        .btn {
+          width: 100%;
+        }
+      }
+    }
+
     @media (max-width: 1280px) {
       margin-bottom: 0;
     }
@@ -82,10 +90,6 @@
         .card {
           flex: initial;
           margin-bottom: 0;
-
-          .btn {
-            width: 100%;
-          }
         }
       }
     }

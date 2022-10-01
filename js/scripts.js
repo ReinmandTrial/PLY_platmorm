@@ -283,3 +283,9 @@ if (window.screen.width <= 768) {
 
   searchForm.appendChild(searchFilterBtn);
 }
+
+// footer email form
+document.querySelector(".btn-email-subscribe").addEventListener("click", function (e) {
+  e.preventDefault();
+  document.querySelector(".text-input-email").remove();
+})

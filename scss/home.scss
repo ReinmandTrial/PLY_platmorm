@@ -1,111 +1,125 @@
-@import 'variables';
-@import 'form';
+@import "variables";
+@import "form";
 
 .intro {
-    &-section {
-        background-image: url(../img/pattern/home-main.svg);
-        background-size: contain;
-        background-repeat: no-repeat;
-        background-position: top;
-        min-height: 1240px;
-        padding: 200px 0 380px;
-        margin: -240px 0;
+  &-section {
+    background-image: url(../img/pattern/home-main.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: top;
+    min-height: 1240px;
+    padding: 200px 0 380px;
+    margin: -240px 0;
 
-        @media (max-width: 1440px) {
-            background-size: 90%;
-        }
+    @media (max-width: 1440px) {
+      background-size: 90%;
+    }
 
-        @media (max-width: 1280px) {
-            background-position: center;
-            min-height: 120vh;
+    @media (max-width: 1280px) {
+      background-position: center;
+      min-height: 120vh;
+    }
+
+    @media (max-width: 768px) {
+      background-size: cover;
+      padding: 360px 0 200px;
+      margin: -160px 0 -100px;
+    }
+  }
+
+  &-card {
+    background-color: white;
+    border-radius: 18px;
+    max-width: 1060px;
+    margin: 0 auto;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 80px;
+
+    @media (max-width: 1280px) {
+      max-width: 85vw;
+    }
+
+    @media (max-width: 992px) {
+      margin: 140px auto 0;
+    }
+
+    @media (max-width: 768px) {
+      margin: 100px auto 0;
+      max-width: 250px;
+    }
+
+    &-row {
+      display: flex;
+
+      @media (max-width: 768px) {
+        flex-direction: column;
+      }
+
+      * {
+        color: $darkgrey-color;
+      }
+
+      &-item {
+        padding: 50px 60px;
+        display: flex;
+        flex-direction: column;
+
+        &:first-of-type {
+          border-right: 1px solid #b5b5b5;
+          min-width: 657px;
+          padding-right: 40px;
+
+          @media (max-width: 1280px) {
+            min-width: unset;
+          }
         }
 
         @media (max-width: 768px) {
-            background-size: cover;
-            padding: 360px 0 200px;
-            margin: -160px 0 -100px;
-        }
-    }
+          padding: 24px;
 
-    &-card {
-        background-color: white;
-        border-radius: 18px;
-        max-width: 1060px;
-        margin: 0 auto;
-        position: absolute;
-        left: 0;
-        right: 0;
-        bottom: 80px;
+          &:first-of-type {
+            border-right: 0;
+            border-bottom: 1px solid #b5b5b5;
+          }
 
-        @media (max-width: 1280px) {
-            max-width: 85vw;
+          &:last-of-type {
+            padding: 17px 25px;
+          }
         }
 
-        @media (max-width: 992px) {
-            margin: 140px auto 0;
+        .h1-heading {
+          margin-bottom: 0;
         }
 
+        .text {
+          font-size: 14px;
+          font-weight: 500;
+          line-height: 1.5;
+
+          @media (max-width: 768px) {
+            display: none;
+          }
+        }
+      }
+
+      .h1-heading {
         @media (max-width: 768px) {
-            margin: 100px auto 0;
-            max-width: 250px;
+          margin-bottom: 0;
+          font-size: 0.875rem;
         }
-
-        &-row {
-            display: flex;
-
-            @media (max-width: 768px) {
-                flex-direction: column;
-            }
-
-            * {
-                color: $darkgrey-color;
-            }
-
-            &-item {
-                padding: 50px 60px;
-                display: flex;
-                flex-direction: column;
-
-                &:first-of-type {
-                    border-right: 1px solid #B5B5B5;
-                }
-
-                @media (max-width: 768px) {
-                    padding: 24px;
-
-                    &:first-of-type {
-                        border-right: 0;
-                        border-bottom: 1px solid #B5B5B5;
-                    }
-
-                    &:last-of-type {
-                        padding: 17px 25px;
-                    }
-                }
-
-                .text {
-                    @media (max-width: 768px) {
-                        display: none;
-                    }
-                }
-            }
-
-            .h1-heading {
-                @media (max-width: 768px) {
-                    margin-bottom: 0;
-                    font-size: 0.875rem;
-                }
-            }
-        }
+      }
     }
+  }
 }
 
 .price {
-    &-section {
-        &-link {
-            display: inline-block;
-            margin-top: 60px;
-            color: #A7A6A6;
-        }
+  &-section {
+    &-link {
+      display: inline-block;
+      margin-top: 60px;
+      color: #a7a6a6;
     }
+  }
 }
