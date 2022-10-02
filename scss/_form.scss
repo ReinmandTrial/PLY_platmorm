@@ -29,6 +29,15 @@ input {
       align-self: stretch;
       height: unset;
 
+      .h2-heading {
+        margin-bottom: 40px;
+      }
+
+      .text {
+        line-height: 1.75;
+        color: white;
+      }
+
       @media (max-width: 768px) {
         display: none;
       }
@@ -99,6 +108,7 @@ input {
       font-family: "Termina", sans-serif;
       font-weight: 600;
       font-size: 14px;
+      line-height: 1.2;
 
       @media (max-width: 992px) {
         font-size: 11px;
@@ -187,6 +197,8 @@ input {
       font-size: 12px;
       user-select: none;
       display: inline-block;
+      line-height: 1.16;
+      font-weight: 300;
 
       a {
         color: #969696;
@@ -507,7 +519,7 @@ input[type="radio"]:checked + .input-checkmark {
   .form-switch-option {
     &:first-of-type {
       order: 1;
-      font-weight: 400;
+      font-weight: 500;
       color: #d6d6d6;
 
       @media (max-width: 992px) {

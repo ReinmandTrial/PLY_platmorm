@@ -205,16 +205,16 @@ const swiperHome = new Swiper(".home-swiper", {
     },
   },
 
-  // If we need pagination
-  pagination: {
-    el: ".home-swiper-pagination",
-  },
+  // // If we need pagination
+  // pagination: {
+  //   el: ".home-swiper-pagination",
+  // },
 
-  // Navigation arrows
-  navigation: {
-    nextEl: ".home-swiper-button-next",
-    prevEl: ".home-swiper-button-prev",
-  },
+  // // Navigation arrows
+  // navigation: {
+  //   nextEl: ".home-swiper-button-next",
+  //   prevEl: ".home-swiper-button-prev",
+  // },
 });
 
 // home slider
@@ -235,16 +235,16 @@ const swiperFeature = new Swiper(".features-swiper", {
     },
   },
 
-  // If we need pagination
-  pagination: {
-    el: ".features-swiper-pagination",
-  },
+  // // If we need pagination
+  // pagination: {
+  //   el: ".features-swiper-pagination",
+  // },
 
-  // Navigation arrows
-  navigation: {
-    nextEl: ".features-swiper-button-next",
-    prevEl: ".features-swiper-button-prev",
-  },
+  // // Navigation arrows
+  // navigation: {
+  //   nextEl: ".features-swiper-button-next",
+  //   prevEl: ".features-swiper-button-prev",
+  // },
 });
 
 // search slider

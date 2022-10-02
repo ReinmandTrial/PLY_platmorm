@@ -103,6 +103,14 @@
           bottom: -20px;
         }
       }
+
+      .swiper-slide {
+        height: auto;
+
+        .card {
+          height: 100%;
+        }
+      }
     }
     &-button {
       &-prev {
