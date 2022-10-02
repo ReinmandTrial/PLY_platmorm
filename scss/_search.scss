@@ -12,13 +12,42 @@
 
     .filter {
       @media (min-width: 1600px) {
-        margin-left: auto;
+        width: 100%;
+      }
+
+      @media (max-width: 768px) {
+        flex-wrap: wrap;
+        overflow: initial;
       }
     }
 
     .filter-btn {
       border-radius: 10px;
       white-space: nowrap;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      display: none;
+
+      &:nth-child(-n+4) {
+        display: flex;
+      }
+
+      @media (max-width: 768px) {
+        order: 3;
+      }
+
+      &-more {
+        @media (max-width: 768px) {
+          order: 2;
+        }
+
+        &:hover {
+          svg path {
+            fill: $darkgrey-color;
+          }
+        }
+      }
 
       &:nth-of-type(even) {
         @media (max-width: 768px) {
@@ -46,11 +75,31 @@
     &-container {
       margin-right: 30px;
 
+      @media (max-width: 1600px) {
+        margin-right: 10px;
+      }
+
       @media (max-width: 768px) {
         width: 100%;
         display: flex;
         margin-right: 0;
         gap: 15px;
+        order: 1;
+      }
+    }
+
+    &-filter {
+      display: flex;
+      gap: 20px;
+
+      @media (max-width: 768px) {
+        order: 3;
+        gap: 15px;
+        overflow: auto;
+      }
+
+      @media (max-width: 576px) {
+        margin: 0 -12px 0 0;
       }
     }
 
@@ -136,5 +185,18 @@
 .swiper-pagination-bullet {
   &-active {
     background: white;
+  }
+}
+
+.search-form-filter.open {
+  flex-wrap: wrap;
+
+  .filter-btn {
+    display: flex;
+    flex-grow: 0;
+  }
+
+  @media (max-width: 768px) {
+    flex-wrap: initial;
   }
 }

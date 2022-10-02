@@ -274,18 +274,26 @@ const swiperSearch = new Swiper(".search-swiper", {
   },
 });
 
-// search filter button move
-if (window.screen.width <= 768) {
-  let searchForm = document.getElementsByClassName(
-    "search-form-container"
-  )[0];
-  let searchFilterBtn = document.getElementsByClassName("filter-btn-more")[0];
+// search filter button
+let searchForm = document.getElementsByClassName("search-form-container")[0];
+let searchFilterBtn = document.getElementsByClassName("filter-btn-more")[0];
+searchFilterBtn.addEventListener("click", function (e) {
+  e.preventDefault();
+  document.querySelector(".search-form-filter").classList.add("open");
+  searchFilterBtn.remove();
+  if (window.screen.width > 768) {
+    document.querySelector(".search-form-filter").prepend(searchForm);
+  }
+});
 
+if (window.screen.width <= 768) {
   searchForm.appendChild(searchFilterBtn);
 }
 
 // footer email form
-document.querySelector(".btn-email-subscribe").addEventListener("click", function (e) {
-  e.preventDefault();
-  document.querySelector(".text-input-email").remove();
-})
+document
+  .querySelector(".btn-email-subscribe")
+  .addEventListener("click", function (e) {
+    e.preventDefault();
+    document.querySelector(".text-input-email").remove();
+  });
