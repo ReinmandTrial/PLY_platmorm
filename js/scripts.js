@@ -277,7 +277,7 @@ const swiperSearch = new Swiper(".search-swiper", {
 // search filter button
 let searchForm = document.getElementsByClassName("search-form-container")[0];
 let searchFilterBtn = document.getElementsByClassName("filter-btn-more")[0];
-searchFilterBtn.addEventListener("click", function (e) {
+searchFilterBtn?.addEventListener("click", function (e) {
   e.preventDefault();
   document.querySelector(".search-form-filter").classList.add("open");
   searchFilterBtn.remove();

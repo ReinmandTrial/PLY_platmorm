@@ -512,7 +512,7 @@
         font-size: 50px;
         display: flex;
         position: relative;
-        font-family: "Termina",sans-serif;
+        font-family: "Termina", sans-serif;
         line-height: 1.2;
 
         @media (max-width: 992px) {
@@ -538,12 +538,12 @@
           border: 0;
           font-weight: 600;
           width: 150px;
-          font-family: "Termina",sans-serif;
+          font-family: "Termina", sans-serif;
         }
 
         > span:first-of-type {
           font-size: 30px;
-          font-family: "Termina",sans-serif;
+          font-family: "Termina", sans-serif;
         }
       }
 
@@ -637,7 +637,7 @@
 
   &-research-case {
     text-decoration: none;
-    transition: .3s;
+    transition: 0.3s;
 
     .text-12 {
       margin-top: auto;
@@ -698,6 +698,11 @@
 
       &-price {
         min-width: 240px;
+      }
+    }
+    &-small {
+      @media (min-width: 1440px) {
+        min-height: unset;
       }
     }
   }
@@ -856,7 +861,8 @@
   max-height: 97px;
 }
 
-.home-swiper-container, .features-swiper-container {
+.home-swiper-container,
+.features-swiper-container {
   position: relative;
   max-width: 100%;
 
