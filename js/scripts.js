@@ -22,6 +22,20 @@ document
     this.classList.toggle("active");
   });
 
+document.querySelector("html").addEventListener("click", function (e) {
+    if (e.target !== document.querySelector(".account-dropdown")) {
+      document.querySelector(".account-dropdown").classList.remove("active");
+    }
+});
+
+// white box disappear
+var introCard = document.querySelector('.intro-card');
+window.addEventListener('scroll', function(e) {
+  // http://stackoverflow.com/a/28633515/962603
+  var scroll = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+  introCard.style.opacity = Math.max(0, Math.min(1, -scroll / 200 + 2));
+});
+
 //fullscreen toggle
 let myDocument = document.documentElement;
 let fullToggle = document.querySelector(".fullscreen-toggler");
