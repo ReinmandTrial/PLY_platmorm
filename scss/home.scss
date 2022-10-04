@@ -7,23 +7,17 @@
     background-size: contain;
     background-repeat: no-repeat;
     background-position: top;
-    min-height: 1240px;
-    padding: 200px 0 380px;
-    margin: -240px 0;
-
-    @media (max-width: 1440px) {
-      background-size: 90%;
-    }
+    min-height: 100vh;
+    margin: -240px 0 -180px;
 
     @media (max-width: 1280px) {
       background-position: center;
-      min-height: 120vh;
+      min-height: calc(100vh + 200px);
+      margin: -200px 0 -10vh;
     }
 
     @media (max-width: 768px) {
       background-size: cover;
-      padding: 360px 0 200px;
-      margin: -160px 0 -100px;
     }
   }
 
@@ -41,12 +35,7 @@
       max-width: 85vw;
     }
 
-    @media (max-width: 992px) {
-      margin: 140px auto 0;
-    }
-
     @media (max-width: 768px) {
-      margin: 100px auto 0;
       max-width: 250px;
     }
 
