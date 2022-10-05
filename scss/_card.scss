@@ -26,6 +26,12 @@
             height: 55px;
           }
         }
+
+        &-short {
+          .card-icon {
+            height: 140px;
+          }
+        }
       }
     }
 
@@ -113,6 +119,55 @@
   }
 }
 
+.line-endless-mob {
+  .card {
+    @media (min-width: 1440px) {
+      min-height: 480px;
+    }
+    @media (max-width: 992px) {
+      min-width: 210px;
+      padding: 20px;
+
+      &-small-extra {
+        padding: 10px;
+        max-width: 145px;
+        min-width: 145px;
+
+        p {
+          font-size: 9px;
+        }
+      }
+
+      .text:last-of-type {
+        margin-bottom: 0;
+
+        + .btn {
+          margin-top: 26px;
+          margin-bottom: 6px;
+        }
+      }
+
+      &-price {
+        min-width: 240px;
+      }
+    }
+    &-small {
+      @media (min-width: 1440px) {
+        min-height: unset;
+      }
+    }
+    &-short {
+      @media (min-width: 1440px) {
+        min-height: unset;
+      }
+
+      .card-icon {
+        height: 140px;
+      }
+    }
+  }
+}
+
 .card {
   padding: 60px 60px 34px;
   background-color: $darkgrey-color;
@@ -123,6 +178,15 @@
   flex-direction: column;
   align-items: flex-start;
   flex: 1 1 0;
+
+  .h5-heading {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+    -webkit-box-orient: vertical;
+  }
 
   @media (max-width: 1280px) {
     padding: 30px;
@@ -663,46 +727,6 @@
 
       .text-12 {
         color: $darkgrey-color;
-      }
-    }
-  }
-}
-
-.line-endless-mob {
-  .card {
-    @media (min-width: 1440px) {
-      min-height: 480px;
-    }
-    @media (max-width: 992px) {
-      min-width: 210px;
-      padding: 20px;
-
-      &-small-extra {
-        padding: 10px;
-        max-width: 145px;
-        min-width: 145px;
-
-        p {
-          font-size: 9px;
-        }
-      }
-
-      .text:last-of-type {
-        margin-bottom: 0;
-
-        + .btn {
-          margin-top: 26px;
-          margin-bottom: 6px;
-        }
-      }
-
-      &-price {
-        min-width: 240px;
-      }
-    }
-    &-small {
-      @media (min-width: 1440px) {
-        min-height: unset;
       }
     }
   }
