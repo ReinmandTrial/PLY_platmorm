@@ -103,7 +103,7 @@
 
   &-small-link,
   &-review {
-    @media (max-width: 992px) {
+    @media (max-width: 1280px) {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 0 15px;
@@ -422,6 +422,12 @@
 
   &-review {
     padding: 40px;
+
+    @media (max-width: 992px) {
+      &:nth-last-child(-n+2) {
+        margin-bottom: 0;
+      }
+    }
 
     @media (max-width: 768px) {
       padding: 20px;

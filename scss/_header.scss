@@ -20,6 +20,10 @@
     justify-content: space-between;
     flex-wrap: wrap;
     gap: 20px;
+    padding: 13px 25px;
+    background: rgba(255,255,255,.1);
+    backdrop-filter: blur(5px);
+    border-radius: 10px;
   }
 }
 
@@ -137,10 +141,10 @@
         gap: 15px;
 
         .form-switch {
-          margin: 8px 0;
           max-width: 100%;
           width: 100%;
           padding: 0;
+          align-items: center;
           
           .account-link-icon {
             order: 1;
@@ -155,6 +159,8 @@
             order: 3;
             right: 0;
             left: auto;
+            top: 50%;
+            transform: translate(0, -50%);
           }
         }
 

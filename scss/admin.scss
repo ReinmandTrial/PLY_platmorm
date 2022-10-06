@@ -12,7 +12,7 @@
     padding: 20px;
     min-height: 100vh;
     min-width: 50px;
-    transition: .3s;
+    transition: .5s;
 
     &-profile-name, &-profile-status {
         background-color: white;
@@ -28,7 +28,7 @@
         }
         >* {
             max-width: 20px;
-            transition: .3s;
+            transition: .5s;
 
             .account-link {
                 font-size: 0;
@@ -98,7 +98,7 @@
             background-color: $darkgrey-color;
             border-radius: 10px;
             position: relative;
-            transition: .3s;
+            transition: .5s;
 
             img {
                 position: absolute;
@@ -164,6 +164,7 @@
 
 .content {
     img {
-        max-width: 100%;
+        width: 100%;
+        height: 100%;
     }
 }

@@ -124,7 +124,7 @@ input {
       bottom: 0;
       right: 0;
 
-      @media (max-width: 768px) {
+      @media (max-width: 1280px) {
         position: static;
         width: 100%;
         margin: 15px 0 0;
@@ -179,9 +179,9 @@ input {
     display: flex;
     align-items: flex-start;
     cursor: pointer;
-    max-width: 70%;
+    max-width: 67%;
 
-    @media (max-width: 768px) {
+    @media (max-width: 1280px) {
       max-width: 100%;
     }
 
@@ -197,7 +197,7 @@ input {
       font-size: 12px;
       user-select: none;
       display: inline-block;
-      line-height: 1.16;
+      line-height: 1.2;
       font-weight: 300;
 
       a {
