@@ -56,8 +56,12 @@
       display: flex;
       justify-content: space-between;
 
-      @media (max-width: 1280px) {
-        // flex-direction: column;
+      @media (max-width: 992px) {
+        flex-direction: column;
+      }
+
+      @media (max-width: 768px) {
+        flex-direction: row;
       }
     }
 
@@ -88,6 +92,12 @@
           text-decoration: none;
         }
       }
+      @media (max-width: 1280px) {
+        max-width: 50%;
+      }
+      @media (max-width: 992px) {
+        max-width: 100%;
+      }
     }
   }
 
@@ -98,6 +108,10 @@
       font-size: 12px;
       font-weight: 500;
 
+      @media (max-width: 1280px) {
+        min-width: 260px
+      }
+
       @media (max-width: 768px) {
         margin-bottom: 15px;
       }
@@ -107,7 +121,7 @@
       }
     }
 
-    @media (max-width: 1280px) {
+    @media (max-width: 992px) {
       margin: 20px 0 0;
     }
   }

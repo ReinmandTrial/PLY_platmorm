@@ -23,9 +23,9 @@ document
   });
 
 document.querySelector("html").addEventListener("click", function (e) {
-    if (e.target !== document.querySelector(".account-dropdown")) {
-      document.querySelector(".account-dropdown").classList.remove("active");
-    }
+  if (e.target !== document.querySelector(".account-dropdown")) {
+    document.querySelector(".account-dropdown").classList.remove("active");
+  }
 });
 
 // white box disappear
@@ -301,6 +301,19 @@ searchFilterBtn?.addEventListener("click", function (e) {
 
 if (window.screen.width <= 768) {
   searchForm.appendChild(searchFilterBtn);
+}
+
+// small cards text move to big card
+let trigger = document.querySelectorAll(".card-trigger");
+let triggerHeading = document.querySelectorAll(".card-trigger-name");
+let targetHeading = document.querySelector(".card-target-name");
+let targetImg = document.querySelector(".card-picture-target");
+for (let i = 0; i < trigger.length; i++) {
+  trigger[i].addEventListener("click", function (e) {
+    e.preventDefault();
+    targetHeading.textContent = trigger[i].children[1].children[1].textContent;
+    targetImg.setAttribute("src", trigger[i].children[0].getAttribute("src"));
+  });
 }
 
 // footer email form
