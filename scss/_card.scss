@@ -925,6 +925,10 @@
 
   .card-icon {
     height: 100px;
+
+    @media (max-width: 768px) {
+      height: 55px;
+    }
   }
 
   .swiper-slide {
@@ -937,6 +941,12 @@
         width: 100%;
       }
     }
+  }
+}
+
+.features-swiper-container {
+  @media (max-width: 768px) {
+    height: 40px;
   }
 }
 

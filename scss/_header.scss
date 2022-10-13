@@ -21,7 +21,7 @@
     flex-wrap: wrap;
     gap: 20px;
     padding: 13px 25px;
-    background: rgba(255,255,255,.1);
+    background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(5px);
     border-radius: 10px;
   }
@@ -52,7 +52,8 @@
       font-size: 12px;
       height: 100%;
 
-      &:hover, &:focus {
+      &:hover,
+      &:focus {
         color: $yellow-color;
       }
     }
@@ -82,7 +83,7 @@
         width: 18px;
         height: 18px;
         display: inline-block;
-        transition: .3s;
+        transition: 0.3s;
       }
 
       &-dropdown {
@@ -117,7 +118,7 @@
           border-radius: 10px;
           text-align: left;
           // padding: 15px;
-          transition: .3s;
+          transition: 0.3s;
 
           @media (max-width: 992px) {
             right: 0;
@@ -134,7 +135,7 @@
             flex-direction: column;
           }
         }
-        
+
         &-divider {
           border: 0;
           margin: 10px 0;
@@ -148,13 +149,14 @@
         display: flex;
         align-items: center;
         gap: 15px;
+        transition: .3s;
 
         .form-switch {
           max-width: 100%;
           width: 100%;
           padding: 0;
           align-items: center;
-          
+
           .account-link-icon {
             order: 1;
             margin-right: 15px;
@@ -182,7 +184,10 @@
         }
 
         &:hover {
-          color: white;
+          color: $yellow-color;
+          label span {
+            color: $yellow-color;
+          }
         }
       }
     }
@@ -199,6 +204,13 @@
     &-icon {
       background-image: url(../img/icons/navbar-toggler.svg);
       width: 14px;
+      transition: .3s;
+    }
+
+    &[aria-expanded="true"] {
+      .navbar-toggler-icon {
+        transform: rotate(180deg);
+      }
     }
   }
 }
@@ -230,7 +242,7 @@
         padding: 13px 15px;
       }
 
-      @media (max-width:992px) {
+      @media (max-width: 992px) {
         padding: 13px 25px;
       }
     }

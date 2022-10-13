@@ -206,7 +206,7 @@ input {
 
       @media (max-width: 992px) {
         font-size: 9px;
-        margin: 0 0 0 20px;
+        margin: 0 0 0 7px;
       }
     }
 
@@ -245,6 +245,16 @@ input {
         background-color: white;
         transition: 0.3s;
         border-radius: 50px;
+      }
+
+      @media (max-width: 768px) {
+        width: 32px;
+        height: 15px;
+
+        &:before {
+          width: 11px;
+          height: 11px;
+        }
       }
     }
 
@@ -292,6 +302,10 @@ input:focus + .form-switch-slider {
 
 input:checked + .form-switch-slider:before {
   transform: translateX(24px);
+
+  @media (max-width: 768px) {
+    transform: translateX(17px);
+  }
 }
 
 .input-checkmark {

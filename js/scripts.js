@@ -303,6 +303,17 @@ if (window.screen.width <= 768) {
   searchForm.appendChild(searchFilterBtn);
 }
 
+// search filter input focus
+const input = document.querySelector(".tag-filter-input");
+// inputs.forEach(input => {
+input.addEventListener("focus", function(){
+    this.classList.add("tag-filter-input-focus");
+});
+input.addEventListener("blur", function(){
+    this.classList.remove("tag-filter-input-focus");
+});
+// });
+
 // small cards text move to big card
 let trigger = document.querySelectorAll(".card-trigger");
 let triggerHeading = document.querySelectorAll(".card-trigger-name");

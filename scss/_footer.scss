@@ -186,6 +186,10 @@
       margin: 100px 0 0;
     }
 
+    @media (max-width: 992px) {
+      display: none;
+    }
+
     p {
       font-size: 10px;
       color: $grey-text-color;

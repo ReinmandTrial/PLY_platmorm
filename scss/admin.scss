@@ -4,167 +4,215 @@
 @import "form";
 
 .admin-container {
-    display: flex;
+  display: flex;
 }
 
 .sidebar {
-    background-color: $grey-color;
-    padding: 20px;
-    min-height: 100vh;
-    min-width: 50px;
-    transition: .5s;
+  background-color: $grey-color;
+  padding: 20px;
+  min-height: 100vh;
+  min-width: 50px;
+  transition: 0.5s;
 
-    &-profile-name, &-profile-status {
-        background-color: white;
+  &-profile-name,
+  &-profile-status {
+    background-color: white;
+    font-size: 0;
+    border-radius: 10px;
+    padding: 10px 5px;
+    white-space: nowrap;
+  }
+
+  &-list {
+    .btn {
+      font-size: 0;
+      padding: 10px 5px;
+    }
+    > * {
+      max-width: 20px;
+      min-width: 16px;
+      transition: 0.5s;
+
+      .account-link {
         font-size: 0;
-        border-radius: 10px;
-        padding: 10px 5px;
+        white-space: nowrap;
+      }
+
+      .account-link > * {
+        opacity: 0;
+      }
+    }
+  }
+
+  &:hover {
+    min-width: 220px;
+
+    .sidebar-profile-image {
+      width: 56px;
+      margin-bottom: 10px;
+
+      img {
+        display: inline-block;
+      }
     }
 
-    &-list {
+    .sidebar-profile-name,
+    .sidebar-profile-status {
+      background-color: transparent;
+      padding: 0;
+    }
+
+    .sidebar-profile-name {
+      font-size: 14px;
+    }
+
+    .sidebar-profile-status {
+      font-size: 10px;
+    }
+
+    .btn {
+      font-size: 0.75rem;
+      padding: 13px 24px;
+    }
+
+    .sidebar-list {
+      * {
+        max-width: 180px;
+
+        .account-link,
         .btn {
-            font-size: 0;
-            padding: 10px 5px;
+          font-size: 0.75rem;
         }
-        >* {
-            max-width: 20px;
-            transition: .5s;
 
-            .account-link {
-                font-size: 0;
-            }
-
-            .account-link>* {
-                opacity: 0;
-            }
+        .account-link > * {
+          opacity: 1;
         }
+      }
     }
 
-    &:hover {
-        min-width: 220px;
-
-        .sidebar-profile-image {
-            width: 56px;
-
-            img {
-                display: inline-block;
-            }
-        }
-
-        .sidebar-profile-name, .sidebar-profile-status {
-            background-color: transparent;
-            padding: 0;
-        }
-
-        .sidebar-profile-name {
-            font-size: 14px;
-        }
-
-        .sidebar-profile-status {
-            font-size: 10px;
-        }
-
-        .btn {
-            font-size: .75rem;
-            padding: 13px 24px;
-        }
-
-        .sidebar-list {
-            * {
-                max-width: initial;
-
-                .account-link, .btn {
-                    font-size: .75rem;
-                }
-
-                .account-link>* {
-                    opacity: 1;
-                }
-            }
-        }
+    .account-list-block {
+      border-radius: 10px;
+      overflow: hidden;
+      border-top: 0;
     }
 
-    &-profile {
-        margin-bottom: 5px;
+    .account-link {
+      padding: 12px 15px;
+      width: auto;
+      height: auto;
+      margin: 0;
+      border-radius: 0;
+    }
+  }
 
-        &-name {
-            font-weight: 700;
-            margin: 10px 0 0;
-        }
+  &-profile {
+    margin-bottom: 5px;
 
-        &-image {
-            width: 11px;
-            height: 54px;
-            background-color: $darkgrey-color;
-            border-radius: 10px;
-            position: relative;
-            transition: .5s;
-
-            img {
-                position: absolute;
-                width: 110%;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-                display: none;
-            }
-        }
+    &-name {
+      font-weight: 700;
+      margin: 10px 0 0;
+      border-radius: 10px 10px 0 0;
     }
 
-    &-list {
-        display: flex;
-        flex-direction: column;
+    &-status {
+        border-radius: 0 0 10px 10px;
     }
+
+    &-image {
+      width: 16px;
+      height: 54px;
+      background-color: $darkgrey-color;
+      border-radius: 10px;
+      position: relative;
+      transition: 0.5s;
+      margin-bottom: 18px;
+
+      img {
+        position: absolute;
+        width: 110%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: none;
+      }
+    }
+  }
+
+  &-list {
+    display: flex;
+    flex-direction: column;
+  }
 }
 
 .account {
-    &-list {
-        &-block {
-            background-color: $darkgrey-color;
-            display: flex;
-            flex-direction: column;
-            border-radius: 10px;
-            margin: 15px 0;
-        }
-
-        .form-switch {
-            max-width: 100%;
-            width: 100%;
-            padding: 0;
-
-            .form-switch-slider {
-                order: 3;
-                right: 0;
-                left: auto;
-            }
-
-            .account-link-icon {
-                order: 1;
-                margin-right: 15px;
-            }
-
-            .account-link-icon+span {
-                order: 2;
-            }
-        }
+  &-list {
+    &-block {
+      display: flex;
+      flex-direction: column;
+      border-top: 1px solid white;
+      border-radius: 0;
+      margin: 23px 0;
+      transition: 0.3s;
     }
 
-    &-link {
-        padding: 12px 15px;
-        display: flex;
-        gap: 15px;
-        font-size: 12px;
-        text-decoration: none;
+    .form-switch {
+      max-width: 100%;
+      width: 100%;
+      padding: 0;
 
-        &:hover {
-            color: white;
-        }
+      .form-switch-slider {
+        order: 3;
+        right: 0;
+        left: auto;
+      }
+
+      .account-link-icon {
+        order: 1;
+        margin-right: 15px;
+      }
+
+      .account-link-icon + span {
+        order: 2;
+      }
     }
+  }
+
+  &-link {
+    background-color: $darkgrey-color;
+    display: flex;
+    gap: 15px;
+    font-size: 12px;
+    text-decoration: none;
+    transition: 0.3s;
+    margin: 23px 0 0;
+    width: 16px;
+    height: 16px;
+    padding: 0;
+    border-radius: 3px;
+
+    &:hover {
+      color: $yellow-color;
+
+      label span {
+        color: $yellow-color;
+      }
+    }
+
+    &:last-of-type {
+        margin-bottom: 0;
+    }
+
+    &-icon {
+        max-width: 100%;
+    }
+  }
 }
 
 .content {
-    img {
-        width: 100%;
-        height: 100%;
-    }
+  flex-grow: 1;
+
+  img {
+    width: 100%;
+    height: 100%;
+  }
 }
