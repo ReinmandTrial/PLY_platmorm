@@ -24,16 +24,9 @@ document
 
 document.querySelector("html").addEventListener("click", function (e) {
   if (e.target !== document.querySelector(".account-dropdown")) {
-    document.querySelector(".account-dropdown").classList.remove("active");
+    document.querySelector(".account-dropdown")?.classList.remove("active");
   }
 });
-
-// white box disappear
-// var introCard = document.querySelector('.intro-card');
-// window.addEventListener('scroll', function(e) {
-//   var scroll = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
-//   introCard.style.opacity = Math.max(0, Math.min(1, -scroll / 200 + 2));
-// });
 
 //fullscreen toggle
 let myDocument = document.documentElement;
@@ -217,17 +210,6 @@ const swiperHome = new Swiper(".home-swiper", {
       slidesPerView: 4,
     },
   },
-
-  // // If we need pagination
-  // pagination: {
-  //   el: ".home-swiper-pagination",
-  // },
-
-  // // Navigation arrows
-  // navigation: {
-  //   nextEl: ".home-swiper-button-next",
-  //   prevEl: ".home-swiper-button-prev",
-  // },
 });
 
 // home slider
@@ -247,17 +229,6 @@ const swiperFeature = new Swiper(".features-swiper", {
       slidesPerView: 4,
     },
   },
-
-  // // If we need pagination
-  // pagination: {
-  //   el: ".features-swiper-pagination",
-  // },
-
-  // // Navigation arrows
-  // navigation: {
-  //   nextEl: ".features-swiper-button-next",
-  //   prevEl: ".features-swiper-button-prev",
-  // },
 });
 
 // search slider
@@ -303,16 +274,72 @@ if (window.screen.width <= 768) {
   searchForm.appendChild(searchFilterBtn);
 }
 
-// search filter input focus
-const input = document.querySelector(".tag-filter-input");
-// inputs.forEach(input => {
-input.addEventListener("focus", function(){
+// search filter tag choice
+window.addEventListener("load", () => {
+  // (A) GET HTML ELEMENTS
+  let input = document.querySelector(".tag-filter-input"), // search box
+    list = document.querySelectorAll(".search-form-filter .filter-btn"); // all list items
+  input.addEventListener("focus", function () {
     this.classList.add("tag-filter-input-focus");
-});
-input.addEventListener("blur", function(){
+  });
+  input.addEventListener("blur", function () {
     this.classList.remove("tag-filter-input-focus");
+  });
+
+  // (B) ATTACH KEY UP LISTENER TO SEARCH BOX
+  input.onkeyup = () => {
+    // (B1) GET CURRENT SEARCH TERM
+    let search = input.value.toLowerCase();
+
+    // (B2) LOOP THROUGH LIST ITEMS - ONLY SHOW THOSE THAT MATCH SEARCH
+    for (let i of list) {
+      let item = i.innerHTML.toLowerCase();
+      if (item.indexOf(search) == -1) {
+        i.classList.add("is-hidden");
+      } else {
+        i.classList.remove("is-hidden");
+      }
+    }
+  };
 });
-// });
+
+// search filters main script
+const filters = document.querySelectorAll(".search .filter-btn");
+
+filters.forEach((filter) => {
+  filter.addEventListener("click", function () {
+    let selectedFilter = filter.getAttribute("data-filter");
+    filter.classList.add("active");
+
+    let itemsToHide = document.querySelectorAll(
+      `.search-form-filter-second .filter-btn:not([data-filter='${selectedFilter}'])`
+    );
+    let itemsToShow = document.querySelectorAll(
+      `.search-form-filter-second [data-filter='${selectedFilter}']`
+    );
+
+    if (filter.classList.contains("active")) {
+      document.querySelector(".search-form-filter-second").classList.add("show");
+    }
+
+    if (selectedFilter == "all") {
+      itemsToHide = [];
+      itemsToShow = document.querySelectorAll(
+        ".search-form-filter-second [data-filter]"
+      );
+    }
+
+    itemsToHide.forEach((el) => {
+      el.classList.add("hide");
+      el.classList.remove("show");
+    });
+
+    itemsToShow.forEach((el) => {
+      el.classList.remove("hide");
+      el.classList.add("show");
+    });
+  });
+});
 
 // small cards text move to big card
 let trigger = document.querySelectorAll(".card-trigger");
