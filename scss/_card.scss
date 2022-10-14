@@ -731,6 +731,11 @@
   &-research-case {
     text-decoration: none;
     transition: 0.3s;
+    max-width: 25%;
+
+    @media (max-width: 992px) {
+      max-width: 100%;
+    }
 
     .text-12 {
       margin-top: auto;
@@ -941,6 +946,11 @@
         width: 100%;
       }
     }
+  }
+
+  @media (max-width: 480px) {
+    max-width: calc(100% + 0.75rem);
+    margin: 0 -0.75rem 0 0;
   }
 }
 

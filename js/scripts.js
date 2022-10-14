@@ -196,12 +196,18 @@ option.forEach((a) => {
 // home slider
 const swiperHome = new Swiper(".home-swiper", {
   // Optional parameters
-  slidesPerView: 2,
+  slidesPerView: 1.6,
   spaceBetween: 15,
   autoplay: {
     delay: 4000,
   },
   breakpoints: {
+    420: {
+      slidesPerView: 1.8,
+    },
+    480: {
+      slidesPerView: 2,
+    },
     768: {
       slidesPerView: 3,
       spaceBetween: 20,
@@ -275,33 +281,40 @@ if (window.screen.width <= 768) {
 }
 
 // search filter tag choice
-window.addEventListener("load", () => {
-  // (A) GET HTML ELEMENTS
-  let input = document.querySelector(".tag-filter-input"), // search box
-    list = document.querySelectorAll(".search-form-filter .filter-btn"); // all list items
-  input.addEventListener("focus", function () {
-    this.classList.add("tag-filter-input-focus");
-  });
-  input.addEventListener("blur", function () {
-    this.classList.remove("tag-filter-input-focus");
-  });
+if (document.querySelector(".tag-filter-input")) {
+  window.addEventListener("load", () => {
+    // (A) GET HTML ELEMENTS
+    const input = document.querySelector(".tag-filter-input"), // search box
+      list = document.querySelectorAll(".search-form-filter .filter-btn"); // all list items
+    input.addEventListener("focus", function () {
+      this.classList.add("tag-filter-input-focus");
+    });
+    input.addEventListener("blur", function () {
+      this.classList.remove("tag-filter-input-focus");
+    });
 
-  // (B) ATTACH KEY UP LISTENER TO SEARCH BOX
-  input.onkeyup = () => {
-    // (B1) GET CURRENT SEARCH TERM
-    let search = input.value.toLowerCase();
+    // (B) ATTACH KEY UP LISTENER TO SEARCH BOX
+    input.onkeyup = () => {
+      // (B1) GET CURRENT SEARCH TERM
+      let search = input.value.toLowerCase();
 
-    // (B2) LOOP THROUGH LIST ITEMS - ONLY SHOW THOSE THAT MATCH SEARCH
-    for (let i of list) {
-      let item = i.innerHTML.toLowerCase();
-      if (item.indexOf(search) == -1) {
-        i.classList.add("is-hidden");
-      } else {
-        i.classList.remove("is-hidden");
+      // (B2) LOOP THROUGH LIST ITEMS - ONLY SHOW THOSE THAT MATCH SEARCH
+      for (let i of list) {
+        let item = i.innerHTML.toLowerCase();
+        if (item.indexOf(search) == -1) {
+          i.classList.add("is-hidden");
+        } else {
+          i.classList.remove("is-hidden");
+        }
       }
+    };
+    let form = document.querySelector(".search-form");
+    function handleForm(event) {
+      event.preventDefault();
     }
-  };
-});
+    form.addEventListener("submit", handleForm);
+  });
+}
 
 // search filters main script
 const filters = document.querySelectorAll(".search .filter-btn");
@@ -317,9 +330,17 @@ filters.forEach((filter) => {
     let itemsToShow = document.querySelectorAll(
       `.search-form-filter-second [data-filter='${selectedFilter}']`
     );
+    let cardsToHide = document.querySelectorAll(
+      `.search-form-filter-results .card-research-case:not([data-filter='${selectedFilter}'])`
+    );
+    let cardsToShow = document.querySelectorAll(
+      `.search-form-filter-results [data-filter='${selectedFilter}']`
+    );
 
     if (filter.classList.contains("active")) {
-      document.querySelector(".search-form-filter-second").classList.add("show");
+      document
+        .querySelector(".search-form-filter-second")
+        .classList.add("show");
     }
 
     if (selectedFilter == "all") {
@@ -338,6 +359,41 @@ filters.forEach((filter) => {
       el.classList.remove("hide");
       el.classList.add("show");
     });
+
+    cardsToHide.forEach((el) => {
+      el.classList.add("hide");
+      el.classList.remove("show");
+    });
+
+    cardsToShow.forEach((el) => {
+      el.classList.remove("hide");
+      el.classList.add("show");
+    });
+  });
+});
+
+const filtersTop = document.querySelectorAll(
+  ".search-form-filter .filter-group"
+);
+const filtersBottom = document.querySelectorAll(
+  ".search-form-filter-second .filter-btn"
+);
+filtersTop.forEach((filterTop) => {
+  filterTop.addEventListener("click", function () {
+    document
+      .querySelectorAll(".search-form-filter-results .card-research-case")
+      .forEach(function (el) {
+        el.style.display = "none";
+      });
+  });
+});
+filtersBottom.forEach((filterBottom) => {
+  filterBottom.addEventListener("click", function () {
+    document
+      .querySelectorAll(".search-form-filter-results .card-research-case")
+      .forEach(function (el) {
+        el.style.display = "block";
+      });
   });
 });
 

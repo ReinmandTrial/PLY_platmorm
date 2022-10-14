@@ -9,6 +9,20 @@
 .header {
   position: relative;
   z-index: 1;
+
+  .mob-only {
+    display: none;
+    @media (max-width: 992px) {
+      display: inline-block;
+    }
+  }
+
+  .desktop-only {
+    display: block;
+    @media (max-width: 992px) {
+      display: none;
+    }
+  }
 }
 
 .header-navbar {
@@ -16,14 +30,22 @@
   width: 100%;
   align-items: center;
 
+  &-top {
+    @media (max-width: 992px) {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      padding: 13px 25px;
+      background: rgba(149,149,149,.3);
+      backdrop-filter: blur(10px);
+      border-radius: 10px;
+    }
+  }
+
   @media (max-width: 992px) {
     justify-content: space-between;
     flex-wrap: wrap;
     gap: 20px;
-    padding: 13px 25px;
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(5px);
-    border-radius: 10px;
   }
 }
 
@@ -42,15 +64,38 @@
     background-color: $darkgrey-color;
     border-radius: 10px;
 
-    // @media (max-width: 1280px) {
-    //   margin: 20px 0 0;
-    // }
+    @media (max-width: 992px) {
+      background-color: rgba(149,149,149,.3);
+      backdrop-filter: blur(10px);
+      padding: 15px 25px;
+    }
 
     .nav-link {
       padding: 13px 24px;
       font-family: "Termina", sans-serif;
       font-size: 12px;
       height: 100%;
+
+      @media (max-width: 992px) {
+        padding: 8px 0;
+        position: relative;
+        font-size: 16px;
+
+        &:after {
+          content: "";
+          width: 13px;
+          height: 13px;
+          background-image: url(../img/icons/navbar-arrow.svg);
+          background-size: contain;
+          background-repeat: no-repeat;
+          background-position: center;
+          display: inline-block;
+          position: absolute;
+          right: 0;
+          top: 50%;
+          transform: translateY(-50%);
+        }
+      }
 
       &:hover,
       &:focus {
@@ -61,8 +106,8 @@
     &:last-of-type {
       background-color: transparent;
 
-      @media (max-width: 768px) {
-        margin-top: 10px;
+      @media (max-width: 992px) {
+        display: none;
       }
 
       .nav-item:first-of-type {
@@ -149,7 +194,7 @@
         display: flex;
         align-items: center;
         gap: 15px;
-        transition: .3s;
+        transition: 0.3s;
 
         .form-switch {
           max-width: 100%;
@@ -204,7 +249,7 @@
     &-icon {
       background-image: url(../img/icons/navbar-toggler.svg);
       width: 14px;
-      transition: .3s;
+      transition: 0.3s;
     }
 
     &[aria-expanded="true"] {
@@ -236,7 +281,7 @@
       background: rgba(255, 255, 255, 0.1);
       backdrop-filter: blur(5px);
       border-radius: 10px;
-      padding: 15px 60px;
+      padding: 20px 60px;
 
       @media (max-width: 1280px) {
         padding: 13px 15px;

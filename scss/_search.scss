@@ -28,7 +28,6 @@
       align-items: center;
       justify-content: center;
       display: none;
-      cursor: pointer;
 
       &:nth-child(-n+4) {
         display: flex;
@@ -125,6 +124,12 @@
       top: 19px;
       padding: 0;
 
+      &:hover, &:focus {
+        border: 0;
+        outline: none;
+        box-shadow: none;
+      }
+
       @media (max-width: 768px) {
         right: 15px;
         top: 11px;
@@ -196,6 +201,10 @@
       }
     }
   }
+
+  .filter-btn {
+    cursor: pointer;
+  }
 }
 
 .swiper-pagination-bullet {
@@ -219,13 +228,13 @@
 
 /*  Needed for filters */
 
-.hide { /* You can play with the seconds to change the "animation" */
+.search .hide { /* You can play with the seconds to change the "animation" */
   animation: hide .3s ease 0s 1 normal forwards;
   transform-origin: center;
   position: absolute;
   // bug fix
 }
-.show { /* You can play with the seconds to change the "animation" */
+.search .show { /* You can play with the seconds to change the "animation" */
     animation: show .3s ease 0s 1 normal forwards;    
     transform-origin: center;
 }

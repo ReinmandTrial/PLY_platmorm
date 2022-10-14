@@ -6,29 +6,29 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
     <link rel="icon" href="img/favicon.png" />
     <style>
-    .loader-container {
-      width: 100%;
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      position: fixed;
-      background: #202020;
-      z-index: 9999;
-      top: 0;
-      left: 0;
-    }
+      .loader-container {
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        background: #202020;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+      }
 
-    .spinner {
-      width: 80vw;
-      height: 80vh;
-      background: url(img/preloader.webp) center no-repeat;
-      background-size: contain;
-    }
+      .spinner {
+        width: 20vw;
+        height: 20vh;
+        background: url(img/preloader.webp) center no-repeat;
+        background-size: contain;
+      }
 
-    .loader-container-hidden {
-      display: none;
-    }
+      .loader-container-hidden {
+        display: none;
+      }
     </style>
     <link rel="stylesheet" href="css/bootstrap.min.css" />
     <link rel="stylesheet" href="css/swiper-bundle.min.css" />
@@ -52,31 +52,51 @@
       <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container">
           <div class="header-navbar">
-            <a class="navbar-brand" href="#">
-              <img src="img/logo.svg" class="logo" alt="" />
-            </a>
-            <button
-              class="navbar-toggler"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#navbarSupportedContent"
-              aria-controls="navbarSupportedContent"
-              aria-expanded="false"
-              aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
+            <div class="header-navbar-top">
+              <a class="navbar-brand" href="#">
+                <img src="img/logo.svg" class="logo" alt="" />
+              </a>
+              <button
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent"
+                aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+            </div>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul class="navbar-nav me-auto ms-auto">
                 <li class="nav-item">
                   <a class="nav-link" href="#">Features</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#">Pricing</a>
-                </li>
-                <li class="nav-item">
                   <a class="nav-link" href="#">Research</a>
                 </li>
                 <li class="nav-item">
+                  <a class="nav-link" href="#">
+                    Pricing
+                    <span class="mob-only">plans</span>
+                  </a>
+                </li>
+                <li class="nav-item mob-only">
+                  <a class="nav-link" href="#">Where to begin</a>
+                </li>
+                <li class="nav-item mob-only">
+                  <a class="nav-link" href="#">User guides</a>
+                </li>
+                <li class="nav-item mob-only">
+                  <a class="nav-link" href="#">Investment ideas</a>
+                </li>
+                <li class="nav-item mob-only">
+                  <a class="nav-link" href="#">Financial reviews</a>
+                </li>
+                <li class="nav-item mob-only">
+                  <a class="nav-link" href="#">Contact center</a>
+                </li>
+                <li class="nav-item desktop-only">
                   <a class="nav-link" href="#">Need help</a>
                 </li>
               </ul>
