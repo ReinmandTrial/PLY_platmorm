@@ -119,6 +119,13 @@ input {
   &-bottom {
     position: relative;
 
+    .form-switch-line:last-of-type {
+      margin-bottom: 0;
+      @media (max-width: 1280px) {
+        margin: 0 0 30px;
+      }
+    }
+
     .btn:last-of-type {
       position: absolute;
       bottom: 0;
@@ -153,7 +160,7 @@ input {
 
         .form-switch {
           max-width: 100%;
-          margin: 20px 0;
+          margin: 10px 0;
         }
       }
     }

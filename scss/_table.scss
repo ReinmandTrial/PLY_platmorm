@@ -1,6 +1,7 @@
 .table,
 .table-container {
   width: 100%;
+  margin-bottom: 0;
 }
 
 .table-container {
@@ -50,17 +51,34 @@
 
   &-text {
     font-size: 14px;
-    margin-bottom: 15px;
+    margin-bottom: 5px;
+    line-height: 1.2;
 
     &-small {
-      font-size: 12px;
+      font-size: 10px;
       display: inline-block;
 
       &:last-of-type {
-        margin-bottom: 30px;
+        margin-bottom: 25px;
       }
     }
   }
+
+  &-history {
+    .table-text {
+      margin-bottom: 25px;
+    }
+  }
+
+  tr:last-of-type {
+    .table-text:last-of-type, .table-text-small:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.table-row-disabled {
+  opacity: .5;
 }
 
 .table-container {
