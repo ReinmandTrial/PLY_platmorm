@@ -318,11 +318,35 @@ if (document.querySelector(".tag-filter-input")) {
 
 // search filters main script
 const filters = document.querySelectorAll(".search .filter-btn");
+const filtersFirst = document.querySelectorAll(".search-form-filter .filter-btn");
+const filtersSecond = document.querySelectorAll(".search-form-filter-second .filter-btn");
 
+// active class on filter button
+filtersFirst.forEach((filter) => {
+  filter.addEventListener("click", function () {
+    filtersFirst.forEach(function (element) {
+      element.classList.remove("active");
+    });
+    filter.classList.add("active");
+  });
+});
+filtersSecond.forEach((filter) => {
+  filter.addEventListener("click", function () {
+    filtersSecond.forEach(function (element) {
+      element.classList.remove("active");
+    });
+    filter.classList.add("active");
+  });
+});
+
+// filtering
 filters.forEach((filter) => {
   filter.addEventListener("click", function () {
     let selectedFilter = filter.getAttribute("data-filter");
-    filter.classList.add("active");
+    // filters.forEach(function (element) {
+    //   element.classList.remove("active");
+    // });
+    // filter.classList.add("active");
 
     let itemsToHide = document.querySelectorAll(
       `.search-form-filter-second .filter-btn:not([data-filter='${selectedFilter}'])`
@@ -372,6 +396,7 @@ filters.forEach((filter) => {
   });
 });
 
+// hide/show cards
 const filtersTop = document.querySelectorAll(
   ".search-form-filter .filter-group"
 );
