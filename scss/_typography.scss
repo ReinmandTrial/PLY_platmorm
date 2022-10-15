@@ -61,6 +61,10 @@
         font-size: .875rem;
     }
 
+    @media (max-width: 576px) {
+        font-size: .75rem;
+    }
+
     &-14 {
         font-size: .875rem;
 
@@ -381,7 +385,7 @@
         }
 
         @media (max-width: 768px) {
-            padding: 6px 12px;
+            padding: 6px 15px;
             min-width: unset;
             flex-basis: unset;
             flex-grow: 0;
@@ -391,6 +395,7 @@
 
     @media (max-width: 576px) {
         gap: 15px;
+        margin: 20px 0;
     }
 }
 
@@ -488,6 +493,10 @@ a.badge-list-item:hover {
         font-size: 14px;
         font-weight: 500;
         line-height: 1.4;
+
+        @media (max-width: 768px) {
+            display: none;
+        }
   
         &:hover {
           color: #a7a6a6;
