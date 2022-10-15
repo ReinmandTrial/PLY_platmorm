@@ -105,6 +105,16 @@
         &.show {
           display: flex;
         }
+
+        .filter-btn {
+          max-width: 400px;
+        }
+      }
+
+      &-results {
+       .card-research-case {
+        cursor: pointer;
+       } 
       }
 
       @media (max-width: 768px) {

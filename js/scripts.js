@@ -1,4 +1,4 @@
-// header class on scroll
+// header add class on scroll
 let scrollpos = window.scrollY;
 function add_class_on_scroll() {
   document.body.classList.add("fixed-header");
@@ -87,7 +87,7 @@ function periodChange() {
   }
 }
 
-// pricing markets
+// pricing markets, multiplication of price
 function sliderChange(val) {
   if (textVal.innerHTML === "8.99") {
     document.getElementById("output-value").value = val * 8.99;
@@ -195,7 +195,6 @@ option.forEach((a) => {
 
 // home slider
 const swiperHome = new Swiper(".home-swiper", {
-  // Optional parameters
   slidesPerView: 1.6,
   spaceBetween: 15,
   autoplay: {
@@ -218,9 +217,8 @@ const swiperHome = new Swiper(".home-swiper", {
   },
 });
 
-// home slider
+// features slider
 const swiperFeature = new Swiper(".features-swiper", {
-  // Optional parameters
   slidesPerView: 2,
   spaceBetween: 15,
   autoplay: {
@@ -239,7 +237,6 @@ const swiperFeature = new Swiper(".features-swiper", {
 
 // search slider
 const swiperSearch = new Swiper(".search-swiper", {
-  // Optional parameters
   slidesPerView: 2,
   spaceBetween: 15,
   breakpoints: {
@@ -252,12 +249,10 @@ const swiperSearch = new Swiper(".search-swiper", {
     },
   },
 
-  // If we need pagination
   pagination: {
     el: ".search-swiper-pagination",
   },
 
-  // Navigation arrows
   navigation: {
     nextEl: ".search-swiper-button-next",
     prevEl: ".search-swiper-button-prev",
@@ -318,35 +313,36 @@ if (document.querySelector(".tag-filter-input")) {
 
 // search filters main script
 const filters = document.querySelectorAll(".search .filter-btn");
-const filtersFirst = document.querySelectorAll(".search-form-filter .filter-btn");
-const filtersSecond = document.querySelectorAll(".search-form-filter-second .filter-btn");
+const cards = document.querySelectorAll(
+  ".search-form-filter-results .card-research-case"
+);
+const filtersTop = document.querySelectorAll(".search-form-filter .filter-btn");
+const filtersBottom = document.querySelectorAll(
+  ".search-form-filter-second .filter-btn"
+);
 
-// active class on filter button
-filtersFirst.forEach((filter) => {
+// search - active class on filter button
+filtersTop.forEach((filter) => {
   filter.addEventListener("click", function () {
-    filtersFirst.forEach(function (element) {
+    filtersTop.forEach(function (element) {
       element.classList.remove("active");
     });
     filter.classList.add("active");
   });
 });
-filtersSecond.forEach((filter) => {
+filtersBottom.forEach((filter) => {
   filter.addEventListener("click", function () {
-    filtersSecond.forEach(function (element) {
+    filtersBottom.forEach(function (element) {
       element.classList.remove("active");
     });
     filter.classList.add("active");
   });
 });
 
-// filtering
+// search filtering
 filters.forEach((filter) => {
   filter.addEventListener("click", function () {
     let selectedFilter = filter.getAttribute("data-filter");
-    // filters.forEach(function (element) {
-    //   element.classList.remove("active");
-    // });
-    // filter.classList.add("active");
 
     let itemsToHide = document.querySelectorAll(
       `.search-form-filter-second .filter-btn:not([data-filter='${selectedFilter}'])`
@@ -396,33 +392,54 @@ filters.forEach((filter) => {
   });
 });
 
-// hide/show cards
-const filtersTop = document.querySelectorAll(
-  ".search-form-filter .filter-group"
-);
-const filtersBottom = document.querySelectorAll(
-  ".search-form-filter-second .filter-btn"
-);
+// search hide/show cards
 filtersTop.forEach((filterTop) => {
   filterTop.addEventListener("click", function () {
-    document
-      .querySelectorAll(".search-form-filter-results .card-research-case")
-      .forEach(function (el) {
-        el.style.display = "none";
-      });
+    cards.forEach(function (el) {
+      el.style.display = "none";
+    });
   });
 });
 filtersBottom.forEach((filterBottom) => {
   filterBottom.addEventListener("click", function () {
-    document
-      .querySelectorAll(".search-form-filter-results .card-research-case")
-      .forEach(function (el) {
-        el.style.display = "block";
-      });
+    cards.forEach(function (el) {
+      el.style.display = "block";
+    });
   });
 });
 
-// small cards text move to big card
+// search - reverse filtering, when clicking on cards
+cards.forEach((card) => {
+  card.addEventListener("click", function () {
+    document.querySelector(".search-form-filter-second").classList.add("show");
+
+    let selectedFilterCard = card.getAttribute("data-filter");
+
+    let itemsToShow1Card = document.querySelectorAll(
+      `.search-form-filter [data-filter='${selectedFilterCard}']`
+    );
+
+    let itemsToShow2Card = document.querySelectorAll(
+      `.search-form-filter-second [data-filter='${selectedFilterCard}']`
+    );
+
+    itemsToShow1Card.forEach((el) => {
+      filtersTop.forEach(function (element) {
+        element.classList.remove("active");
+      });
+      el.classList.add("active"); 
+    });
+
+    itemsToShow2Card.forEach((el) => {
+      filtersBottom.forEach(function (element) {
+        element.classList.remove("active");
+      });
+      el.classList.add("active");
+    });
+  });
+});
+
+// homepage - small cards text move to big card
 let trigger = document.querySelectorAll(".card-trigger");
 let triggerHeading = document.querySelectorAll(".card-trigger-name");
 let targetHeading = document.querySelector(".card-target-name");
@@ -435,7 +452,7 @@ for (let i = 0; i < trigger.length; i++) {
   });
 }
 
-// footer email form
+// footer email form disappear
 document
   .querySelector(".btn-email-subscribe")
   .addEventListener("click", function (e) {
