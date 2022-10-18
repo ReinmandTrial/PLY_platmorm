@@ -1,637 +1,944 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <link rel="icon" href="img/favicon.png" />
+    <style>
+      .loader-container {
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        background: #202020;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+      }
 
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv="x-ua-compatible" content="ie=edge" />
-  <link rel="icon" href="img/favicon.png" />
-  <style>
-    .loader-container {
-      width: 100%;
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      position: fixed;
-      background: #202020;
-      z-index: 9999;
-      top: 0;
-      left: 0;
-    }
+      .spinner {
+        width: 20vw;
+        height: 20vh;
+        background: url(img/preloader.webp) center no-repeat;
+        background-size: contain;
+      }
 
-    .spinner {
-      width: 20vw;
-      height: 20vh;
-      background: url(img/preloader.webp) center no-repeat;
-      background-size: contain;
-    }
+      .loader-container-hidden {
+        display: none;
+      }
+    </style>
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="css/index.min.css" />
+    <link rel="stylesheet" href="css/home.min.css" />
 
-    .loader-container-hidden {
-      display: none;
-    }
-  </style>
-  <link rel="stylesheet" href="css/bootstrap.min.css" />
-  <link rel="stylesheet" href="css/swiper-bundle.min.css" />
-  <link rel="stylesheet" href="css/index.min.css" />
-  <link rel="stylesheet" href="css/home.min.css" />
+    <title>Pricing</title>
+  </head>
 
-  <title>Pricing</title>
-</head>
-
-<body class="grey-bg">
-  <div class="loader-container">
-    <div class="spinner"></div>
-  </div>
-  <script>
-    const loaderContainer = document.querySelector(".loader-container");
-    window.addEventListener("load", () => {
-      loaderContainer.classList.add("loader-container-hidden");
-    });
-  </script>
-  <header class="header">
-    <nav class="navbar navbar-expand-lg navbar-light">
-      <div class="container">
-        <div class="header-navbar">
-          <div class="header-navbar-top">
-            <a class="navbar-brand" href="#">
-              <img src="img/logo.svg" class="logo" alt="" />
-            </a>
-            <button
-              class="navbar-toggler"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#navbarSupportedContent"
-              aria-controls="navbarSupportedContent"
-              aria-expanded="false"
-              aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-          </div>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto ms-auto">
-              <li class="nav-item">
-                <a class="nav-link" href="#">Features</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Research</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Pricing <span class="mob-only">plans</span></a>
-              </li>
-              <li class="nav-item mob-only">
-                <a class="nav-link" href="#">Where to begin</a>
-              </li>
-              <li class="nav-item mob-only">
-                <a class="nav-link" href="#">User guides</a>
-              </li>
-              <li class="nav-item mob-only">
-                <a class="nav-link" href="#">Investment ideas</a>
-              </li>
-              <li class="nav-item mob-only">
-                <a class="nav-link" href="#">Financial reviews</a>
-              </li>
-              <li class="nav-item mob-only">
-                <a class="nav-link" href="#">Contact center</a>
-              </li>
-              <li class="nav-item desktop-only">
-                <a class="nav-link" href="#">Need help</a>
-              </li>
-            </ul>
-            <ul class="navbar-nav">
-              <li class="nav-item">
-                <a class="nav-link btn btn-darkgrey" href="#">Log in</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link btn btn-yellow" href="#">Start free trial</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </nav>
-  </header>
-
-  <section class="common-section price-section">
-    <div class="container">
-      <div class="common-desc">
-        <h2 class="h2-heading center-text">Package to suit your plan</h2>
-        <p class="text center-text">Taxes included. 14 day money back guarantee. Cancel, downgrade or upgrade at any time</p>
-      </div>
-      <div class="price-choice">
-        <label class="form-switch form-switch-line">
-          <span class="form-switch-option">Monthly</span>
-          <input type="checkbox" class="price-period-switch" />
-          <span class="form-switch-slider form-switch-round"></span>
-          <span class="form-switch-option">Annually</span>
-        </label>
-        <span class="price-choice-tip">Annually you have 16% off which is 2 months free</span>
-      </div>
-      <div class="line line-endless-mob">
-        <div class="card card-price">
-          <img src="img/pattern/price-card-1.svg" class="card-bg" alt="" />
-          <div class="card-price-top">
-            <p class="card-price-top-name">Basic</p>
-            <p class="card-price-top-cost">
-              0.00
-              <span>€</span>
-            </p>
-            <p class="card-price-top-description">Get familiar with platform. No credit card requider.</p>
-            <a href="" class="btn btn-white">Start Today</a>
-          </div>
-          <a href="" class="card-price-list-show">View detailed pricing options</a>
-          <ul class="card-price-list">
-            <li>Scoring system for identifying best companies</li>
-            <li>Discover undervalued stocks based on our relative valuation methodology</li>
-            <li>Dashboard of more than 50 financial metrics and ratios</li>
-            <li>17 years of data</li>
-            <li>Interactive charts for all metrics</li>
-            <li>Comliare all comlianies by any metric</li>
-            <li>Export data</li>
-            <li>Predefined investment portfolios</li>
-            <li>Screen markets by all metrics an ratios</li>
-          </ul>
-        </div>
-        <div class="card card-price">
-          <img src="img/pattern/price-card-2.svg" class="card-bg" alt="" />
-          <div class="card-price-top">
-            <p class="card-price-top-name">Professional</p>
-            <p class="card-price-top-cost">
-              <input type="text" id="output-value" value="8.99" readonly />
-              <span>€</span>
-              <span class="card-price-top-cost-monthly"><span class="card-price-top-cost-monthly-number">8.99</span> € /
-                month / market</span>
-            </p>
-            <div class="range-container">
-              <span>Markets</span>
-              <input type="range" min="1" max="6" value="1" oninput="sliderChange(this.value)" id="input-value" class="range-input" />
-              <span class="range-input-value">1</span>
-            </div>
-            <a href="" class="btn btn-yellow">Start Today</a>
-          </div>
-          <a href="" class="card-price-list-show">View detailed pricing options</a>
-          <ul class="card-price-list">
-            <li>All free features</li>
-            <li>Comprehensive as-reported financials of every company</li>
-            <li>Source documents for every financial number</li>
-            <li>Details for specific items of costs, assets and liabilities</li>
-            <li>Segment information</li>
-            <li>KPIs and alternative performance metrics</li>
-            <li>Ownership structure and its changes</li>
-            <li>Insiders' ownership and trading</li>
-            <li>Comprehensive trading statistics</li>
-          </ul>
-        </div>
-        <div class="card card-price">
-          <img src="img/pattern/price-card-3.svg" class="card-bg" alt="" />
-          <div class="card-price-top">
-            <p class="card-price-top-name">Enterprise</p>
-            <p class="card-price-top-cost">Custom</p>
-            <p class="card-price-top-description">For organizations with special requirements</p>
-            <a href="" class="btn btn-purple">Start Today</a>
-          </div>
-          <a href="" class="card-price-list-show">View detailed pricing options</a>
-          <ul class="card-price-list">
-            <li>Can't find your preferred financial ratios in our toolkit?</li>
-            <li>Need some additonal valuation multiples to value your stocks?</li>
-            <li>Want to compare companies by additional metrics?</li>
-            <li>Have specific requirements for analytical reports?</li>
-            <li>Need special pricing for more users?</li>
-            <li>Contact us and we will customize analytical reports to tailor your special needs!</li>
-          </ul>
-        </div>
-      </div>
-      <div class="center-text">
-        <a href="#price-table" class="price-section-link">View detailed pricing options</a>
-      </div>
+  <body class="grey-bg">
+    <div class="loader-container">
+      <div class="spinner"></div>
     </div>
-  </section>
-
-  <section class="price-table-section" id="price-table">
-    <div class="container">
-      <div class="common-desc">
-        <h2 class="h2-heading center-text">Detailed features overview</h2>
-      </div>
-      <div class="price-table-container">
-        <table class="price-table">
-          <tr class="price-table-row price-table-row-heading">
-            <th class="price-table-heading">
-              <div>Discover investment opportunities</div>
-            </th>
-            <th class="price-table-heading price-table-heading-pricing price-table-heading-pricing-1">
-              <div class="price-table-heading-tariff"><img src="img/pattern/pricing-table-1.svg"
-                  class="price-table-heading-tariff-bg" alt=""><span>Basic</span><span
-                  class="price-table-heading-tariff-final">0.00<sup>€</sup></span></div>
-            </th>
-            <th class="price-table-heading price-table-heading-pricing price-table-heading-pricing-2">
-              <div class="price-table-heading-tariff"><img src="img/pattern/pricing-table-2.svg"
-                  class="price-table-heading-tariff-bg" alt=""><span>Professional</span><span
-                  class="price-table-heading-tariff-final">8.99<sup>€</sup></span></div>
-            </th>
-            <th class="price-table-heading price-table-heading-pricing price-table-heading-pricing-3">
-              <div class="price-table-heading-tariff"><img src="img/pattern/pricing-table-3.svg"
-                  class="price-table-heading-tariff-bg" alt=""><span>Enterprise</span><span
-                  class="price-table-heading-tariff-final">Custom</span></div>
-            </th>
-          </tr>
-          <tr class="price-table-row">
-            <td class="price-table-item">Select best compnies with PLY scoring system</td>
-            <td class="price-table-item"><img src="img/icons/arrow-top-right-white.svg" alt=""></td>
-            <td class="price-table-item"><img src="img/icons/arrow-top-right-white.svg" alt=""></td>
-            <td class="price-table-item"><img src="img/icons/arrow-top-right-white.svg" alt=""></td>
-          </tr>
-          <tr class="price-table-row">
-            <td class="price-table-item">Find undervalued stocks with PLY realtive valuation system</td>
-            <td class="price-table-item"><img src="img/icons/arrow-top-right-white.svg" alt=""></td>
-            <td class="price-table-item"><img src="img/icons/arrow-top-right-white.svg" alt=""></td>
-            <td class="price-table-item"><img src="img/icons/arrow-top-right-white.svg" alt=""></td>
-          </tr>
-          <tr class="price-table-row">
-            <td class="price-table-item">Compare companies by any of the more than 50 metrics and ratios</td>
-            <td class="price-table-item"><img src="img/icons/arrow-top-right-white.svg" alt=""></td>
-            <td class="price-table-item"><img src="img/icons/arrow-top-right-white.svg" alt=""></td>
-            <td class="price-table-item"><img src="img/icons/arrow-top-right-white.svg" alt=""></td>
-          </tr>
-          <tr class="price-table-row">
-            <td class="price-table-item">Screen markets by all metrics an ratios</td>
-            <td class="price-table-item"><img src="img/icons/arrow-top-right-white.svg" alt=""></td>
-            <td class="price-table-item"><img src="img/icons/arrow-top-right-white.svg" alt=""></td>
-            <td class="price-table-item"><img src="img/icons/arrow-top-right-white.svg" alt=""></td>
-          </tr>
-          <tr class="price-table-row">
-            <td class="price-table-item">View our predefined investment portfolios</td>
-            <td class="price-table-item"><img src="img/icons/arrow-top-right-white.svg" alt=""></td>
-            <td class="price-table-item"><img src="img/icons/arrow-top-right-white.svg" alt=""></td>
-            <td class="price-table-item"><img src="img/icons/arrow-top-right-white.svg" alt=""></td>
-          </tr>
-          <tr class="price-table-row">
-            <td class="price-table-item">Analyze interactive charts with 17-year historical data</td>
-            <td class="price-table-item"><img src="img/icons/arrow-top-right-white.svg" alt=""></td>
-            <td class="price-table-item"><img src="img/icons/arrow-top-right-white.svg" alt=""></td>
-            <td class="price-table-item"><img src="img/icons/arrow-top-right-white.svg" alt=""></td>
-          </tr>
-          <tr class="price-table-row">
-            <td class="price-table-item">Generate your investment ideas with our research reports</td>
-            <td class="price-table-item"><img src="img/icons/arrow-top-right-white.svg" alt=""></td>
-            <td class="price-table-item"><img src="img/icons/arrow-top-right-white.svg" alt=""></td>
-            <td class="price-table-item"><img src="img/icons/arrow-top-right-white.svg" alt=""></td>
-          </tr>
-          <tr class="price-table-row">
-            <td class="price-table-item">Export data from every chart and table</td>
-            <td class="price-table-item"><img src="img/icons/arrow-top-right-white.svg" alt=""></td>
-            <td class="price-table-item"><img src="img/icons/arrow-top-right-white.svg" alt=""></td>
-            <td class="price-table-item"><img src="img/icons/arrow-top-right-white.svg" alt=""></td>
-          </tr>
-          <tr class="price-table-row price-table-row-heading">
-            <th class="price-table-heading">
-              <div>Research company financials in-depth</div>
-            </th>
-            <th class="price-table-heading"></th>
-            <th class="price-table-heading"></th>
-            <th class="price-table-heading"></th>
-          </tr>
-          <tr class="price-table-row">
-            <td class="price-table-item">Dashboard of most important financial metrics and ratios</td>
-            <td class="price-table-item"><img src="img/icons/arrow-top-right-white.svg" alt=""></td>
-            <td class="price-table-item"><img src="img/icons/arrow-top-right-white.svg" alt=""></td>
-            <td class="price-table-item"><img src="img/icons/arrow-top-right-white.svg" alt=""></td>
-          </tr>
-          <tr class="price-table-row">
-            <td class="price-table-item">Comprehensive as-reported financials for every company with 17-year historical
-              data:</td>
-            <td class="price-table-item"><img src="img/icons/line-white.svg" alt=""></td>
-            <td class="price-table-item"><img src="img/icons/arrow-top-right-white.svg" alt=""></td>
-            <td class="price-table-item"><img src="img/icons/arrow-top-right-white.svg" alt=""></td>
-          </tr>
-          <tr class="price-table-row price-table-row-includes">
-            <td class="price-table-item">Income statement</td>
-            <td class="price-table-item"><img src="img/icons/line-white.svg" alt=""></td>
-            <td class="price-table-item"><img src="img/icons/arrow-top-right-white.svg" alt=""></td>
-            <td class="price-table-item"><img src="img/icons/arrow-top-right-white.svg" alt=""></td>
-          </tr>
-          <tr class="price-table-row price-table-row-includes">
-            <td class="price-table-item">Balance sheet</td>
-            <td class="price-table-item"><img src="img/icons/line-white.svg" alt=""></td>
-            <td class="price-table-item"><img src="img/icons/arrow-top-right-white.svg" alt=""></td>
-            <td class="price-table-item"><img src="img/icons/arrow-top-right-white.svg" alt=""></td>
-          </tr>
-          <tr class="price-table-row price-table-row-includes">
-            <td class="price-table-item">Cash flow statement</td>
-            <td class="price-table-item"><img src="img/icons/line-white.svg" alt=""></td>
-            <td class="price-table-item"><img src="img/icons/arrow-top-right-white.svg" alt=""></td>
-            <td class="price-table-item"><img src="img/icons/arrow-top-right-white.svg" alt=""></td>
-          </tr>
-          <tr class="price-table-row">
-            <td class="price-table-item">Interactive charts for every data serie with multiselection feature</td>
-            <td class="price-table-item"><img src="img/icons/line-white.svg" alt=""></td>
-            <td class="price-table-item"><img src="img/icons/arrow-top-right-white.svg" alt=""></td>
-            <td class="price-table-item"><img src="img/icons/arrow-top-right-white.svg" alt=""></td>
-          </tr>
-          <tr class="price-table-row">
-            <td class="price-table-item">Interactive charts for every data serie with multiselection feature</td>
-            <td class="price-table-item"><img src="img/icons/line-white.svg" alt=""></td>
-            <td class="price-table-item"><img src="img/icons/arrow-top-right-white.svg" alt=""></td>
-            <td class="price-table-item"><img src="img/icons/arrow-top-right-white.svg" alt=""></td>
-          </tr>
-          <tr class="price-table-row">
-            <td class="price-table-item">Attached source documents for every financial number</td>
-            <td class="price-table-item"><img src="img/icons/line-white.svg" alt=""></td>
-            <td class="price-table-item"><img src="img/icons/arrow-top-right-white.svg" alt=""></td>
-            <td class="price-table-item"><img src="img/icons/arrow-top-right-white.svg" alt=""></td>
-          </tr>
-          <tr class="price-table-row">
-            <td class="price-table-item">Detailed information about structure of revenue, costs, assets and liabilites
-            </td>
-            <td class="price-table-item"><img src="img/icons/line-white.svg" alt=""></td>
-            <td class="price-table-item"><img src="img/icons/arrow-top-right-white.svg" alt=""></td>
-            <td class="price-table-item"><img src="img/icons/arrow-top-right-white.svg" alt=""></td>
-          </tr>
-          <tr class="price-table-row">
-            <td class="price-table-item">Operating segment information</td>
-            <td class="price-table-item"><img src="img/icons/line-white.svg" alt=""></td>
-            <td class="price-table-item"><img src="img/icons/arrow-top-right-white.svg" alt=""></td>
-            <td class="price-table-item"><img src="img/icons/arrow-top-right-white.svg" alt=""></td>
-          </tr>
-          <tr class="price-table-row">
-            <td class="price-table-item">Key operating indicators</td>
-            <td class="price-table-item"><img src="img/icons/line-white.svg" alt=""></td>
-            <td class="price-table-item"><img src="img/icons/arrow-top-right-white.svg" alt=""></td>
-            <td class="price-table-item"><img src="img/icons/arrow-top-right-white.svg" alt=""></td>
-          </tr>
-          <tr class="price-table-row">
-            <td class="price-table-item">Alternative performance metrics</td>
-            <td class="price-table-item"><img src="img/icons/line-white.svg" alt=""></td>
-            <td class="price-table-item"><img src="img/icons/arrow-top-right-white.svg" alt=""></td>
-            <td class="price-table-item"><img src="img/icons/arrow-top-right-white.svg" alt=""></td>
-          </tr>
-          <tr class="price-table-row">
-            <td class="price-table-item">Ownership structure and its changes</td>
-            <td class="price-table-item"><img src="img/icons/line-white.svg" alt=""></td>
-            <td class="price-table-item"><img src="img/icons/arrow-top-right-white.svg" alt=""></td>
-            <td class="price-table-item"><img src="img/icons/arrow-top-right-white.svg" alt=""></td>
-          </tr>
-          <tr class="price-table-row">
-            <td class="price-table-item">Insiders' ownership and trading</td>
-            <td class="price-table-item"><img src="img/icons/line-white.svg" alt=""></td>
-            <td class="price-table-item"><img src="img/icons/arrow-top-right-white.svg" alt=""></td>
-            <td class="price-table-item"><img src="img/icons/arrow-top-right-white.svg" alt=""></td>
-          </tr>
-          <tr class="price-table-row price-table-row-heading">
-            <th class="price-table-heading">
-              <div>Get customized financial analytics</div>
-            </th>
-            <th class="price-table-heading"></th>
-            <th class="price-table-heading"></th>
-            <th class="price-table-heading"></th>
-          </tr>
-          <tr class="price-table-row">
-            <td class="price-table-item">Specific analytical reports tailored to your requirements</td>
-            <td class="price-table-item"><img src="img/icons/line-white.svg" alt=""></td>
-            <td class="price-table-item"><img src="img/icons/line-white.svg" alt=""></td>
-            <td class="price-table-item"><img src="img/icons/arrow-top-right-white.svg" alt=""></td>
-          </tr>
-        </table>
-      </div>
-    </div>
-  </section>
-
-  <section class="form-section">
-    <div class="container">
-      <div class="line">
-        <div class="card form-section-left">
-          <img src="img/pattern/home-form.svg" alt="" class="card-bg" />
-          <h2 class="h2-heading">Neque odio at viverra viverra quis.</h2>
-          <p class="text">Hac consequat hac mus egestas. Etiam amet donec viverra amet morbi integer eget faciazlisis
-            orci. Leo fermentum ac elementum, lacus, tempor neque. Tellus aliquam justo varius elit consequat nullam
-            accumsan praesent.</p>
-        </div>
-        <div class="card form-section-right">
-          <form action="" class="form">
-            <label class="form-label form-label-half">
-              <span class="form-label-name">
-                Name
-                <span class="red">*</span>
-              </span>
-              <input type="text" class="form-text-input" placeholder="Enter name" />
-            </label>
-            <label class="form-label form-label-half">
-              <span class="form-label-name">
-                Company
-                <span class="red">*</span>
-              </span>
-              <input type="text" class="form-text-input" placeholder="Enter company" />
-            </label>
-            <label class="form-label form-label-half">
-              <span class="form-label-name">
-                Email
-                <span class="red">*</span>
-              </span>
-              <input type="email" class="form-text-input" placeholder="Enter email" />
-            </label>
-            <label class="form-label form-label-half">
-              <span class="form-label-name">
-                Phone
-                <span class="red">*</span>
-              </span>
-              <input type="tel" class="form-text-input" placeholder="Enter phone" />
-            </label>
-            <label class="form-label form-label-full">
-              <span class="form-label-name">
-                Message
-                <span class="red">*</span>
-              </span>
-              <textarea class="form-textarea" placeholder="Enter message"></textarea>
-            </label>
-            <div class="form-bottom">
-              <label class="form-switch form-switch-line">
-                <input type="checkbox" />
-                <span class="form-switch-slider form-switch-round"></span>
-                <span class="form-switch-text">
-                  I accept the
-                  <a href="">Terms of Services</a>
-                  and have read the Service
-                  <a href="">Privacy Policy</a>
-                </span>
-              </label>
-              <label class="form-switch form-switch-line">
-                <input type="checkbox" />
-                <span class="form-switch-slider form-switch-round"></span>
-                <span class="form-switch-text">I agree that my personal data (name, surname, email address, telephone
-                  number) will be processed for direct marketing purpose, i.e. I would be provided with offers, news
-                  about the services, information about ongoing events, promotions and/or other information, as well as
-                  my opinion about services provided would also be sought</span>
-              </label>
-              <input type="submit" class="btn btn-purple" value="Dive deeper" />
-            </div>
-          </form>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="common-section">
-    <div class="container">
-      <div class="common-desc">
-        <h2 class="h2-heading center-text">What do users say about us?</h2>
-        <p class="text center-text">Hac consequat hac mus egestas. Etiam amet donec viverra amet morbi integer eget
-          facilisis orci. Leo fermentum ac elementum, lacus, tempor neque. Tellus aliquam justo varius elit consequat
-          nullam accumsan praesent.</p>
-      </div>
-      <div class="line line-review">
-        <div class="card card-review">
-          <div class="card-review-top">
-            <img src="img/icons/trustpilot-stars.svg" class="card-review-top-image" alt="" />
-            <span>4 days ago</span>
-          </div>
-          <p class="card-review-heading"><b>Lobortis viverra maecenas.</b></p>
-          <p class="card-review-text">Eget mauris odio sollicitudin velit a, eleifend in fames. Sit laoreet risus
-            consequat cras.</p>
-          <p class="card-review-name">Lobortis viverra</p>
-        </div>
-        <div class="card card-review">
-          <div class="card-review-top">
-            <img src="img/icons/trustpilot-stars.svg" class="card-review-top-image" alt="" />
-            <span>4 days ago</span>
-          </div>
-          <p class="card-review-heading"><b>Lobortis viverra maecenas.</b></p>
-          <p class="card-review-text">Eget mauris odio sollicitudin velit a, eleifend in fames. Sit laoreet risus
-            consequat cras.</p>
-          <p class="card-review-name">Lobortis viverra</p>
-        </div>
-        <div class="card card-review">
-          <div class="card-review-top">
-            <img src="img/icons/trustpilot-stars.svg" class="card-review-top-image" alt="" />
-            <span>4 days ago</span>
-          </div>
-          <p class="card-review-heading"><b>Lobortis viverra maecenas.</b></p>
-          <p class="card-review-text">Eget mauris odio sollicitudin velit a, eleifend in fames. Sit laoreet risus
-            consequat cras.</p>
-          <p class="card-review-name">Lobortis viverra</p>
-        </div>
-        <div class="card card-review">
-          <div class="card-review-top">
-            <img src="img/icons/trustpilot-stars.svg" class="card-review-top-image" alt="" />
-            <span>4 days ago</span>
-          </div>
-          <p class="card-review-heading"><b>Lobortis viverra maecenas.</b></p>
-          <p class="card-review-text">Eget mauris odio sollicitudin velit a, eleifend in fames. Sit laoreet risus
-            consequat cras.</p>
-          <p class="card-review-name">Lobortis viverra</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <footer class="footer">
-    <div class="container">
-      <div class="filter">
-        <a href="" class="filter-btn">Guide</a>
-        <a href="" class="filter-btn">Tips</a>
-        <a href="" class="filter-btn">Analysis</a>
-        <a href="" class="filter-btn">Help</a>
-        <a href="" class="filter-btn">Data</a>
-        <a href="" class="filter-btn">Guide</a>
-        <a href="" class="filter-btn">Tips</a>
-        <a href="" class="filter-btn">Analysis</a>
-        <a href="" class="filter-btn">Data recovery</a>
-      </div>
-      <div class="footer-block footer-block-email">
-        <div class="footer-block-row">
-          <div class="footer-block-gradient">
-            <p class="gradient-text">Possibility to choose various investment</p>
-            <p class="text-14">
-              Unsubscribe at any time.
-              <a href="">Privacy policy↗</a>
-            </p>
-          </div>
-          <form action="" class="footer-form">
-            <input
-              type="email"
-              class="text-input text-input-email"
-              placeholder="Enter your email to subscribe" />
-            <input type="submit" class="btn btn-purple btn-email-subscribe" value="Subscribe" />
-          </form>
-        </div>
-      </div>
-      <div class="footer-block">
-        <div class="footer-block-row">
-          <img src="img/logo.svg" class="logo" alt="" />
-          <div class="footer-reviews-rate">
-            <p><b>Excellent</b></p>
-            <img src="img/icons/trustpilot-stars.svg" alt="" />
-            <p>4.8 out of 5 based ion 427 review</p>
-          </div>
-        </div>
-      </div>
-      <div class="footer-block footer-block-links">
-        <div class="row">
-          <div class="col-lg-4">
-            <h6 class="h6-heading">Our Platform</h6>
-            <p class="text-14">Ultrices dignissim iaculis mattis feugiat. Nulla imperdiet in lacus integer pellentesque
-              justo. Adipiscing purus quis ut mattis at cursus sit ut et. Eu pharetra, tempus arcu eget blandit
-              vestibulum scelerisque convallis. Pellentesque interdum elit amet vitae, nunc vitae, molestie dui.</p>
-          </div>
-          <div class="col-6 col-lg-2 offset-lg-2">
-            <h6 class="h6-heading">Where to begin</h6>
-            <div class="footer-list">
-              <a class="footer-list-link" href="">Beginner’s guide</a>
-              <a class="footer-list-link" href="">Analysis & Inspiration</a>
-              <a class="footer-list-link" href="">Investment tips</a>
-              <a class="footer-list-link" href="">Market coverage</a>
-            </div>
-          </div>
-          <div class="col-6 col-lg-2">
-            <h6 class="h6-heading">Invest</h6>
-            <div class="footer-list">
-              <a class="footer-list-link" href="">Pricing & plans</a>
-              <a class="footer-list-link" href="">News & annoucments</a>
-              <a class="footer-list-link" href="">Help center</a>
-              <a class="footer-list-link" href="">Contacts center</a>
-            </div>
-          </div>
-          <div class="col-6 col-lg-2">
-            <h6 class="h6-heading">Legal</h6>
-            <div class="footer-list">
-              <a class="footer-list-link" href="">Terms of Service</a>
-              <a class="footer-list-link" href="">
-                Terms & Conditions of Sales
+    <script>
+      const loaderContainer = document.querySelector(".loader-container");
+      window.addEventListener("load", () => {
+        setInterval(function () {
+          loaderContainer.classList.add("loader-container-hidden");
+        }, 1500);
+      });
+    </script>
+    <header class="header">
+      <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container">
+          <div class="header-navbar">
+            <div class="header-navbar-top">
+              <a class="navbar-brand" href="#">
+                <img src="img/logo.svg" class="logo" alt="" />
               </a>
-              <a class="footer-list-link" href="">Privacy Policy</a>
-              <a class="footer-list-link" href="">Cookies Policy</a>
+              <button
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent"
+                aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+            </div>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav me-auto ms-auto">
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Features</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Research</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">
+                    Pricing
+                    <span class="mob-only">plans</span>
+                  </a>
+                </li>
+                <li class="nav-item mob-only">
+                  <a class="nav-link" href="#">Where to begin</a>
+                </li>
+                <li class="nav-item mob-only">
+                  <a class="nav-link" href="#">User guides</a>
+                </li>
+                <li class="nav-item mob-only">
+                  <a class="nav-link" href="#">Investment ideas</a>
+                </li>
+                <li class="nav-item mob-only">
+                  <a class="nav-link" href="#">Financial reviews</a>
+                </li>
+                <li class="nav-item mob-only">
+                  <a class="nav-link" href="#">Contact center</a>
+                </li>
+                <li class="nav-item desktop-only">
+                  <a class="nav-link" href="#">Need help</a>
+                </li>
+              </ul>
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <a class="nav-link btn btn-darkgrey" href="#">Log in</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link btn btn-yellow" href="#">
+                    Start free trial
+                  </a>
+                </li>
+              </ul>
             </div>
           </div>
         </div>
+      </nav>
+    </header>
+
+    <section class="common-section price-section">
+      <div class="container">
+        <div class="common-desc">
+          <h2 class="h2-heading center-text">Package to suit your plan</h2>
+          <p class="text center-text">
+            Taxes included. 14 day money back guarantee. Cancel, downgrade or
+            upgrade at any time
+          </p>
+        </div>
+        <div class="price-choice">
+          <label class="form-switch form-switch-line">
+            <span class="form-switch-option">Monthly</span>
+            <input type="checkbox" class="price-period-switch" />
+            <span class="form-switch-slider form-switch-round"></span>
+            <span class="form-switch-option">Annually</span>
+          </label>
+          <span class="price-choice-tip">
+            Annually you have 16% off which is 2 months free
+          </span>
+        </div>
+        <div class="line line-endless-mob">
+          <div class="card card-price">
+            <img src="img/pattern/price-card-1.svg" class="card-bg" alt="" />
+            <div class="card-price-top">
+              <p class="card-price-top-name">Basic</p>
+              <p class="card-price-top-cost">
+                0.00
+                <span>€</span>
+              </p>
+              <p class="card-price-top-description">
+                Get familiar with platform. No credit card requider.
+              </p>
+              <a href="" class="btn btn-white">Start Today</a>
+            </div>
+            <a href="" class="card-price-list-show">
+              View detailed pricing options
+            </a>
+            <ul class="card-price-list">
+              <li>Scoring system for identifying best companies</li>
+              <li>
+                Discover undervalued stocks based on our relative valuation
+                methodology
+              </li>
+              <li>Dashboard of more than 50 financial metrics and ratios</li>
+              <li>17 years of data</li>
+              <li>Interactive charts for all metrics</li>
+              <li>Comliare all comlianies by any metric</li>
+              <li>Export data</li>
+              <li>Predefined investment portfolios</li>
+              <li>Screen markets by all metrics an ratios</li>
+            </ul>
+          </div>
+          <div class="card card-price">
+            <img src="img/pattern/price-card-2.svg" class="card-bg" alt="" />
+            <div class="card-price-top">
+              <p class="card-price-top-name">Professional</p>
+              <p class="card-price-top-cost">
+                <input type="text" id="output-value" value="8.99" readonly />
+                <span>€</span>
+                <span class="card-price-top-cost-monthly">
+                  <span class="card-price-top-cost-monthly-number">8.99</span>
+                  € / month / market
+                </span>
+              </p>
+              <div class="range-container">
+                <span>Markets</span>
+                <input
+                  type="range"
+                  min="1"
+                  max="6"
+                  value="1"
+                  oninput="sliderChange(this.value)"
+                  id="input-value"
+                  class="range-input" />
+                <span class="range-input-value">1</span>
+              </div>
+              <a href="" class="btn btn-yellow">Start Today</a>
+            </div>
+            <a href="" class="card-price-list-show">
+              View detailed pricing options
+            </a>
+            <ul class="card-price-list">
+              <li>All free features</li>
+              <li>Comprehensive as-reported financials of every company</li>
+              <li>Source documents for every financial number</li>
+              <li>
+                Details for specific items of costs, assets and liabilities
+              </li>
+              <li>Segment information</li>
+              <li>KPIs and alternative performance metrics</li>
+              <li>Ownership structure and its changes</li>
+              <li>Insiders' ownership and trading</li>
+              <li>Comprehensive trading statistics</li>
+            </ul>
+          </div>
+          <div class="card card-price">
+            <img src="img/pattern/price-card-3.svg" class="card-bg" alt="" />
+            <div class="card-price-top">
+              <p class="card-price-top-name">Enterprise</p>
+              <p class="card-price-top-cost">Custom</p>
+              <p class="card-price-top-description">
+                For organizations with special requirements
+              </p>
+              <a href="" class="btn btn-purple">Start Today</a>
+            </div>
+            <a href="" class="card-price-list-show">
+              View detailed pricing options
+            </a>
+            <ul class="card-price-list">
+              <li>
+                Can't find your preferred financial ratios in our toolkit?
+              </li>
+              <li>
+                Need some additonal valuation multiples to value your stocks?
+              </li>
+              <li>Want to compare companies by additional metrics?</li>
+              <li>Have specific requirements for analytical reports?</li>
+              <li>Need special pricing for more users?</li>
+              <li>
+                Contact us and we will customize analytical reports to tailor
+                your special needs!
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="center-text">
+          <a href="#price-table" class="price-section-link">
+            View detailed pricing options
+          </a>
+        </div>
       </div>
-      <p class="footer-copyright-text center-text">Copyright © Plyanalytics. 2022</p>
-      <div class="footer-risk-disclosure">
-        <p>
-          No Advice Regarding Investment, Tax, Trading or Security Account Type. The Services provided by the Service
-          Provider include only the collection of Financial Data and their provision to the User with analytics
-          solutions for the analysis of this Financial Data. Neither Service Provider, nor any of its representatives,
-          will: provide User with investment advice or recommendation; offer any opinion regarding the suitability of
-          any security, account type, order, transaction, or investment advisor, or strategy; solicit any order or
-          transaction; monitor User Account or the Financial Data it analyzes, alert User to any change of Financial
-          Data, or provide legal, tax, or accounting advice (collectively – "Advice"). Nothing on Platform is or shall
-          be deemed a recommendation or solicitation to invest, buy or sell securities or any other investment products,
-          or to engage in any investment strategy. User will not seek, accept, or rely on any Advice from Service
-          Provider or its
-          representatives, or any communication that could be construed as such. Because Service Provider does not
-          provide Advice, Service Provider is not responsible for the suitability or appropriateness of any order,
-          trade, investment, investment strategy, selection of advisor or other activity of User. User agrees that any
-          investment or trade decision executed based on Financial Data provided on Platform is solely User's own
-          decision and is based on User's own evaluation of Financial Data and/or its personal financial situation,
-          needs, and investment objective(s). Service Provider does not endorse and is not responsible for any advice,
-          representation, content, or other information provided by third parties, including but not limited to any such
-          information or third party referenced by or accessed through Platform, including but not limited to the
-          official websites of the public companies from which the Financial Data is collected.
+    </section>
+
+    <section class="price-table-section" id="price-table">
+      <div class="container">
+        <div class="common-desc">
+          <h2 class="h2-heading center-text">Detailed features overview</h2>
+        </div>
+        <div class="price-table-container">
+          <table class="price-table">
+            <tr class="price-table-row price-table-row-heading">
+              <th class="price-table-heading">
+                <div>Discover investment opportunities</div>
+              </th>
+              <th
+                class="price-table-heading price-table-heading-pricing price-table-heading-pricing-1">
+                <div class="price-table-heading-tariff">
+                  <img
+                    src="img/pattern/pricing-table-1.svg"
+                    class="price-table-heading-tariff-bg"
+                    alt="" />
+                  <span>Basic</span>
+                  <span class="price-table-heading-tariff-final">
+                    0.00
+                    <sup>€</sup>
+                  </span>
+                </div>
+              </th>
+              <th
+                class="price-table-heading price-table-heading-pricing price-table-heading-pricing-2">
+                <div class="price-table-heading-tariff">
+                  <img
+                    src="img/pattern/pricing-table-2.svg"
+                    class="price-table-heading-tariff-bg"
+                    alt="" />
+                  <span>Professional</span>
+                  <span class="price-table-heading-tariff-final">
+                    8.99
+                    <sup>€</sup>
+                  </span>
+                </div>
+              </th>
+              <th
+                class="price-table-heading price-table-heading-pricing price-table-heading-pricing-3">
+                <div class="price-table-heading-tariff">
+                  <img
+                    src="img/pattern/pricing-table-3.svg"
+                    class="price-table-heading-tariff-bg"
+                    alt="" />
+                  <span>Enterprise</span>
+                  <span class="price-table-heading-tariff-final">Custom</span>
+                </div>
+              </th>
+            </tr>
+            <tr class="price-table-row">
+              <td class="price-table-item">
+                Select best compnies with PLY scoring system
+              </td>
+              <td class="price-table-item">
+                <img src="img/icons/arrow-top-right-white.svg" alt="" />
+              </td>
+              <td class="price-table-item">
+                <img src="img/icons/arrow-top-right-white.svg" alt="" />
+              </td>
+              <td class="price-table-item">
+                <img src="img/icons/arrow-top-right-white.svg" alt="" />
+              </td>
+            </tr>
+            <tr class="price-table-row">
+              <td class="price-table-item">
+                Find undervalued stocks with PLY realtive valuation system
+              </td>
+              <td class="price-table-item">
+                <img src="img/icons/arrow-top-right-white.svg" alt="" />
+              </td>
+              <td class="price-table-item">
+                <img src="img/icons/arrow-top-right-white.svg" alt="" />
+              </td>
+              <td class="price-table-item">
+                <img src="img/icons/arrow-top-right-white.svg" alt="" />
+              </td>
+            </tr>
+            <tr class="price-table-row">
+              <td class="price-table-item">
+                Compare companies by any of the more than 50 metrics and ratios
+              </td>
+              <td class="price-table-item">
+                <img src="img/icons/arrow-top-right-white.svg" alt="" />
+              </td>
+              <td class="price-table-item">
+                <img src="img/icons/arrow-top-right-white.svg" alt="" />
+              </td>
+              <td class="price-table-item">
+                <img src="img/icons/arrow-top-right-white.svg" alt="" />
+              </td>
+            </tr>
+            <tr class="price-table-row">
+              <td class="price-table-item">
+                Screen markets by all metrics an ratios
+              </td>
+              <td class="price-table-item">
+                <img src="img/icons/arrow-top-right-white.svg" alt="" />
+              </td>
+              <td class="price-table-item">
+                <img src="img/icons/arrow-top-right-white.svg" alt="" />
+              </td>
+              <td class="price-table-item">
+                <img src="img/icons/arrow-top-right-white.svg" alt="" />
+              </td>
+            </tr>
+            <tr class="price-table-row">
+              <td class="price-table-item">
+                View our predefined investment portfolios
+              </td>
+              <td class="price-table-item">
+                <img src="img/icons/arrow-top-right-white.svg" alt="" />
+              </td>
+              <td class="price-table-item">
+                <img src="img/icons/arrow-top-right-white.svg" alt="" />
+              </td>
+              <td class="price-table-item">
+                <img src="img/icons/arrow-top-right-white.svg" alt="" />
+              </td>
+            </tr>
+            <tr class="price-table-row">
+              <td class="price-table-item">
+                Analyze interactive charts with 17-year historical data
+              </td>
+              <td class="price-table-item">
+                <img src="img/icons/arrow-top-right-white.svg" alt="" />
+              </td>
+              <td class="price-table-item">
+                <img src="img/icons/arrow-top-right-white.svg" alt="" />
+              </td>
+              <td class="price-table-item">
+                <img src="img/icons/arrow-top-right-white.svg" alt="" />
+              </td>
+            </tr>
+            <tr class="price-table-row">
+              <td class="price-table-item">
+                Generate your investment ideas with our research reports
+              </td>
+              <td class="price-table-item">
+                <img src="img/icons/arrow-top-right-white.svg" alt="" />
+              </td>
+              <td class="price-table-item">
+                <img src="img/icons/arrow-top-right-white.svg" alt="" />
+              </td>
+              <td class="price-table-item">
+                <img src="img/icons/arrow-top-right-white.svg" alt="" />
+              </td>
+            </tr>
+            <tr class="price-table-row">
+              <td class="price-table-item">
+                Export data from every chart and table
+              </td>
+              <td class="price-table-item">
+                <img src="img/icons/arrow-top-right-white.svg" alt="" />
+              </td>
+              <td class="price-table-item">
+                <img src="img/icons/arrow-top-right-white.svg" alt="" />
+              </td>
+              <td class="price-table-item">
+                <img src="img/icons/arrow-top-right-white.svg" alt="" />
+              </td>
+            </tr>
+            <tr class="price-table-row price-table-row-heading">
+              <th class="price-table-heading">
+                <div>Research company financials in-depth</div>
+              </th>
+              <th class="price-table-heading"></th>
+              <th class="price-table-heading"></th>
+              <th class="price-table-heading"></th>
+            </tr>
+            <tr class="price-table-row">
+              <td class="price-table-item">
+                Dashboard of most important financial metrics and ratios
+              </td>
+              <td class="price-table-item">
+                <img src="img/icons/arrow-top-right-white.svg" alt="" />
+              </td>
+              <td class="price-table-item">
+                <img src="img/icons/arrow-top-right-white.svg" alt="" />
+              </td>
+              <td class="price-table-item">
+                <img src="img/icons/arrow-top-right-white.svg" alt="" />
+              </td>
+            </tr>
+            <tr class="price-table-row">
+              <td class="price-table-item">
+                Comprehensive as-reported financials for every company with
+                17-year historical data:
+              </td>
+              <td class="price-table-item">
+                <img src="img/icons/line-white.svg" alt="" />
+              </td>
+              <td class="price-table-item">
+                <img src="img/icons/arrow-top-right-white.svg" alt="" />
+              </td>
+              <td class="price-table-item">
+                <img src="img/icons/arrow-top-right-white.svg" alt="" />
+              </td>
+            </tr>
+            <tr class="price-table-row price-table-row-includes">
+              <td class="price-table-item">Income statement</td>
+              <td class="price-table-item">
+                <img src="img/icons/line-white.svg" alt="" />
+              </td>
+              <td class="price-table-item">
+                <img src="img/icons/arrow-top-right-white.svg" alt="" />
+              </td>
+              <td class="price-table-item">
+                <img src="img/icons/arrow-top-right-white.svg" alt="" />
+              </td>
+            </tr>
+            <tr class="price-table-row price-table-row-includes">
+              <td class="price-table-item">Balance sheet</td>
+              <td class="price-table-item">
+                <img src="img/icons/line-white.svg" alt="" />
+              </td>
+              <td class="price-table-item">
+                <img src="img/icons/arrow-top-right-white.svg" alt="" />
+              </td>
+              <td class="price-table-item">
+                <img src="img/icons/arrow-top-right-white.svg" alt="" />
+              </td>
+            </tr>
+            <tr class="price-table-row price-table-row-includes">
+              <td class="price-table-item">Cash flow statement</td>
+              <td class="price-table-item">
+                <img src="img/icons/line-white.svg" alt="" />
+              </td>
+              <td class="price-table-item">
+                <img src="img/icons/arrow-top-right-white.svg" alt="" />
+              </td>
+              <td class="price-table-item">
+                <img src="img/icons/arrow-top-right-white.svg" alt="" />
+              </td>
+            </tr>
+            <tr class="price-table-row">
+              <td class="price-table-item">
+                Interactive charts for every data serie with multiselection
+                feature
+              </td>
+              <td class="price-table-item">
+                <img src="img/icons/line-white.svg" alt="" />
+              </td>
+              <td class="price-table-item">
+                <img src="img/icons/arrow-top-right-white.svg" alt="" />
+              </td>
+              <td class="price-table-item">
+                <img src="img/icons/arrow-top-right-white.svg" alt="" />
+              </td>
+            </tr>
+            <tr class="price-table-row">
+              <td class="price-table-item">
+                Interactive charts for every data serie with multiselection
+                feature
+              </td>
+              <td class="price-table-item">
+                <img src="img/icons/line-white.svg" alt="" />
+              </td>
+              <td class="price-table-item">
+                <img src="img/icons/arrow-top-right-white.svg" alt="" />
+              </td>
+              <td class="price-table-item">
+                <img src="img/icons/arrow-top-right-white.svg" alt="" />
+              </td>
+            </tr>
+            <tr class="price-table-row">
+              <td class="price-table-item">
+                Attached source documents for every financial number
+              </td>
+              <td class="price-table-item">
+                <img src="img/icons/line-white.svg" alt="" />
+              </td>
+              <td class="price-table-item">
+                <img src="img/icons/arrow-top-right-white.svg" alt="" />
+              </td>
+              <td class="price-table-item">
+                <img src="img/icons/arrow-top-right-white.svg" alt="" />
+              </td>
+            </tr>
+            <tr class="price-table-row">
+              <td class="price-table-item">
+                Detailed information about structure of revenue, costs, assets
+                and liabilites
+              </td>
+              <td class="price-table-item">
+                <img src="img/icons/line-white.svg" alt="" />
+              </td>
+              <td class="price-table-item">
+                <img src="img/icons/arrow-top-right-white.svg" alt="" />
+              </td>
+              <td class="price-table-item">
+                <img src="img/icons/arrow-top-right-white.svg" alt="" />
+              </td>
+            </tr>
+            <tr class="price-table-row">
+              <td class="price-table-item">Operating segment information</td>
+              <td class="price-table-item">
+                <img src="img/icons/line-white.svg" alt="" />
+              </td>
+              <td class="price-table-item">
+                <img src="img/icons/arrow-top-right-white.svg" alt="" />
+              </td>
+              <td class="price-table-item">
+                <img src="img/icons/arrow-top-right-white.svg" alt="" />
+              </td>
+            </tr>
+            <tr class="price-table-row">
+              <td class="price-table-item">Key operating indicators</td>
+              <td class="price-table-item">
+                <img src="img/icons/line-white.svg" alt="" />
+              </td>
+              <td class="price-table-item">
+                <img src="img/icons/arrow-top-right-white.svg" alt="" />
+              </td>
+              <td class="price-table-item">
+                <img src="img/icons/arrow-top-right-white.svg" alt="" />
+              </td>
+            </tr>
+            <tr class="price-table-row">
+              <td class="price-table-item">Alternative performance metrics</td>
+              <td class="price-table-item">
+                <img src="img/icons/line-white.svg" alt="" />
+              </td>
+              <td class="price-table-item">
+                <img src="img/icons/arrow-top-right-white.svg" alt="" />
+              </td>
+              <td class="price-table-item">
+                <img src="img/icons/arrow-top-right-white.svg" alt="" />
+              </td>
+            </tr>
+            <tr class="price-table-row">
+              <td class="price-table-item">
+                Ownership structure and its changes
+              </td>
+              <td class="price-table-item">
+                <img src="img/icons/line-white.svg" alt="" />
+              </td>
+              <td class="price-table-item">
+                <img src="img/icons/arrow-top-right-white.svg" alt="" />
+              </td>
+              <td class="price-table-item">
+                <img src="img/icons/arrow-top-right-white.svg" alt="" />
+              </td>
+            </tr>
+            <tr class="price-table-row">
+              <td class="price-table-item">Insiders' ownership and trading</td>
+              <td class="price-table-item">
+                <img src="img/icons/line-white.svg" alt="" />
+              </td>
+              <td class="price-table-item">
+                <img src="img/icons/arrow-top-right-white.svg" alt="" />
+              </td>
+              <td class="price-table-item">
+                <img src="img/icons/arrow-top-right-white.svg" alt="" />
+              </td>
+            </tr>
+            <tr class="price-table-row price-table-row-heading">
+              <th class="price-table-heading">
+                <div>Get customized financial analytics</div>
+              </th>
+              <th class="price-table-heading"></th>
+              <th class="price-table-heading"></th>
+              <th class="price-table-heading"></th>
+            </tr>
+            <tr class="price-table-row">
+              <td class="price-table-item">
+                Specific analytical reports tailored to your requirements
+              </td>
+              <td class="price-table-item">
+                <img src="img/icons/line-white.svg" alt="" />
+              </td>
+              <td class="price-table-item">
+                <img src="img/icons/line-white.svg" alt="" />
+              </td>
+              <td class="price-table-item">
+                <img src="img/icons/arrow-top-right-white.svg" alt="" />
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section class="form-section">
+      <div class="container">
+        <div class="line">
+          <div class="card form-section-left">
+            <img src="img/pattern/home-form.svg" alt="" class="card-bg" />
+            <h2 class="h2-heading">Neque odio at viverra viverra quis.</h2>
+            <p class="text">
+              Hac consequat hac mus egestas. Etiam amet donec viverra amet morbi
+              integer eget faciazlisis orci. Leo fermentum ac elementum, lacus,
+              tempor neque. Tellus aliquam justo varius elit consequat nullam
+              accumsan praesent.
+            </p>
+          </div>
+          <div class="card form-section-right">
+            <form action="" class="form">
+              <label class="form-label form-label-half">
+                <span class="form-label-name">
+                  Name
+                  <span class="red">*</span>
+                </span>
+                <input
+                  type="text"
+                  class="form-text-input"
+                  placeholder="Enter name" />
+              </label>
+              <label class="form-label form-label-half">
+                <span class="form-label-name">
+                  Company
+                  <span class="red">*</span>
+                </span>
+                <input
+                  type="text"
+                  class="form-text-input"
+                  placeholder="Enter company" />
+              </label>
+              <label class="form-label form-label-half">
+                <span class="form-label-name">
+                  Email
+                  <span class="red">*</span>
+                </span>
+                <input
+                  type="email"
+                  class="form-text-input"
+                  placeholder="Enter email" />
+              </label>
+              <label class="form-label form-label-half">
+                <span class="form-label-name">
+                  Phone
+                  <span class="red">*</span>
+                </span>
+                <input
+                  type="tel"
+                  class="form-text-input"
+                  placeholder="Enter phone" />
+              </label>
+              <label class="form-label form-label-full">
+                <span class="form-label-name">
+                  Message
+                  <span class="red">*</span>
+                </span>
+                <textarea
+                  class="form-textarea"
+                  placeholder="Enter message"></textarea>
+              </label>
+              <div class="form-bottom">
+                <label class="form-switch form-switch-line">
+                  <input type="checkbox" />
+                  <span class="form-switch-slider form-switch-round"></span>
+                  <span class="form-switch-text">
+                    I accept the
+                    <a href="">Terms of Services</a>
+                    and have read the Service
+                    <a href="">Privacy Policy</a>
+                  </span>
+                </label>
+                <label class="form-switch form-switch-line">
+                  <input type="checkbox" />
+                  <span class="form-switch-slider form-switch-round"></span>
+                  <span class="form-switch-text">
+                    I agree that my personal data (name, surname, email address,
+                    telephone number) will be processed for direct marketing
+                    purpose, i.e. I would be provided with offers, news about
+                    the services, information about ongoing events, promotions
+                    and/or other information, as well as my opinion about
+                    services provided would also be sought
+                  </span>
+                </label>
+                <input
+                  type="submit"
+                  class="btn btn-purple"
+                  value="Dive deeper" />
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="common-section">
+      <div class="container">
+        <div class="common-desc">
+          <h2 class="h2-heading center-text">What do users say about us?</h2>
+          <p class="text center-text">
+            Hac consequat hac mus egestas. Etiam amet donec viverra amet morbi
+            integer eget facilisis orci. Leo fermentum ac elementum, lacus,
+            tempor neque. Tellus aliquam justo varius elit consequat nullam
+            accumsan praesent.
+          </p>
+        </div>
+        <div class="line line-review">
+          <div class="card card-review">
+            <div class="card-review-top">
+              <img
+                src="img/icons/trustpilot-stars.svg"
+                class="card-review-top-image"
+                alt="" />
+              <span>4 days ago</span>
+            </div>
+            <p class="card-review-heading"><b>Lobortis viverra maecenas.</b></p>
+            <p class="card-review-text">
+              Eget mauris odio sollicitudin velit a, eleifend in fames. Sit
+              laoreet risus consequat cras.
+            </p>
+            <p class="card-review-name">Lobortis viverra</p>
+          </div>
+          <div class="card card-review">
+            <div class="card-review-top">
+              <img
+                src="img/icons/trustpilot-stars.svg"
+                class="card-review-top-image"
+                alt="" />
+              <span>4 days ago</span>
+            </div>
+            <p class="card-review-heading"><b>Lobortis viverra maecenas.</b></p>
+            <p class="card-review-text">
+              Eget mauris odio sollicitudin velit a, eleifend in fames. Sit
+              laoreet risus consequat cras.
+            </p>
+            <p class="card-review-name">Lobortis viverra</p>
+          </div>
+          <div class="card card-review">
+            <div class="card-review-top">
+              <img
+                src="img/icons/trustpilot-stars.svg"
+                class="card-review-top-image"
+                alt="" />
+              <span>4 days ago</span>
+            </div>
+            <p class="card-review-heading"><b>Lobortis viverra maecenas.</b></p>
+            <p class="card-review-text">
+              Eget mauris odio sollicitudin velit a, eleifend in fames. Sit
+              laoreet risus consequat cras.
+            </p>
+            <p class="card-review-name">Lobortis viverra</p>
+          </div>
+          <div class="card card-review">
+            <div class="card-review-top">
+              <img
+                src="img/icons/trustpilot-stars.svg"
+                class="card-review-top-image"
+                alt="" />
+              <span>4 days ago</span>
+            </div>
+            <p class="card-review-heading"><b>Lobortis viverra maecenas.</b></p>
+            <p class="card-review-text">
+              Eget mauris odio sollicitudin velit a, eleifend in fames. Sit
+              laoreet risus consequat cras.
+            </p>
+            <p class="card-review-name">Lobortis viverra</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="filter">
+          <a href="" class="filter-btn">Guide</a>
+          <a href="" class="filter-btn">Tips</a>
+          <a href="" class="filter-btn">Analysis</a>
+          <a href="" class="filter-btn">Help</a>
+          <a href="" class="filter-btn">Data</a>
+          <a href="" class="filter-btn">Guide</a>
+          <a href="" class="filter-btn">Tips</a>
+          <a href="" class="filter-btn">Analysis</a>
+          <a href="" class="filter-btn">Data recovery</a>
+        </div>
+        <div class="footer-block footer-block-email">
+          <div class="footer-block-row">
+            <div class="footer-block-gradient">
+              <p class="gradient-text">
+                Possibility to choose various investment
+              </p>
+              <p class="text-14">
+                Unsubscribe at any time.
+                <a href="">Privacy policy↗</a>
+              </p>
+            </div>
+            <form action="" class="footer-form">
+              <input
+                type="email"
+                class="text-input text-input-email"
+                placeholder="Enter your email to subscribe" />
+              <input
+                type="submit"
+                class="btn btn-purple btn-email-subscribe"
+                value="Subscribe" />
+            </form>
+          </div>
+        </div>
+        <div class="footer-block">
+          <div class="footer-block-row">
+            <img src="img/logo.svg" class="logo" alt="" />
+            <div class="footer-reviews-rate">
+              <p><b>Excellent</b></p>
+              <img src="img/icons/trustpilot-stars.svg" alt="" />
+              <p>4.8 out of 5 based ion 427 review</p>
+            </div>
+          </div>
+        </div>
+        <div class="footer-block footer-block-links">
+          <div class="row">
+            <div class="col-lg-4">
+              <h6 class="h6-heading">Our Platform</h6>
+              <p class="text-14">
+                Ultrices dignissim iaculis mattis feugiat. Nulla imperdiet in
+                lacus integer pellentesque justo. Adipiscing purus quis ut
+                mattis at cursus sit ut et. Eu pharetra, tempus arcu eget
+                blandit vestibulum scelerisque convallis. Pellentesque interdum
+                elit amet vitae, nunc vitae, molestie dui.
+              </p>
+            </div>
+            <div class="col-6 col-lg-2 offset-lg-2">
+              <h6 class="h6-heading">Where to begin</h6>
+              <div class="footer-list">
+                <a class="footer-list-link" href="">Beginner’s guide</a>
+                <a class="footer-list-link" href="">Analysis & Inspiration</a>
+                <a class="footer-list-link" href="">Investment tips</a>
+                <a class="footer-list-link" href="">Market coverage</a>
+              </div>
+            </div>
+            <div class="col-6 col-lg-2">
+              <h6 class="h6-heading">Invest</h6>
+              <div class="footer-list">
+                <a class="footer-list-link" href="">Pricing & plans</a>
+                <a class="footer-list-link" href="">News & annoucments</a>
+                <a class="footer-list-link" href="">Help center</a>
+                <a class="footer-list-link" href="">Contacts center</a>
+              </div>
+            </div>
+            <div class="col-6 col-lg-2">
+              <h6 class="h6-heading">Legal</h6>
+              <div class="footer-list">
+                <a class="footer-list-link" href="">Terms of Service</a>
+                <a class="footer-list-link" href="">
+                  Terms & Conditions of Sales
+                </a>
+                <a class="footer-list-link" href="">Privacy Policy</a>
+                <a class="footer-list-link" href="">Cookies Policy</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <p class="footer-copyright-text center-text">
+          Copyright © Plyanalytics. 2022
         </p>
+        <div class="footer-risk-disclosure">
+          <p>
+            No Advice Regarding Investment, Tax, Trading or Security Account
+            Type. The Services provided by the Service Provider include only the
+            collection of Financial Data and their provision to the User with
+            analytics solutions for the analysis of this Financial Data. Neither
+            Service Provider, nor any of its representatives, will: provide User
+            with investment advice or recommendation; offer any opinion
+            regarding the suitability of any security, account type, order,
+            transaction, or investment advisor, or strategy; solicit any order
+            or transaction; monitor User Account or the Financial Data it
+            analyzes, alert User to any change of Financial Data, or provide
+            legal, tax, or accounting advice (collectively – "Advice"). Nothing
+            on Platform is or shall be deemed a recommendation or solicitation
+            to invest, buy or sell securities or any other investment products,
+            or to engage in any investment strategy. User will not seek, accept,
+            or rely on any Advice from Service Provider or its representatives,
+            or any communication that could be construed as such. Because
+            Service Provider does not provide Advice, Service Provider is not
+            responsible for the suitability or appropriateness of any order,
+            trade, investment, investment strategy, selection of advisor or
+            other activity of User. User agrees that any investment or trade
+            decision executed based on Financial Data provided on Platform is
+            solely User's own decision and is based on User's own evaluation of
+            Financial Data and/or its personal financial situation, needs, and
+            investment objective(s). Service Provider does not endorse and is
+            not responsible for any advice, representation, content, or other
+            information provided by third parties, including but not limited to
+            any such information or third party referenced by or accessed
+            through Platform, including but not limited to the official websites
+            of the public companies from which the Financial Data is collected.
+          </p>
+        </div>
       </div>
-    </div>
-  </footer>
+    </footer>
 
-  <script src="js/bootstrap.min.js"></script>
-  <script src="js/swiper-bundle.min.js"></script>
-  <script src="js/scripts.js"></script>
-</body>
-
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/swiper-bundle.min.js"></script>
+    <script src="js/scripts.js"></script>
+  </body>
 </html>

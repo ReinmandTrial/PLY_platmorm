@@ -44,10 +44,12 @@
     <div class="spinner"></div>
   </div>
   <script>
-    const loaderContainer = document.querySelector(".loader-container");
-    window.addEventListener("load", () => {
-      loaderContainer.classList.add("loader-container-hidden");
-    });
+      const loaderContainer = document.querySelector(".loader-container");
+      window.addEventListener("load", () => {
+        setInterval(function(){
+        loaderContainer.classList.add("loader-container-hidden");
+        }, 1500);
+      });
   </script>
   <header class="header">
     <nav class="navbar navbar-expand-lg navbar-light">

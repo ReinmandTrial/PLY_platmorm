@@ -45,7 +45,9 @@
     <script>
       const loaderContainer = document.querySelector(".loader-container");
       window.addEventListener("load", () => {
+        setInterval(function(){
         loaderContainer.classList.add("loader-container-hidden");
+        }, 1500);
       });
     </script>
     <header class="header">
