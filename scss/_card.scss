@@ -78,6 +78,24 @@
     margin-bottom: 20px;
     gap: 15px;
 
+    @media (max-width: 1280px) {
+      margin-bottom: 0;
+    }
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+
+      &-2 {
+        .card {
+          flex: initial;
+          margin-bottom: 0;
+          align-items: center;
+          justify-content: center;
+          align-self: initial;
+        }
+      }
+    }
+
     &-2 {
       .card {
         .text:last-of-type {
@@ -93,26 +111,14 @@
           @media (max-width: 1280px) {
             &:last-of-type {
               margin-bottom: 0;
+              background-color: $purple-color;
             }
           }
         }
       }
-    }
 
-    @media (max-width: 1280px) {
-      margin-bottom: 0;
-    }
-
-    @media (max-width: 768px) {
-      flex-direction: column;
-
-      &-2 {
-        .card {
-          flex: initial;
-          margin-bottom: 0;
-          align-items: center;
-          justify-content: center;
-        }
+      @media (max-width: 768px) {
+        flex-direction: column-reverse;
       }
     }
   }
