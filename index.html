@@ -29,6 +29,13 @@
       .loader-container-hidden {
         display: none;
       }
+
+      @media (max-width: 768px) {
+        .spinner {
+          width: 50vw;
+          height: 50vh;
+        }
+      }
     </style>
     <link rel="stylesheet" href="css/bootstrap.min.css" />
     <link rel="stylesheet" href="css/swiper-bundle.min.css" />
@@ -431,13 +438,7 @@
                   </div>
                 </div>
               </div>
-
-              <!-- If we need navigation buttons -->
-              <!-- <div class="swiper-button-prev home-swiper-button-prev"></div>
-              <div class="swiper-button-next home-swiper-button-next"></div> -->
             </div>
-            <!-- If we need pagination -->
-            <!-- <div class="swiper-pagination home-swiper-pagination"></div> -->
           </div>
         </div>
       </div>
@@ -912,7 +913,7 @@
 
     <section class="form-section">
       <div class="container">
-        <div class="line">
+        <div class="line line-form">
           <div class="card form-section-left">
             <img src="img/pattern/home-form.svg" alt="" class="card-bg" />
             <h2 class="h2-heading">Neque odio at viverra viverra quis.</h2>

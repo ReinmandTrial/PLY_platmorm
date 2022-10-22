@@ -150,7 +150,6 @@ body {
   margin: 0;
 }
 
-// container
 .container,
 .container-lg,
 .container-md,
@@ -159,6 +158,15 @@ body {
 .container-xxl {
   @media (min-width: 1600px) {
     max-width: 1520px;
+  }
+  @media (max-width: 576px) {
+    padding: 0 20px;
+  }
+}
+
+.desktop-only {
+  @media (max-width: 768px) {
+    display: none;
   }
 }
 

@@ -60,6 +60,11 @@
     margin: 30px 0;
   }
 
+  &-brand {
+    padding: 0;
+    display: flex;
+  }
+
   .navbar-nav {
     background-color: $darkgrey-color;
     border-radius: 10px;
@@ -240,7 +245,7 @@
 
   &-toggler {
     border: 0;
-    padding-right: 0;
+    padding: 0;
 
     &:focus {
       box-shadow: none;
@@ -249,7 +254,8 @@
     &-icon {
       background-image: url(../img/icons/navbar-toggler.svg);
       width: 14px;
-      transition: 0.3s;
+      height: 14px;
+      transition: .3s;
     }
 
     &[aria-expanded="true"] {

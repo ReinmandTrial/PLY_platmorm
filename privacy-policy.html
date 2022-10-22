@@ -1,288 +1,471 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <link rel="icon" href="img/favicon.png" />
+    <style>
+      .loader-container {
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        background: #202020;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+      }
 
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv="x-ua-compatible" content="ie=edge" />
-  <link rel="icon" href="img/favicon.png" />
-  <style>
-    .loader-container {
-      width: 100%;
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      position: fixed;
-      background: #202020;
-      z-index: 9999;
-      top: 0;
-      left: 0;
-    }
+      .spinner {
+        width: 20vw;
+        height: 20vh;
+        background: url(img/preloader.webp) center no-repeat;
+        background-size: contain;
+      }
 
-    .spinner {
-      width: 20vw;
-      height: 20vh;
-      background: url(img/preloader.webp) center no-repeat;
-      background-size: contain;
-    }
+      .loader-container-hidden {
+        display: none;
+      }
 
-    .loader-container-hidden {
-      display: none;
-    }
-  </style>
-  <link rel="stylesheet" href="css/bootstrap.min.css" />
-  <link rel="stylesheet" href="css/swiper-bundle.min.css" />
-  <link rel="stylesheet" href="css/index.min.css" />
-  <link rel="stylesheet" href="css/article.min.css" />
+      @media (max-width: 768px) {
+        .spinner {
+          width: 50vw;
+          height: 50vh;
+        }
+      }
+    </style>
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="css/index.min.css" />
+    <link rel="stylesheet" href="css/article.min.css" />
 
-  <title>Privacy policy</title>
-</head>
+    <title>Privacy policy</title>
+  </head>
 
-<body class="grey-bg">
-  <div class="loader-container">
-    <div class="spinner"></div>
-  </div>
-  <script>
+  <body class="grey-bg">
+    <div class="loader-container">
+      <div class="spinner"></div>
+    </div>
+    <script>
       const loaderContainer = document.querySelector(".loader-container");
       window.addEventListener("load", () => {
-        setInterval(function(){
-        loaderContainer.classList.add("loader-container-hidden");
+        setInterval(function () {
+          loaderContainer.classList.add("loader-container-hidden");
         }, 1500);
       });
-  </script>
-  <header class="header">
-    <nav class="navbar navbar-expand-lg navbar-light">
-      <div class="container">
-        <div class="header-navbar">
-          <div class="header-navbar-top">
-            <a class="navbar-brand" href="#">
-              <img src="img/logo.svg" class="logo" alt="" />
-            </a>
-            <button
-              class="navbar-toggler"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#navbarSupportedContent"
-              aria-controls="navbarSupportedContent"
-              aria-expanded="false"
-              aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-          </div>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto ms-auto">
-              <li class="nav-item">
-                <a class="nav-link" href="#">Features</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Research</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Pricing <span class="mob-only">plans</span></a>
-              </li>
-              <li class="nav-item mob-only">
-                <a class="nav-link" href="#">Where to begin</a>
-              </li>
-              <li class="nav-item mob-only">
-                <a class="nav-link" href="#">User guides</a>
-              </li>
-              <li class="nav-item mob-only">
-                <a class="nav-link" href="#">Investment ideas</a>
-              </li>
-              <li class="nav-item mob-only">
-                <a class="nav-link" href="#">Financial reviews</a>
-              </li>
-              <li class="nav-item mob-only">
-                <a class="nav-link" href="#">Contact center</a>
-              </li>
-              <li class="nav-item desktop-only">
-                <a class="nav-link" href="#">Need help</a>
-              </li>
-            </ul>
-            <ul class="navbar-nav">
-              <li class="nav-item">
-                <a class="nav-link btn btn-darkgrey" href="#">Log in</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link btn btn-yellow" href="#">Start free trial</a>
-              </li>
-            </ul>
+    </script>
+    <header class="header">
+      <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container">
+          <div class="header-navbar">
+            <div class="header-navbar-top">
+              <a class="navbar-brand" href="#">
+                <img src="img/logo.svg" class="logo" alt="" />
+              </a>
+              <button
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent"
+                aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+            </div>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav me-auto ms-auto">
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Features</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Research</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">
+                    Pricing
+                    <span class="mob-only">plans</span>
+                  </a>
+                </li>
+                <li class="nav-item mob-only">
+                  <a class="nav-link" href="#">Where to begin</a>
+                </li>
+                <li class="nav-item mob-only">
+                  <a class="nav-link" href="#">User guides</a>
+                </li>
+                <li class="nav-item mob-only">
+                  <a class="nav-link" href="#">Investment ideas</a>
+                </li>
+                <li class="nav-item mob-only">
+                  <a class="nav-link" href="#">Financial reviews</a>
+                </li>
+                <li class="nav-item mob-only">
+                  <a class="nav-link" href="#">Contact center</a>
+                </li>
+                <li class="nav-item desktop-only">
+                  <a class="nav-link" href="#">Need help</a>
+                </li>
+              </ul>
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <a class="nav-link btn btn-darkgrey" href="#">Log in</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link btn btn-yellow" href="#">
+                    Start free trial
+                  </a>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
-      </div>
-    </nav>
-  </header>
+      </nav>
+    </header>
 
-  <article class="article article-legal">
-    <div class="container">
-      <div class="article-legal-heading">
-        <h1 class="h1-heading regular-font">Terms of service</h1>
-        <p class="article-legal-date">Last updated: <b>21 September 2021</b></p>
-      </div>
-      <p class="text"><strong>1. GENERAL PROVISIONS</strong></p>
-      <p class="text">1.1. These terms of service, together with the other documents referred to in these terms of service
-        (hereinafter referred to as the “Terms of Service”), are a binding legal agreement between the User (or “you”)
-        and the Service Provider (or “us”, ‘we”) that govern use of INVESTELLIGENTLY platform, which can be accessed
-        online at https://www.investelligently.com, and establishes the rights, obligations and liability of the
-        Parties.</p>
-      <p class="text">1.2. By using the Platform and the Services therein, as well as by registering an Account, you
-        confirm that you have read these Terms of Service and rights and obligations of the User established therein and
-        agree to adhere to them unconditionally and irrevocably. If a User does not agree to assume and adhere to all
-        obligations set forth in these Terms of Service, the User shall not have the right to register an Account, use
-        the Platform and Service therein.</p>
-      <p class="text">1.3. The Service is intended for users that aren’t consumers (being an individual acting primarily
-        for purposes other than a trade, business or profession) and the applicability of consumer protection
-        legislation is therefore excluded. You must be 18 years of age or older to enter into this agreement and use the
-        Service. You represent and warrant that any information you submit is true and accurate, you are fully able and
-        competent, and you have the authority to represent the entity on whose behalf you register an Account and use
-        the Service, if applicable.</p>
-      <p class="text">1.4. Capitalised terms used in these Terms of Service shall have the following meanings:</p>
-      <p class="text">1.4.1. Terms of Service – the Terms of Service set herein are a binding legal agreement between
-        the Parties, that establishes the terms and conditions for the use of the Platform and Service provided therein,
-        as well as the rights, obligations and liability of the Parties for violation of these Terms of Service.</p>
-      <p class="text">1.4.2. Service – is the Financial Data analytics solution that allows Users to get a unique
-        insight into the financial data of public companies listed on a various securities exchanges and alternative
-        trading systems by using the Service Provider collected comprehensive public financial data and analytical
-        templates that allow Users to analyze and compare financial data faster and easier.</p>
-      <p class="text">1.4.3. Service Provider – the entity providing Service and administering and maintaining the
-        Platform, UAB Finansu analizes ir valdymo sprendimai, legal entity code 303500896, legal address 5 Ulonu str.,
-        LT-08240 Vilnius, Lithuania. Data about the Service Provider are collected and stored in the Register of Legal
-        Entities, Register State Enterprise Centre of Registers. Service Provider’s VAT identification number –
-        LT100009077919.</p>
-      <p class="text">1.4.4. User – a person or its authorized representative who use the Platform and Service therein.
-      </p>
-      <p class="text">1.4.5. Account – the result of the User’s registration with the Platform, which creates a personal
-        account for the User that stores his or her Personal Data and order history.</p>
-      <p class="text">1.4.6. Financial Data – is the financial data of public companies listed on a various stock
-        exchange markets that is collected and reported by Service Provider on the Platform based on publicly available
-        sources on official pages of the public companies and various securities exchanges and alternative trading
-        systems. The provided Financial Data is updated on daily basis following the changes in data on the
-        aforementioned publicly available sources, but regularly updated financial data is accessible just for Users on
-        the Service subscription basis.</p>
-      <p class="text">1.4.7. Personal Data – any information collected by the Service Provider about the User or
-        representative thereof (natural person) as defined in Article 4(1) of Regulation (EU) 2016/679 of the European
-        Parliament and of the Council of 27 April 2016 on the protection of natural persons with regard to the
-        processing of personal data and on the free movement of such data and repealing Directive 95/46/EC (General Data
-        Protection Regulation).</p>
-      <p class="text">1.4.8. Intellectual Property Rights – any present and future rights in and to trade secrets,
-        patents, copyrights, trademarks, service marks, know-how, and other proprietary rights of any type under the
-        laws of any governmental authority, domestic or foreign, including rights in and to all applications and
-        registrations relating to the Service.</p>
-      <p class="text">1.4.9. Parties – the Service Provider and the User.</p>
-      <p class="text">1.5. No Advice Regarding Investment, Tax, Trading or Security Account Type. The Services provided
-        by the Service Provider include only the collection of Financial Data and their provision to the User with
-        analytics solutions for the analysis of this Financial Data. Neither Service Provider, nor any of its
-        representatives, will: provide User with investment advice or recommendation; offer any opinion regarding the
-        suitability of any security, account type, order, transaction, or investment advisor, or strategy; solicit any
-        order or transaction; monitor User Account or the Financial Data it analyzes, alert User to any change of
-        Financial Data, or provide legal, tax, or accounting advice (collectively – "Advice"). Nothing on Platform is or
-        shall be deemed a recommendation or solicitation to invest, buy or sell securities or any other investment
-        products, or to engage in any investment strategy. User will not seek, accept, or rely on any Advice from
-        Service Provider or its representatives, or any communication that could be construed as such. Because Service
-        Provider does not provide Advice, Service Provider is not responsible for the suitability or appropriateness of
-        any order, trade, investment, investment strategy, selection of advisor or other activity of User. User agrees
-        that any investment or trade decision executed based on Financial Data provided on Platform is solely User's own
-        decision and is based on User's own evaluation of Financial Data and/or its personal financial situation, needs,
-        and investment objective(s). Service Provider does not endorse and is not responsible for any advice,
-        representation, content, or other information provided by third parties, including but not limited to any such
-        information or third party referenced by or accessed through Platform, including but not limited to the official
-        websites of the public companies from which the Financial Data is collected.</p>
-      <p class="text">1.6. The Service Provider shall process the User’s Personal Data in accordance with the Privacy
-        Policy. The Personal Data Protection and Privacy Policy contains important provisions of the Terms of Service,
-        so it is recommended that the Buyer read them carefully and make sure that all the provisions of the Privacy
-        Policy are understandable and acceptable; available in the Privacy Policy section of the Platform.</p>
-      <p class="text">1.7. These Terms of Service shall be governed, construed, and enforced in accordance with the laws
-        of the Republic of Lithuania, without giving effect to conflicts-of-law principles thereof. If any provision of
-        these Terms of Service contradicts the legislation of the Republic of Lithuania or becomes invalid in whole or
-        in part for any reason, it shall not invalidate the remaining provisions of the Terms of Service.</p>
-      <p class="text">1.8. The Service Provider reserves the right to change, amend or supplement these Terms of Service
-        at any time. User shall be informed about changes to the Terms of Service via Platform or Account, or by email.
-        Unless otherwise specified by Service Provider, changes become effective for User upon renewal of the
-        then-current subscription term or entry into a new subscription after the updated version of these Term of
-        Service goes into effect. User may be required to click to accept or otherwise agree to the modified Terms of
-        Service before renewing a subscription term or entering into new subscription, and in any event continued use of
-        any Service after the updated version of this Terms of Service goes into effect will constitute User’s
-        acceptance of such updated version.</p>
+    <article class="article article-legal">
+      <div class="container">
+        <div class="article-legal-heading">
+          <h1 class="h1-heading regular-font">Terms of service</h1>
+          <p class="article-legal-date">
+            Last updated:
+            <b>21 September 2021</b>
+          </p>
+        </div>
+        <p class="text"><strong>1. GENERAL PROVISIONS</strong></p>
+        <p class="text">
+          1.1. These terms of service, together with the other documents
+          referred to in these terms of service (hereinafter referred to as the
+          “Terms of Service”), are a binding legal agreement between the User
+          (or “you”) and the Service Provider (or “us”, ‘we”) that govern use of
+          INVESTELLIGENTLY platform, which can be accessed online at
+          https://www.investelligently.com, and establishes the rights,
+          obligations and liability of the Parties.
+        </p>
+        <p class="text">
+          1.2. By using the Platform and the Services therein, as well as by
+          registering an Account, you confirm that you have read these Terms of
+          Service and rights and obligations of the User established therein and
+          agree to adhere to them unconditionally and irrevocably. If a User
+          does not agree to assume and adhere to all obligations set forth in
+          these Terms of Service, the User shall not have the right to register
+          an Account, use the Platform and Service therein.
+        </p>
+        <p class="text">
+          1.3. The Service is intended for users that aren’t consumers (being an
+          individual acting primarily for purposes other than a trade, business
+          or profession) and the applicability of consumer protection
+          legislation is therefore excluded. You must be 18 years of age or
+          older to enter into this agreement and use the Service. You represent
+          and warrant that any information you submit is true and accurate, you
+          are fully able and competent, and you have the authority to represent
+          the entity on whose behalf you register an Account and use the
+          Service, if applicable.
+        </p>
+        <p class="text">
+          1.4. Capitalised terms used in these Terms of Service shall have the
+          following meanings:
+        </p>
+        <p class="text">
+          1.4.1. Terms of Service – the Terms of Service set herein are a
+          binding legal agreement between the Parties, that establishes the
+          terms and conditions for the use of the Platform and Service provided
+          therein, as well as the rights, obligations and liability of the
+          Parties for violation of these Terms of Service.
+        </p>
+        <p class="text">
+          1.4.2. Service – is the Financial Data analytics solution that allows
+          Users to get a unique insight into the financial data of public
+          companies listed on a various securities exchanges and alternative
+          trading systems by using the Service Provider collected comprehensive
+          public financial data and analytical templates that allow Users to
+          analyze and compare financial data faster and easier.
+        </p>
+        <p class="text">
+          1.4.3. Service Provider – the entity providing Service and
+          administering and maintaining the Platform, UAB Finansu analizes ir
+          valdymo sprendimai, legal entity code 303500896, legal address 5 Ulonu
+          str., LT-08240 Vilnius, Lithuania. Data about the Service Provider are
+          collected and stored in the Register of Legal Entities, Register State
+          Enterprise Centre of Registers. Service Provider’s VAT identification
+          number – LT100009077919.
+        </p>
+        <p class="text">
+          1.4.4. User – a person or its authorized representative who use the
+          Platform and Service therein.
+        </p>
+        <p class="text">
+          1.4.5. Account – the result of the User’s registration with the
+          Platform, which creates a personal account for the User that stores
+          his or her Personal Data and order history.
+        </p>
+        <p class="text">
+          1.4.6. Financial Data – is the financial data of public companies
+          listed on a various stock exchange markets that is collected and
+          reported by Service Provider on the Platform based on publicly
+          available sources on official pages of the public companies and
+          various securities exchanges and alternative trading systems. The
+          provided Financial Data is updated on daily basis following the
+          changes in data on the aforementioned publicly available sources, but
+          regularly updated financial data is accessible just for Users on the
+          Service subscription basis.
+        </p>
+        <p class="text">
+          1.4.7. Personal Data – any information collected by the Service
+          Provider about the User or representative thereof (natural person) as
+          defined in Article 4(1) of Regulation (EU) 2016/679 of the European
+          Parliament and of the Council of 27 April 2016 on the protection of
+          natural persons with regard to the processing of personal data and on
+          the free movement of such data and repealing Directive 95/46/EC
+          (General Data Protection Regulation).
+        </p>
+        <p class="text">
+          1.4.8. Intellectual Property Rights – any present and future rights in
+          and to trade secrets, patents, copyrights, trademarks, service marks,
+          know-how, and other proprietary rights of any type under the laws of
+          any governmental authority, domestic or foreign, including rights in
+          and to all applications and registrations relating to the Service.
+        </p>
+        <p class="text">1.4.9. Parties – the Service Provider and the User.</p>
+        <p class="text">
+          1.5. No Advice Regarding Investment, Tax, Trading or Security Account
+          Type. The Services provided by the Service Provider include only the
+          collection of Financial Data and their provision to the User with
+          analytics solutions for the analysis of this Financial Data. Neither
+          Service Provider, nor any of its representatives, will: provide User
+          with investment advice or recommendation; offer any opinion regarding
+          the suitability of any security, account type, order, transaction, or
+          investment advisor, or strategy; solicit any order or transaction;
+          monitor User Account or the Financial Data it analyzes, alert User to
+          any change of Financial Data, or provide legal, tax, or accounting
+          advice (collectively – "Advice"). Nothing on Platform is or shall be
+          deemed a recommendation or solicitation to invest, buy or sell
+          securities or any other investment products, or to engage in any
+          investment strategy. User will not seek, accept, or rely on any Advice
+          from Service Provider or its representatives, or any communication
+          that could be construed as such. Because Service Provider does not
+          provide Advice, Service Provider is not responsible for the
+          suitability or appropriateness of any order, trade, investment,
+          investment strategy, selection of advisor or other activity of User.
+          User agrees that any investment or trade decision executed based on
+          Financial Data provided on Platform is solely User's own decision and
+          is based on User's own evaluation of Financial Data and/or its
+          personal financial situation, needs, and investment objective(s).
+          Service Provider does not endorse and is not responsible for any
+          advice, representation, content, or other information provided by
+          third parties, including but not limited to any such information or
+          third party referenced by or accessed through Platform, including but
+          not limited to the official websites of the public companies from
+          which the Financial Data is collected.
+        </p>
+        <p class="text">
+          1.6. The Service Provider shall process the User’s Personal Data in
+          accordance with the Privacy Policy. The Personal Data Protection and
+          Privacy Policy contains important provisions of the Terms of Service,
+          so it is recommended that the Buyer read them carefully and make sure
+          that all the provisions of the Privacy Policy are understandable and
+          acceptable; available in the Privacy Policy section of the Platform.
+        </p>
+        <p class="text">
+          1.7. These Terms of Service shall be governed, construed, and enforced
+          in accordance with the laws of the Republic of Lithuania, without
+          giving effect to conflicts-of-law principles thereof. If any provision
+          of these Terms of Service contradicts the legislation of the Republic
+          of Lithuania or becomes invalid in whole or in part for any reason, it
+          shall not invalidate the remaining provisions of the Terms of Service.
+        </p>
+        <p class="text">
+          1.8. The Service Provider reserves the right to change, amend or
+          supplement these Terms of Service at any time. User shall be informed
+          about changes to the Terms of Service via Platform or Account, or by
+          email. Unless otherwise specified by Service Provider, changes become
+          effective for User upon renewal of the then-current subscription term
+          or entry into a new subscription after the updated version of these
+          Term of Service goes into effect. User may be required to click to
+          accept or otherwise agree to the modified Terms of Service before
+          renewing a subscription term or entering into new subscription, and in
+          any event continued use of any Service after the updated version of
+          this Terms of Service goes into effect will constitute User’s
+          acceptance of such updated version.
+        </p>
 
-        <p class="text"><strong>2. ACCESS TO THE PLATFORM, SERVICE, AND USE RESTRICTIONS</strong></p>
-      <p class="text">2.1. Service Provider hereby grants you the right to access the Platform and use the Service, subject to your
-      compliance with these Terms at all times, including timely payment of all applicable fees. Your right to access
-      and use the Service is personal, limited to your internal business purposes, non-transferable, non-exclusive, and
-      revocable.</p>
-      <p class="text">2.2. All Users must register an Account on the Platform to use the Service. You agree to:</p>
-      <p class="text">2.2.1. provide accurate, current and complete information as may be prompted by on Account registration form on
-      the Platform;</p>
-      <p class="text">2.2.2. maintain the security of, and not share with any third party, any logins, passwords, or other credentials
-      that you or any your authorized User selects or that are provided to you or your authorized User for use on the
-      Platform;</p>
-      <p class="text">2.2.3. maintain and promptly update the Personal Data, and any other information you provide to us, and to keep
-      all such information accurate, current, and complete, and</p>
-      <p class="text">2.2.4. notify us immediately of any unauthorized use of an Account or any other breach of security by emailing us.
-      Any activity on User’s Account shall be the sole responsibility of the User.</p>
-      <p class="text">2.3. Access and use of the Platform and Service is possible when Service Provider has identified the User by the
-      User's e-mail address and password indicated at the moment of registration of the Account.</p>
-      <p class="text">2.4. Without limiting the generality of the foregoing, User shall not, shall not attempt to, and shall not permit
-      or encourage any third party to:</p>
-      <p class="text">2.4.1. reverse engineer, disassemble, decompile, decode, or otherwise attempt to derive or gain improper access to
-      any software component of the Platform, in whole or in part;</p>
-      <p class="text">2.4.2. modify or create derivative works of the Platform, in whole or in part;</p>
-      <p class="text">2.4.3. use the Platform in any manner or for any purpose that infringes, misappropriates, or otherwise violates
-      any intellectual property right or other right of any third party;</p>
-      <p class="text">2.4.4. interfere with or disrupt the integrity of the Platform and/or Service, or any content or data contained
-      therein or transmitted thereby;</p>
-      <p class="text">2.4.5. access, monitor, or copy any content or information on the Platform using any robot, spider, scraper, or
-      other automated means or any manual process for any purpose incompatible with the essence of the Service without
-      our express written permission;</p>
-      <p class="text">2.4.6. violate the restrictions in any robot exclusion headers on the Service or bypass or circumvent other
-      measures employed to prevent or limit access to the Platform and/or Service;</p>
-      <p class="text">2.4.7. take any action that imposes, or may impose, in our discretion, an unreasonable or disproportionately large
-      load on our infrastructure;</p>
-      <p class="text">2.4.8. “frame”, “mirror,” sell, resell, rent, or lease any portion of the Service or otherwise incorporate any
-      part of the Service into any other website without our prior written authorization;</p>
-      <p class="text">2.4.9. input any virus, malware, or other harmful code into the Service;</p>
-      <p class="text">2.4.10. use the Platform or/and Service, or any provided Financial Data analyzing solutions for benchmarking or
-      competitive analysis with respect to competitive or related products or services or to develop, commercialize,
-      license, or sell any product, service, or technology that could, directly or indirectly, compete with the Service;</p>
-      <p class="text">or</p>
-      <p class="text">2.4.11. violate any applicable local, provincial national, or international law or regulation.</p>
-      <p class="text">2.5. Service Provider reserves the right to suspend provision of Service, if Service Provider deems such
-      suspension necessary as a result of User’s breach of these Terms of Service, or/and if Service Provider reasonably
-      determines suspension is necessary to avoid material harm to Platform or its other users, including if the Service
-      is experiencing denial of service attacks, mail flooding, or other attacks or disruptions outside of Service
-      Provider control, or/and as required by law or at the request of governmental entities.</p>
+        <p class="text">
+          <strong>
+            2. ACCESS TO THE PLATFORM, SERVICE, AND USE RESTRICTIONS
+          </strong>
+        </p>
+        <p class="text">
+          2.1. Service Provider hereby grants you the right to access the
+          Platform and use the Service, subject to your compliance with these
+          Terms at all times, including timely payment of all applicable fees.
+          Your right to access and use the Service is personal, limited to your
+          internal business purposes, non-transferable, non-exclusive, and
+          revocable.
+        </p>
+        <p class="text">
+          2.2. All Users must register an Account on the Platform to use the
+          Service. You agree to:
+        </p>
+        <p class="text">
+          2.2.1. provide accurate, current and complete information as may be
+          prompted by on Account registration form on the Platform;
+        </p>
+        <p class="text">
+          2.2.2. maintain the security of, and not share with any third party,
+          any logins, passwords, or other credentials that you or any your
+          authorized User selects or that are provided to you or your authorized
+          User for use on the Platform;
+        </p>
+        <p class="text">
+          2.2.3. maintain and promptly update the Personal Data, and any other
+          information you provide to us, and to keep all such information
+          accurate, current, and complete, and
+        </p>
+        <p class="text">
+          2.2.4. notify us immediately of any unauthorized use of an Account or
+          any other breach of security by emailing us. Any activity on User’s
+          Account shall be the sole responsibility of the User.
+        </p>
+        <p class="text">
+          2.3. Access and use of the Platform and Service is possible when
+          Service Provider has identified the User by the User's e-mail address
+          and password indicated at the moment of registration of the Account.
+        </p>
+        <p class="text">
+          2.4. Without limiting the generality of the foregoing, User shall not,
+          shall not attempt to, and shall not permit or encourage any third
+          party to:
+        </p>
+        <p class="text">
+          2.4.1. reverse engineer, disassemble, decompile, decode, or otherwise
+          attempt to derive or gain improper access to any software component of
+          the Platform, in whole or in part;
+        </p>
+        <p class="text">
+          2.4.2. modify or create derivative works of the Platform, in whole or
+          in part;
+        </p>
+        <p class="text">
+          2.4.3. use the Platform in any manner or for any purpose that
+          infringes, misappropriates, or otherwise violates any intellectual
+          property right or other right of any third party;
+        </p>
+        <p class="text">
+          2.4.4. interfere with or disrupt the integrity of the Platform and/or
+          Service, or any content or data contained therein or transmitted
+          thereby;
+        </p>
+        <p class="text">
+          2.4.5. access, monitor, or copy any content or information on the
+          Platform using any robot, spider, scraper, or other automated means or
+          any manual process for any purpose incompatible with the essence of
+          the Service without our express written permission;
+        </p>
+        <p class="text">
+          2.4.6. violate the restrictions in any robot exclusion headers on the
+          Service or bypass or circumvent other measures employed to prevent or
+          limit access to the Platform and/or Service;
+        </p>
+        <p class="text">
+          2.4.7. take any action that imposes, or may impose, in our discretion,
+          an unreasonable or disproportionately large load on our
+          infrastructure;
+        </p>
+        <p class="text">
+          2.4.8. “frame”, “mirror,” sell, resell, rent, or lease any portion of
+          the Service or otherwise incorporate any part of the Service into any
+          other website without our prior written authorization;
+        </p>
+        <p class="text">
+          2.4.9. input any virus, malware, or other harmful code into the
+          Service;
+        </p>
+        <p class="text">
+          2.4.10. use the Platform or/and Service, or any provided Financial
+          Data analyzing solutions for benchmarking or competitive analysis with
+          respect to competitive or related products or services or to develop,
+          commercialize, license, or sell any product, service, or technology
+          that could, directly or indirectly, compete with the Service;
+        </p>
+        <p class="text">or</p>
+        <p class="text">
+          2.4.11. violate any applicable local, provincial national, or
+          international law or regulation.
+        </p>
+        <p class="text">
+          2.5. Service Provider reserves the right to suspend provision of
+          Service, if Service Provider deems such suspension necessary as a
+          result of User’s breach of these Terms of Service, or/and if Service
+          Provider reasonably determines suspension is necessary to avoid
+          material harm to Platform or its other users, including if the Service
+          is experiencing denial of service attacks, mail flooding, or other
+          attacks or disruptions outside of Service Provider control, or/and as
+          required by law or at the request of governmental entities.
+        </p>
 
-      <p class="text"><strong>3. SERVICE SUBSCRIPTION, FEES AND PAYMENT</strong></p>
-      <p class="text">3.1. Access to certain features of the Platform may be provided to you free of charge, while access to real-time
-      Financial Data and selected features of Service may be provided on a Service subscription basis. Additional
-      information regarding the Service subscription plans and pricing may be found on the Pricing section of the
-      Platform.</p>
-      <p class="text">3.2. Service Provider reserves the right to implement new fees or change the fees for certain Services at any time
-      in accordance with the general procedure for amending and informing the Users about the change of these Terms of
-      Service.</p>
-      <p class="text">3.3. Subscription purchased via Platform are billed either monthly or annually. Your selected payment method will
-      be charged automatically on a recurring monthly or annual basis. Your subscription will be renewed automatically,
-      and you will be charged in advance of each billing cycle unless you cancel.</p>
-      <p class="text">3.4. By purchasing any Service subscription, you authorize Service Provider or its third-party payment processors
-      to charge the credit card identified by you (which you represent and warrant that you are authorized to use) all
-      applicable fees for your purchase, including all applicable taxes, and you agree that our payment provider can
-      store your credit card information. If Service Provider does not receive payment from your credit card provider,
-      you agree to pay all amounts due upon demand and Service Provider may suspend your access to the Services until
-      full payment is received or terminate the Service.</p>
-      <p class="text">3.5. The third-party payment system Stripe is used to make all User payments on the Platform and to store credit
-      or debit card and merger information. The Stripe system operator and supplier is Stripe Payments Europe, Ltd, C /
-      O A & L Goodbody, Ifsc, North Wall Quay Dublin D01 H104, Dublin, Ireland. The payment service provider operates
-      under an electronic money institution license issued by the Central Bank of Ireland ([license number]).</p>
-      <p class="text">3.6. All sales are final, and Service Provider will not issue refunds, including for monthly/annually Service
-      subscription fees. By cancelling a monthly/annual subscription, all future charges associated with future months
-      of your subscription will be cancelled. You may notify us of your intent to cancel at any time; your cancellation
-      will become effective at the end of your current monthly/annual billing period. You will not receive a refund;
-      however, your subscription access and/or delivery and accompanying subscriber benefits will continue for the
-      remainder of the current monthly/annual billing period. If you choose an automatic recurring payment and later
-      decide to end your subscription, cancelling the payment is your responsibility. Service Provider does not refund
-      automatic payments not cancelled in time.</p>
+        <p class="text">
+          <strong>3. SERVICE SUBSCRIPTION, FEES AND PAYMENT</strong>
+        </p>
+        <p class="text">
+          3.1. Access to certain features of the Platform may be provided to you
+          free of charge, while access to real-time Financial Data and selected
+          features of Service may be provided on a Service subscription basis.
+          Additional information regarding the Service subscription plans and
+          pricing may be found on the Pricing section of the Platform.
+        </p>
+        <p class="text">
+          3.2. Service Provider reserves the right to implement new fees or
+          change the fees for certain Services at any time in accordance with
+          the general procedure for amending and informing the Users about the
+          change of these Terms of Service.
+        </p>
+        <p class="text">
+          3.3. Subscription purchased via Platform are billed either monthly or
+          annually. Your selected payment method will be charged automatically
+          on a recurring monthly or annual basis. Your subscription will be
+          renewed automatically, and you will be charged in advance of each
+          billing cycle unless you cancel.
+        </p>
+        <p class="text">
+          3.4. By purchasing any Service subscription, you authorize Service
+          Provider or its third-party payment processors to charge the credit
+          card identified by you (which you represent and warrant that you are
+          authorized to use) all applicable fees for your purchase, including
+          all applicable taxes, and you agree that our payment provider can
+          store your credit card information. If Service Provider does not
+          receive payment from your credit card provider, you agree to pay all
+          amounts due upon demand and Service Provider may suspend your access
+          to the Services until full payment is received or terminate the
+          Service.
+        </p>
+        <p class="text">
+          3.5. The third-party payment system Stripe is used to make all User
+          payments on the Platform and to store credit or debit card and merger
+          information. The Stripe system operator and supplier is Stripe
+          Payments Europe, Ltd, C / O A & L Goodbody, Ifsc, North Wall Quay
+          Dublin D01 H104, Dublin, Ireland. The payment service provider
+          operates under an electronic money institution license issued by the
+          Central Bank of Ireland ([license number]).
+        </p>
+        <p class="text">
+          3.6. All sales are final, and Service Provider will not issue refunds,
+          including for monthly/annually Service subscription fees. By
+          cancelling a monthly/annual subscription, all future charges
+          associated with future months of your subscription will be cancelled.
+          You may notify us of your intent to cancel at any time; your
+          cancellation will become effective at the end of your current
+          monthly/annual billing period. You will not receive a refund; however,
+          your subscription access and/or delivery and accompanying subscriber
+          benefits will continue for the remainder of the current monthly/annual
+          billing period. If you choose an automatic recurring payment and later
+          decide to end your subscription, cancelling the payment is your
+          responsibility. Service Provider does not refund automatic payments
+          not cancelled in time.
+        </p>
 
-      <!-- <strong>4. INTELLECTUAL PROPERTY</strong>
+        <!-- <strong>4. INTELLECTUAL PROPERTY</strong>
       4.1. The Platform, and all of the content it contains, or may contain in the future, including but not limited to
       text, content, photographs, video, audio and graphics, goods, designs, information, applications, software, music,
       audio files, articles, directories, guides, photographs as well as trademarks, service marks, trade names, trade
@@ -373,119 +556,139 @@
       possible, the original intention of the parties, and the remaining portions shall remain in full force and effect.
       7.4. Previous version of the Terms of Service:
       - Version of the Terms of Service valid until [date].</p> -->
-    </div>
-  </article>
+      </div>
+    </article>
 
-  <footer class="footer">
-    <div class="container">
-      <div class="filter">
-        <a href="" class="filter-btn">Guide</a>
-        <a href="" class="filter-btn">Tips</a>
-        <a href="" class="filter-btn">Analysis</a>
-        <a href="" class="filter-btn">Help</a>
-        <a href="" class="filter-btn">Data</a>
-        <a href="" class="filter-btn">Guide</a>
-        <a href="" class="filter-btn">Tips</a>
-        <a href="" class="filter-btn">Analysis</a>
-        <a href="" class="filter-btn">Data recovery</a>
-      </div>
-      <div class="footer-block footer-block-email">
-        <div class="footer-block-row">
-          <div class="footer-block-gradient">
-            <p class="gradient-text">Possibility to choose various investment</p>
-            <p class="text-14">
-              Unsubscribe at any time.
-              <a href="">Privacy policy↗</a>
-            </p>
-          </div>
-          <form action="" class="footer-form">
-            <input
-              type="email"
-              class="text-input text-input-email"
-              placeholder="Enter your email to subscribe" />
-            <input type="submit" class="btn btn-purple btn-email-subscribe" value="Subscribe" />
-          </form>
+    <footer class="footer">
+      <div class="container">
+        <div class="filter">
+          <a href="" class="filter-btn">Guide</a>
+          <a href="" class="filter-btn">Tips</a>
+          <a href="" class="filter-btn">Analysis</a>
+          <a href="" class="filter-btn">Help</a>
+          <a href="" class="filter-btn">Data</a>
+          <a href="" class="filter-btn">Guide</a>
+          <a href="" class="filter-btn">Tips</a>
+          <a href="" class="filter-btn">Analysis</a>
+          <a href="" class="filter-btn">Data recovery</a>
         </div>
-      </div>
-      <div class="footer-block">
-        <div class="footer-block-row">
-          <img src="img/logo.svg" class="logo" alt="" />
-          <div class="footer-reviews-rate">
-            <p><b>Excellent</b></p>
-            <img src="img/icons/trustpilot-stars.svg" alt="" />
-            <p>4.8 out of 5 based ion 427 review</p>
+        <div class="footer-block footer-block-email">
+          <div class="footer-block-row">
+            <div class="footer-block-gradient">
+              <p class="gradient-text">
+                Possibility to choose various investment
+              </p>
+              <p class="text-14">
+                Unsubscribe at any time.
+                <a href="">Privacy policy↗</a>
+              </p>
+            </div>
+            <form action="" class="footer-form">
+              <input
+                type="email"
+                class="text-input text-input-email"
+                placeholder="Enter your email to subscribe" />
+              <input
+                type="submit"
+                class="btn btn-purple btn-email-subscribe"
+                value="Subscribe" />
+            </form>
           </div>
         </div>
-      </div>
-      <div class="footer-block footer-block-links">
-        <div class="row">
-          <div class="col-lg-4">
-            <h6 class="h6-heading">Our Platform</h6>
-            <p class="text-14">Ultrices dignissim iaculis mattis feugiat. Nulla imperdiet in lacus integer pellentesque
-              justo. Adipiscing purus quis ut mattis at cursus sit ut et. Eu pharetra, tempus arcu eget blandit
-              vestibulum scelerisque convallis. Pellentesque interdum elit amet vitae, nunc vitae, molestie dui.</p>
-          </div>
-          <div class="col-6 col-lg-2 offset-lg-2">
-            <h6 class="h6-heading">Where to begin</h6>
-            <div class="footer-list">
-              <a class="footer-list-link" href="">Beginner’s guide</a>
-              <a class="footer-list-link" href="">Analysis & Inspiration</a>
-              <a class="footer-list-link" href="">Investment tips</a>
-              <a class="footer-list-link" href="">Market coverage</a>
-            </div>
-          </div>
-          <div class="col-6 col-lg-2">
-            <h6 class="h6-heading">Invest</h6>
-            <div class="footer-list">
-              <a class="footer-list-link" href="">Pricing & plans</a>
-              <a class="footer-list-link" href="">News & annoucments</a>
-              <a class="footer-list-link" href="">Help center</a>
-              <a class="footer-list-link" href="">Contacts center</a>
-            </div>
-          </div>
-          <div class="col-6 col-lg-2">
-            <h6 class="h6-heading">Legal</h6>
-            <div class="footer-list">
-              <a class="footer-list-link" href="">Terms of Service</a>
-              <a class="footer-list-link" href="">
-                Terms & Conditions of Sales
-              </a>
-              <a class="footer-list-link" href="">Privacy Policy</a>
-              <a class="footer-list-link" href="">Cookies Policy</a>
+        <div class="footer-block">
+          <div class="footer-block-row">
+            <img src="img/logo.svg" class="logo" alt="" />
+            <div class="footer-reviews-rate">
+              <p><b>Excellent</b></p>
+              <img src="img/icons/trustpilot-stars.svg" alt="" />
+              <p>4.8 out of 5 based ion 427 review</p>
             </div>
           </div>
         </div>
-      </div>
-      <p class="footer-copyright-text center-text">Copyright © Plyanalytics. 2022</p>
-      <div class="footer-risk-disclosure">
-        <p>
-          No Advice Regarding Investment, Tax, Trading or Security Account Type. The Services provided by the Service
-          Provider include only the collection of Financial Data and their provision to the User with analytics
-          solutions for the analysis of this Financial Data. Neither Service Provider, nor any of its representatives,
-          will: provide User with investment advice or recommendation; offer any opinion regarding the suitability of
-          any security, account type, order, transaction, or investment advisor, or strategy; solicit any order or
-          transaction; monitor User Account or the Financial Data it analyzes, alert User to any change of Financial
-          Data, or provide legal, tax, or accounting advice (collectively – "Advice"). Nothing on Platform is or shall
-          be deemed a recommendation or solicitation to invest, buy or sell securities or any other investment products,
-          or to engage in any investment strategy. User will not seek, accept, or rely on any Advice from Service
-          Provider or its
-          representatives, or any communication that could be construed as such. Because Service Provider does not
-          provide Advice, Service Provider is not responsible for the suitability or appropriateness of any order,
-          trade, investment, investment strategy, selection of advisor or other activity of User. User agrees that any
-          investment or trade decision executed based on Financial Data provided on Platform is solely User's own
-          decision and is based on User's own evaluation of Financial Data and/or its personal financial situation,
-          needs, and investment objective(s). Service Provider does not endorse and is not responsible for any advice,
-          representation, content, or other information provided by third parties, including but not limited to any such
-          information or third party referenced by or accessed through Platform, including but not limited to the
-          official websites of the public companies from which the Financial Data is collected.
+        <div class="footer-block footer-block-links">
+          <div class="row">
+            <div class="col-lg-4">
+              <h6 class="h6-heading">Our Platform</h6>
+              <p class="text-14">
+                Ultrices dignissim iaculis mattis feugiat. Nulla imperdiet in
+                lacus integer pellentesque justo. Adipiscing purus quis ut
+                mattis at cursus sit ut et. Eu pharetra, tempus arcu eget
+                blandit vestibulum scelerisque convallis. Pellentesque interdum
+                elit amet vitae, nunc vitae, molestie dui.
+              </p>
+            </div>
+            <div class="col-6 col-lg-2 offset-lg-2">
+              <h6 class="h6-heading">Where to begin</h6>
+              <div class="footer-list">
+                <a class="footer-list-link" href="">Beginner’s guide</a>
+                <a class="footer-list-link" href="">Analysis & Inspiration</a>
+                <a class="footer-list-link" href="">Investment tips</a>
+                <a class="footer-list-link" href="">Market coverage</a>
+              </div>
+            </div>
+            <div class="col-6 col-lg-2">
+              <h6 class="h6-heading">Invest</h6>
+              <div class="footer-list">
+                <a class="footer-list-link" href="">Pricing & plans</a>
+                <a class="footer-list-link" href="">News & annoucments</a>
+                <a class="footer-list-link" href="">Help center</a>
+                <a class="footer-list-link" href="">Contacts center</a>
+              </div>
+            </div>
+            <div class="col-6 col-lg-2">
+              <h6 class="h6-heading">Legal</h6>
+              <div class="footer-list">
+                <a class="footer-list-link" href="">Terms of Service</a>
+                <a class="footer-list-link" href="">
+                  Terms & Conditions of Sales
+                </a>
+                <a class="footer-list-link" href="">Privacy Policy</a>
+                <a class="footer-list-link" href="">Cookies Policy</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <p class="footer-copyright-text center-text">
+          Copyright © Plyanalytics. 2022
         </p>
+        <div class="footer-risk-disclosure">
+          <p>
+            No Advice Regarding Investment, Tax, Trading or Security Account
+            Type. The Services provided by the Service Provider include only the
+            collection of Financial Data and their provision to the User with
+            analytics solutions for the analysis of this Financial Data. Neither
+            Service Provider, nor any of its representatives, will: provide User
+            with investment advice or recommendation; offer any opinion
+            regarding the suitability of any security, account type, order,
+            transaction, or investment advisor, or strategy; solicit any order
+            or transaction; monitor User Account or the Financial Data it
+            analyzes, alert User to any change of Financial Data, or provide
+            legal, tax, or accounting advice (collectively – "Advice"). Nothing
+            on Platform is or shall be deemed a recommendation or solicitation
+            to invest, buy or sell securities or any other investment products,
+            or to engage in any investment strategy. User will not seek, accept,
+            or rely on any Advice from Service Provider or its representatives,
+            or any communication that could be construed as such. Because
+            Service Provider does not provide Advice, Service Provider is not
+            responsible for the suitability or appropriateness of any order,
+            trade, investment, investment strategy, selection of advisor or
+            other activity of User. User agrees that any investment or trade
+            decision executed based on Financial Data provided on Platform is
+            solely User's own decision and is based on User's own evaluation of
+            Financial Data and/or its personal financial situation, needs, and
+            investment objective(s). Service Provider does not endorse and is
+            not responsible for any advice, representation, content, or other
+            information provided by third parties, including but not limited to
+            any such information or third party referenced by or accessed
+            through Platform, including but not limited to the official websites
+            of the public companies from which the Financial Data is collected.
+          </p>
+        </div>
       </div>
-    </div>
-  </footer>
+    </footer>
 
-  <script src="js/bootstrap.min.js"></script>
-  <script src="js/swiper-bundle.min.js"></script>
-  <script src="js/scripts.js"></script>
-</body>
-
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/swiper-bundle.min.js"></script>
+    <script src="js/scripts.js"></script>
+  </body>
 </html>

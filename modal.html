@@ -29,6 +29,13 @@
       .loader-container-hidden {
         display: none;
       }
+
+      @media (max-width: 768px) {
+        .spinner {
+          width: 50vw;
+          height: 50vh;
+        }
+      }
     </style>
     <link rel="stylesheet" href="css/bootstrap.min.css" />
     <link rel="stylesheet" href="css/swiper-bundle.min.css" />
@@ -76,7 +83,10 @@
                   <a class="nav-link" href="#">Research</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#">Pricing <span class="mob-only">plans</span></a>
+                  <a class="nav-link" href="#">
+                    Pricing
+                    <span class="mob-only">plans</span>
+                  </a>
                 </li>
                 <li class="nav-item mob-only">
                   <a class="nav-link" href="#">Where to begin</a>
@@ -567,7 +577,9 @@
                         </div>
                         <button class="billing-line-edit"></button>
                       </label>
-                      <a href="" class="btn btn-purple btn-wide">Add payment method</a>
+                      <a href="" class="btn btn-purple btn-wide">
+                        Add payment method
+                      </a>
                     </div>
                     <div class="billing-block">
                       <p class="text"><b>Tax information</b></p>

@@ -197,6 +197,9 @@ option.forEach((a) => {
 const swiperHome = new Swiper(".home-swiper", {
   slidesPerView: 1.6,
   spaceBetween: 15,
+  rewind: false,
+  loop: true,
+  grabCursor: true,
   autoplay: {
     delay: 4000,
   },
@@ -275,6 +278,16 @@ if (window.screen.width <= 768) {
   searchForm.appendChild(searchFilterBtn);
 }
 
+// search filters consts
+const filters = document.querySelectorAll(".search .filter-btn");
+const cards = document.querySelectorAll(
+  ".search-form-filter-results .card-research-case"
+);
+const filtersTop = document.querySelectorAll(".search-form-filter .filter-btn");
+const filtersBottom = document.querySelectorAll(
+  ".search-form-filter-second .filter-btn"
+);
+
 // search filter tag choice
 if (document.querySelector(".tag-filter-input")) {
   window.addEventListener("load", () => {
@@ -302,6 +315,14 @@ if (document.querySelector(".tag-filter-input")) {
           i.classList.remove("is-hidden");
         }
       }
+      for (let c of cards) {
+        let item = c.innerHTML.toLowerCase();
+        if (item.indexOf(search) == -1) {
+          c.classList.add("is-hidden");
+        } else {
+          c.classList.remove("is-hidden");
+        }
+      }
     };
     let form = document.querySelector(".search-form");
     function handleForm(event) {
@@ -310,16 +331,6 @@ if (document.querySelector(".tag-filter-input")) {
     form.addEventListener("submit", handleForm);
   });
 }
-
-// search filters main script
-const filters = document.querySelectorAll(".search .filter-btn");
-const cards = document.querySelectorAll(
-  ".search-form-filter-results .card-research-case"
-);
-const filtersTop = document.querySelectorAll(".search-form-filter .filter-btn");
-const filtersBottom = document.querySelectorAll(
-  ".search-form-filter-second .filter-btn"
-);
 
 // search - active class on filter button
 filtersTop.forEach((filter) => {
@@ -411,6 +422,12 @@ filtersBottom.forEach((filterBottom) => {
 // search - reverse filtering, when clicking on cards
 cards.forEach((card) => {
   card.addEventListener("click", function () {
+    cards.forEach(function (element) {
+      element.classList.remove("active");
+    });
+
+    card.classList.add("active");
+
     document.querySelector(".search-form-filter-second").classList.add("show");
 
     let selectedFilterCard = card.getAttribute("data-filter");
@@ -427,7 +444,7 @@ cards.forEach((card) => {
       filtersTop.forEach(function (element) {
         element.classList.remove("active");
       });
-      el.classList.add("active"); 
+      el.classList.add("active");
     });
 
     itemsToShow2Card.forEach((el) => {
