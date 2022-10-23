@@ -476,3 +476,65 @@ document
     e.preventDefault();
     document.querySelector(".text-input-email").remove();
   });
+
+
+// banner animation 
+
+let imageSources = [];
+
+
+
+function preloadImages(from, to) {
+  for (let i = from; i <= to; i++) {
+    let image = new Image()
+
+    if (i < 10) {
+      image.src = `../img/banner-patterns/out_${"000" + i}.svg`;
+    } else if (i < 100) {
+      image.src = `../img/banner-patterns/out_${"00" + i}.svg`;
+    } else {
+      image.src = `../img/banner-patterns/out_${"0" + i}.svg`;
+    }
+    imageSources.push(image)
+  }
+}
+
+
+let imageCount = 1
+let reverseChangeImage = false
+let banner = document.querySelector('.intro-section')
+
+function changeImage() {
+  if (!reverseChangeImage && imageSources[imageCount]?.width) {
+    banner.style.backgroundImage = 'url(' + imageSources[imageCount].src + ')'
+    imageCount++
+  } else {
+    if (imageCount == 1) {
+      reverseChangeImage = false
+    } else {
+      reverseChangeImage = true
+      imageCount--
+      banner.style.backgroundImage = 'url(' + imageSources[imageCount].src + ')'
+    }
+  }
+}
+
+function animateBanner() {
+
+  preloadImages(1, 200)
+
+  setTimeout(() => {
+    setInterval(() => {
+      if (imageCount < 600) {
+        if (imageSources.length < 600 && imageCount % 10 == 0) {
+          preloadImages(imageCount + 190, imageCount + 199)
+        }
+        changeImage()
+      } else {
+        imageCount = 1
+      }
+    }, 30);
+  }, 3000);
+}
+
+if (banner) { animateBanner() }
