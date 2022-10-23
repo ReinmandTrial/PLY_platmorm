@@ -529,20 +529,22 @@ function changeImage() {
 
 function animateBanner() {
 
-  preloadImages(1, 200)
-
-  setTimeout(() => {
-    setInterval(() => {
-      if (imageCount < 600) {
-        if (imageSources.length < 600 && imageCount % 10 == 0) {
-          preloadImages(imageCount + 190, imageCount + 199)
+  preloadImages(1, 100)
+  window.addEventListener("load", () => { 
+    setTimeout(() => {
+      setInterval(() => {
+        if (imageCount < 600) {
+          if (imageSources.length < 600 && imageCount % 10 == 0) {
+            preloadImages(imageSources.length + 1, imageSources.length + 20)
+          }
+          changeImage()
+        } else {
+          imageCount = 1
         }
-        changeImage()
-      } else {
-        imageCount = 1
-      }
-    }, 30);
-  }, 3000);
+      }, 30);
+    }, 3000);
+  })
 }
+
 
 if (banner) { animateBanner() }
