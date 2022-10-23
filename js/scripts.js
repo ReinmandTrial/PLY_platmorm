@@ -529,7 +529,7 @@ function changeImage() {
 
 function animateBanner() {
 
-  preloadImages(1, 100)
+  preloadImages(1, 50)
   window.addEventListener("load", () => { 
     setTimeout(() => {
       setInterval(() => {
@@ -541,7 +541,7 @@ function animateBanner() {
         } else {
           imageCount = 1
         }
-      }, 50);
+      }, 60);
     }, 3000);
   })
 }
