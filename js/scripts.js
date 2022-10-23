@@ -482,18 +482,26 @@ document
 
 let imageSources = [];
 
+let projectName = ''
 
+let gitHost = 'reinmandtrial.github.io'
+
+let host = document.location.host
+
+if (host == gitHost) {
+  projectName = '/PLY_platmorm'
+}
 
 function preloadImages(from, to) {
   for (let i = from; i <= to; i++) {
     let image = new Image()
 
     if (i < 10) {
-      image.src = `../img/banner-patterns/out_${"000" + i}.svg`;
+      image.src = `..${projectName}/img/banner-patterns/out_${"000" + i}.svg`;
     } else if (i < 100) {
-      image.src = `../img/banner-patterns/out_${"00" + i}.svg`;
+      image.src = `..${projectName}/img/banner-patterns/out_${"00" + i}.svg`;
     } else {
-      image.src = `../img/banner-patterns/out_${"0" + i}.svg`;
+      image.src = `..${projectName}/img/banner-patterns/out_${"0" + i}.svg`;
     }
     imageSources.push(image)
   }
