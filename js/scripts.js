@@ -534,14 +534,14 @@ function animateBanner() {
     setTimeout(() => {
       setInterval(() => {
         if (imageCount < 600) {
-          if (imageSources.length < 600 && imageCount % 10 == 0) {
-            preloadImages(imageSources.length + 1, imageSources.length + 20)
+          if (imageSources.length < 600 && imageCount % 5 == 0) {
+            preloadImages(imageSources.length + 1, imageSources.length + 5)
           }
           changeImage()
         } else {
           imageCount = 1
         }
-      }, 30);
+      }, 50);
     }, 3000);
   })
 }
