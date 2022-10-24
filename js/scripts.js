@@ -311,8 +311,10 @@ if (document.querySelector(".tag-filter-input")) {
         let item = i.innerHTML.toLowerCase();
         if (item.indexOf(search) == -1) {
           i.classList.add("is-hidden");
+          document.querySelector(".filter-btn-more").classList.add("is-hidden");
         } else {
           i.classList.remove("is-hidden");
+          document.querySelector(".filter-btn-more").classList.remove("is-hidden");
         }
       }
       for (let c of cards) {
@@ -444,7 +446,9 @@ cards.forEach((card) => {
       filtersTop.forEach(function (element) {
         element.classList.remove("active");
       });
-      el.classList.add("active");
+      cards.forEach(function (element) {
+        element.classList.add("active");
+      });
     });
 
     itemsToShow2Card.forEach((el) => {
