@@ -241,17 +241,21 @@
         display: flex;
 
         .price-table-heading:first-of-type div {
-          max-width: 210px;
+          max-width: 340px;
+          height: 100%;
+          align-items: center;
+          justify-content: center;
+          display: flex;
         }
       }
 
       .price-table-item:first-of-type {
-        width: 210px;
+        width: 340px;
         padding: 7px 10px 7px 15px;
       }
 
       .price-table-item:last-of-type {
-        margin-left: 65px;
+        margin-left: 90px;
       }
     }
 
@@ -259,13 +263,41 @@
       font-size: 10px;
     }
 
-    .price-table-item {
-      color: $grey-text-color;
+    .price-table-row-heading {
+      margin-top: 60px;
+
+      &:first-of-type {
+        margin-top: 0;
+      }
     }
   }
 
   .price-table-heading .price-table-heading-tariff {
-    width: 100px;
+    width: 160px;
     min-width: unset;
+    height: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .price-table-container-mobile
+    .price-table-row-heading-mobile
+    .price-table-heading:first-of-type
+    div {
+    max-width: 210px;
+  }
+  .price-table-heading .price-table-heading-tariff {
+    width: 100px;
+  }
+  .price-table-container-mobile
+    .price-table-row
+    .price-table-item:first-of-type {
+    width: 210px;
+  }
+  .price-table-container-mobile
+    .price-table-row
+    .price-table-item:last-of-type {
+    margin-left: 65px;
   }
 }
