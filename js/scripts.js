@@ -413,13 +413,13 @@ filtersTop.forEach((filterTop) => {
     });
   });
 });
-filtersBottom.forEach((filterBottom) => {
-  filterBottom.addEventListener("click", function () {
-    cards.forEach(function (el) {
-      el.style.display = "block";
-    });
-  });
-});
+// filtersBottom.forEach((filterBottom) => {
+//   filterBottom.addEventListener("click", function () {
+//     cards.forEach(function (el) {
+//       el.style.display = "block";
+//     });
+//   });
+// });
 
 // search - reverse filtering, when clicking on cards
 cards.forEach((card) => {
